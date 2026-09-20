@@ -127,6 +127,28 @@ body {
   background-attachment: fixed;
 }
 
+/* Accessible Skip Link */
+.skip-link {
+  position: absolute;
+  top: -120px;
+  left: 20px;
+  background: var(--clay);
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  z-index: 10000;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-md);
+  transition: top 0.25s ease;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 16px;
+  outline: 3px solid var(--paper);
+}
+
 /* Scroll Progress Bar */
 #scrollProgress {
   position: fixed;
@@ -765,6 +787,15 @@ section.tight { padding: 56px 0; }
   color: var(--ink);
   animation: float 4s ease-in-out infinite;
   white-space: nowrap;
+}
+
+.pill-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--clay);
+  flex: none;
 }
 
 .floating-pill.pill-left {
