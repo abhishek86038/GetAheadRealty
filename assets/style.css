@@ -796,37 +796,80 @@ section.tight { padding: 56px 0; }
   50% { transform: translateY(-6px); }
 }
 
-/* ---------- Stat Strip ---------- */
+/* ---------- Continuous Infinite Stat Wipe Marquee (Right to Left) ---------- */
 .stat-strip {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: var(--paper-card);
+  background: linear-gradient(90deg, var(--paper-soft) 0%, var(--paper-surface) 50%, var(--paper-soft) 100%);
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 18px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 6%, rgba(0, 0, 0, 1) 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 6%, rgba(0, 0, 0, 1) 94%, transparent 100%);
 }
 
-.stat-strip .grid-4 { gap: 0; }
-
-.stat-cell {
-  padding: 34px 24px;
-  border-left: 1px solid var(--line);
-  transition: var(--transition);
+.stat-strip:hover .stat-track {
+  animation-play-state: paused;
 }
 
-.stat-cell:first-child { border-left: none; }
+.stat-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 36px;
+  animation: statWipe 28s linear infinite;
+  will-change: transform;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+  white-space: nowrap;
+  flex: none;
+}
 
 .stat-num {
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
   color: var(--clay);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1;
+  text-shadow: 0 2px 8px var(--clay-glow);
 }
 
 .stat-label {
-  font-size: 0.88rem;
-  color: var(--ink-soft);
-  margin-top: 6px;
-  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--ink);
+  font-weight: 600;
+  max-width: 26ch;
+  white-space: normal;
+  line-height: 1.35;
+}
+
+.stat-divider {
+  color: var(--moss);
+  font-size: 1.1rem;
+  opacity: 0.7;
+  flex: none;
+  animation: spinSlow 12s linear infinite;
+}
+
+@keyframes statWipe {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-track { animation: none; overflow-x: auto; }
 }
 
 /* ---------- Interactive Micro-Market Street Simulator ---------- */
@@ -1592,10 +1635,6 @@ footer.site {
   .grid-3 { grid-template-columns: 1fr 1fr; gap: 20px; }
   .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 0; }
   .diff-row { grid-template-columns: 1fr; gap: 20px; }
-  
-  .stat-cell:nth-child(2) { border-left: 1px solid var(--line); }
-  .stat-cell:nth-child(3) { border-left: none; border-top: 1px solid var(--line); }
-  .stat-cell:nth-child(4) { border-left: 1px solid var(--line); border-top: 1px solid var(--line); }
 
   .fee-model-steps { grid-template-columns: 1fr; gap: 12px; }
   .fee-step-arrow { transform: rotate(90deg); margin: 4px auto; }
@@ -1681,11 +1720,6 @@ footer.site {
     margin-bottom: 0;
   }
 
-  .stat-strip .grid-4 { grid-template-columns: 1fr 1fr; }
-  .stat-cell { padding: 22px 16px; }
-  .stat-num { font-size: 1.85rem; }
-  .stat-label { font-size: 0.82rem; }
-
   .grid-3 { grid-template-columns: 1fr; gap: 18px; }
   .card, .testi-card, .svc-card { padding: 24px 20px; }
   .simulator-box, .fee-model-box, .calculator-section { padding: 24px 18px; border-radius: var(--radius-lg); }
@@ -1705,7 +1739,4 @@ footer.site {
 
 @media (max-width: 380px) {
   .hero h1 { font-size: 1.85rem; }
-  .stat-strip .grid-4 { grid-template-columns: 1fr; }
-  .stat-cell { border-left: none !important; border-top: 1px solid var(--line); }
-  .stat-cell:first-child { border-top: none; }
 }
