@@ -18,15 +18,15 @@ window.DEVELOPER_CONFIG = {
     },
     {
       name: "LinkedIn",
-      handle: "Connect on LinkedIn",
-      url: "https://linkedin.com/in/abhishek", // 👈 Edit your LinkedIn URL
+      handle: "Abhishek Kumar",
+      url: "https://www.linkedin.com/in/abhishek-kumar-b6585a28b/",
       icon: "linkedin",
       accent: "#0A66C2"
     },
     {
       name: "Instagram",
-      handle: "@abhishek_official",
-      url: "https://instagram.com/your_handle", // 👈 Edit your Instagram URL
+      handle: "@official_abhi_7.6",
+      url: "https://www.instagram.com/official_abhi_7.6/",
       icon: "instagram",
       accent: "#E1306C"
     },
