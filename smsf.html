@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SMSF Property Advisory | Get Ahead Realty</title>
+<meta name="description" content="Independent property research, micro-market selection and acquisition advocacy for Australian Self-Managed Super Funds (SMSF).">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='18' fill='%23F6F1E5' stroke='%2317241B' stroke-width='1.4'/%3E%3Cpath d='M20 11 L25 20 L20 29 L15 20 Z' fill='%23B65D33'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="scrollProgress"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="header-row">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" stroke="var(--ink)" stroke-width="1.4"/>
+        <path d="M20 6 V34 M6 20 H34" stroke="var(--line)" stroke-width="1"/>
+        <path d="M20 11 L25 20 L20 29 L15 20 Z" fill="var(--clay)"/>
+      </svg>
+      <span class="brand-word">Get Ahead Realty</span>
+    </a>
+    <nav class="primary" id="primaryNav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="services.html">Services</a>
+      <a href="smsf.html" aria-current="page">SMSF</a>
+      <a href="areas.html">Areas We Serve</a>
+      <a href="process.html">Process</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-cta">
+      <a class="phone-link" href="tel:+61466191055">0466 191 055</a>
+      <a class="btn btn-primary btn-small desktop-only" href="contact.html">Book a free call</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="tight page-hero">
+  <div class="wrap grid-2">
+    <div>
+      <span class="tag">SMSF Property Advisory</span>
+      <h1>Buying property inside your SMSF?</h1>
+      <p class="lede">Residential or commercial, the tax structure matters &mdash; but the physical property still has to stack up on capital growth, vacancy safety, and yield. We manage the research and sourcing side with zero advisory fees to your fund.</p>
+      <div style="margin-top:28px;">
+        <a class="btn btn-primary" href="contact.html">Book an SMSF Strategy Call</a>
+      </div>
+    </div>
+    
+    <div class="hero-visual" style="display:flex; align-items:center; justify-content:center; background:var(--paper-card); padding:30px;">
+      <svg viewBox="0 0 400 320" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <rect width="400" height="320" fill="var(--paper-soft)" rx="12"/>
+        <circle cx="200" cy="160" r="100" stroke="var(--moss)" stroke-width="1.5" fill="none" opacity="0.4"/>
+        <circle cx="200" cy="160" r="65" stroke="var(--line)" stroke-width="1" fill="none"/>
+        <rect x="165" y="125" width="70" height="70" rx="8" fill="var(--paper-card)" stroke="var(--line)" stroke-width="1.5"/>
+        <path d="M180 160 L200 142 L220 160 M185 160 V178 H215 V160" stroke="var(--clay)" stroke-width="2.5" fill="none"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- SMSF Calculator -->
+<section class="alt">
+  <div class="wrap">
+    <span class="tag">SMSF Leverage Estimator</span>
+    <h2>Model your SMSF purchasing capacity.</h2>
+    <p class="lede">Estimate how much property your SMSF cash/contributions can support under standard LRBA borrowing ratios.</p>
+    
+    <div class="calculator-section">
+      <div class="calc-grid">
+        <div class="calc-sliders">
+          <div class="slider-group">
+            <label for="calcDeposit">
+              <span>SMSF Available Cash / Rollover</span>
+              <span class="slider-val" id="depositVal">$150,000</span>
+            </label>
+            <input type="range" id="calcDeposit" class="custom-slider" min="80000" max="500000" step="10000" value="150000">
+          </div>
+
+          <div class="slider-group">
+            <label for="calcBudget">
+              <span>Target SMSF Property Value</span>
+              <span class="slider-val" id="budgetVal">$700,000</span>
+            </label>
+            <input type="range" id="calcBudget" class="custom-slider" min="400000" max="1500000" step="25000" value="700000">
+          </div>
+          
+          <p style="font-size:0.86rem; color:var(--ink-faint); margin:0;">*Assuming compliant LRBA single-acquirable asset rules. Subject to formal broker and trustee approval.</p>
+        </div>
+
+        <div class="calc-result-box">
+          <div class="calc-metric-item">
+            <div style="font-size:0.9rem; font-weight:600; color:var(--ink-soft);">Est. LRBA Loan Required</div>
+            <div class="calc-metric-val" id="calcBorrowing">$550,000</div>
+          </div>
+          <div class="calc-metric-item">
+            <div style="font-size:0.9rem; font-weight:600; color:var(--ink-soft);">Est. Net Fund Cashflow</div>
+            <div class="calc-metric-val moss" id="calcCashflow">+$18/wk</div>
+          </div>
+          <a class="btn btn-primary btn-small" href="contact.html" style="margin-top:14px; width:100%;">Discuss SMSF Property</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid-2" style="align-items:start;">
+    <div class="card">
+      <span class="tag" style="background:var(--clay-subtle); color:var(--clay); border-color:var(--clay);">Residential</span>
+      <h3>Residential SMSF Acquisitions</h3>
+      <p>We stress-test tenant demographics, micro-market vacancy rates, long-term capital appreciation, and owner-occupier resale appeal so your super fund isn't left holding high-density oversupplied stock.</p>
+    </div>
+    <div class="card">
+      <span class="tag" style="background:var(--moss-subtle); color:var(--moss); border-color:var(--moss);">Commercial</span>
+      <h3>Commercial SMSF Acquisitions</h3>
+      <p>We evaluate location demand, lease length, tenant covenants, net yield, re-leasing velocity, and underlying land value for business owners and commercial super trustees.</p>
+    </div>
+  </div>
+  
+  <div class="wrap" style="margin-top:36px;">
+    <p class="disclaimer">Strategy before property &mdash; even inside superannuation. We research and assess the physical property asset. Your licensed financial planner, tax accountant, legal and mortgage specialists will confirm whether your trust deed, borrowing structure and sole-purpose test compliance meet statutory requirements. Get Ahead Realty provides property research and advocacy services and does not provide financial or legal advice.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:14px">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="28" height="28">
+            <circle cx="20" cy="20" r="18" stroke="var(--ink)" stroke-width="1.4"/>
+            <path d="M20 11 L25 20 L20 29 L15 20 Z" fill="var(--clay)"/>
+          </svg>
+          <span class="brand-word">Get Ahead Realty</span>
+        </a>
+        <p style="max-width:34ch">Strategy before property. Smarter property decisions for a better financial future.</p>
+      </div>
+      <div>
+        <h4>What we help with</h4>
+        <ul>
+          <li><a href="services.html">First Property</a></li>
+          <li><a href="smsf.html">SMSF Property</a></li>
+          <li><a href="services.html">Portfolio Growth</a></li>
+          <li><a href="services.html">Second Opinion</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="why-us.html">Why Us</a></li>
+          <li><a href="process.html">Our Process</a></li>
+          <li><a href="areas.html">Areas We Serve</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Direct Contact</h4>
+        <ul>
+          <li><a href="tel:+61466191055">0466 191 055</a></li>
+          <li><a href="mailto:aaron@getaheadrealty.com.au">aaron@getaheadrealty.com.au</a></li>
+          <li><a href="contact.html">Book a Free Call</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <span>&copy; 2026 Get Ahead Realty. All rights reserved.</span>
+      <span>Privacy Policy &middot; Terms of Use &middot; General Advice Disclaimer</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
