@@ -330,24 +330,29 @@ p { margin-bottom: 1.1em; color: var(--ink-soft); font-size: 1.02rem; line-heigh
   pointer-events: none;
 }
 
-/* ---------- Header & Navigation with Image Backdrop ---------- */
+/* ---------- Header & Navigation with Full Prominent Image Background ---------- */
 header.site {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: 
-    linear-gradient(180deg, color-mix(in srgb, var(--paper) 92%, transparent) 0%, color-mix(in srgb, var(--paper) 97%, transparent) 100%),
-    url('../assets/settlement-handover.jpg') center 25% / cover no-repeat;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--line);
-  transition: background 0.3s, box-shadow 0.3s;
+  background-image: 
+    linear-gradient(90deg, rgba(248, 244, 235, 0.82) 0%, rgba(248, 244, 235, 0.42) 50%, rgba(248, 244, 235, 0.85) 100%),
+    url('settlement-handover.jpg');
+  background-position: center 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(17, 27, 19, 0.14);
+  box-shadow: 0 4px 20px rgba(17, 27, 19, 0.08);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  transition: all 0.3s ease;
 }
 
 header.site.scrolled {
-  background: color-mix(in srgb, var(--paper) 98%, transparent);
-  box-shadow: var(--shadow-sm);
-  border-bottom-color: var(--line-strong);
+  background-image: 
+    linear-gradient(90deg, rgba(248, 244, 235, 0.94) 0%, rgba(248, 244, 235, 0.82) 50%, rgba(248, 244, 235, 0.96) 100%),
+    url('settlement-handover.jpg');
+  box-shadow: var(--shadow-md);
 }
 
 .header-row {
@@ -365,11 +370,18 @@ header.site.scrolled {
   align-items: center;
   gap: 10px;
   text-decoration: none;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 6px 14px 6px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 10px rgba(17, 27, 19, 0.06);
 }
 
 .brand-avatar {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   object-fit: cover;
   border: 1.5px solid var(--clay);
@@ -395,8 +407,8 @@ header.site.scrolled {
 
 .brand-word {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.2rem;
+  font-weight: 700;
+  font-size: 1.22rem;
   letter-spacing: -0.01em;
   color: var(--ink);
   white-space: nowrap;
@@ -406,12 +418,19 @@ nav.primary {
   display: flex;
   align-items: center;
   gap: 4px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 12px rgba(17, 27, 19, 0.06);
 }
 
 nav.primary a {
-  color: var(--ink-soft);
+  color: var(--ink);
   font-size: 0.92rem;
-  font-weight: 500;
+  font-weight: 600;
   padding: 8px 14px;
   border-radius: var(--radius-full);
   transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease, color 0.2s ease;
@@ -421,18 +440,20 @@ nav.primary a {
 }
 
 nav.primary a:hover {
-  color: var(--ink);
-  background: var(--line-soft);
+  color: var(--clay);
+  background: rgba(255, 255, 255, 0.95);
   transform: translateY(-2px) scale(1.06);
 }
 
 nav.primary a[aria-current="page"] {
-  color: var(--clay);
-  font-weight: 600;
-  background: var(--clay-subtle);
+  color: #ffffff;
+  font-weight: 700;
+  background: var(--clay);
+  box-shadow: 0 2px 8px var(--clay-glow);
 }
 
 nav.primary a[aria-current="page"]:hover {
+  background: var(--clay-hover);
   transform: translateY(-2px) scale(1.06);
 }
 
@@ -445,16 +466,30 @@ nav.primary a[aria-current="page"]:hover {
 
 .phone-link {
   display: none;
-  font-size: 0.92rem;
-  color: var(--ink-soft);
-  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+  font-weight: 700;
   letter-spacing: 0.01em;
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 10px rgba(17, 27, 19, 0.05);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease, background 0.2s ease;
 }
 
 .phone-link:hover {
   color: var(--clay);
-  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px) scale(1.05);
+}
+
+@media (min-width: 860px) {
+  .phone-link {
+    display: inline-flex;
+  }
 }
 
 .btn {
