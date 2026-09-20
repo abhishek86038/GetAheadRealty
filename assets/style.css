@@ -373,21 +373,28 @@ nav.primary a {
   color: var(--ink-soft);
   font-size: 0.92rem;
   font-weight: 500;
-  padding: 8px 13px;
+  padding: 8px 14px;
   border-radius: var(--radius-full);
-  transition: var(--transition);
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease, color 0.2s ease;
   white-space: nowrap;
+  display: inline-block;
+  will-change: transform;
 }
 
 nav.primary a:hover {
   color: var(--ink);
   background: var(--line-soft);
+  transform: translateY(-2px) scale(1.06);
 }
 
 nav.primary a[aria-current="page"] {
   color: var(--clay);
   font-weight: 600;
   background: var(--clay-subtle);
+}
+
+nav.primary a[aria-current="page"]:hover {
+  transform: translateY(-2px) scale(1.06);
 }
 
 .header-cta {
@@ -403,10 +410,12 @@ nav.primary a[aria-current="page"] {
   color: var(--ink-soft);
   font-weight: 600;
   letter-spacing: 0.01em;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease;
 }
 
 .phone-link:hover {
   color: var(--clay);
+  transform: scale(1.05);
 }
 
 .btn {
@@ -417,16 +426,27 @@ nav.primary a[aria-current="page"] {
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.92rem;
-  padding: 11px 22px;
+  padding: 12px 24px;
   min-height: 44px;
   border-radius: var(--radius-full);
   border: 1px solid transparent;
   cursor: pointer;
   text-decoration: none;
-  transition: var(--transition);
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   line-height: 1.2;
   box-shadow: var(--shadow-sm);
   touch-action: manipulation;
+  position: relative;
+  overflow: hidden;
+  will-change: transform, box-shadow;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.06);
+}
+
+.btn:active {
+  transform: translateY(0px) scale(0.97);
 }
 
 .btn-primary {
@@ -437,25 +457,25 @@ nav.primary a[aria-current="page"] {
 
 .btn-primary:hover {
   background: var(--clay-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px -4px var(--clay-glow);
+  box-shadow: 0 16px 36px -4px var(--clay-glow), 0 4px 14px rgba(178, 84, 42, 0.35);
   color: #ffffff;
 }
 
 .btn-ghost {
-  background: var(--paper-card);
+  background: var(--paper-surface);
   color: var(--ink);
   border-color: var(--line);
 }
 
 .btn-ghost:hover {
-  border-color: var(--ink-faint);
+  border-color: var(--clay);
   background: var(--paper-soft);
-  transform: translateY(-2px);
+  color: var(--clay-dark);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-small {
-  padding: 8px 16px;
+  padding: 9px 18px;
   min-height: 38px;
   font-size: 0.85rem;
 }
@@ -470,8 +490,13 @@ nav.primary a[aria-current="page"] {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: var(--transition);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.2s ease;
   touch-action: manipulation;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.08);
+  border-color: var(--clay);
 }
 
 .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after {
@@ -1028,13 +1053,23 @@ section.tight { padding: 56px 0; }
 }
 
 .sim-btn {
-  padding: 9px 20px;
+  padding: 10px 22px;
   border-radius: var(--radius-full);
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--ink-soft);
   cursor: pointer;
-  transition: var(--transition-fast);
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  will-change: transform;
+}
+
+.sim-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  color: var(--ink);
+}
+
+.sim-btn:active {
+  transform: scale(0.98);
 }
 
 .sim-btn.active {
