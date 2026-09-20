@@ -10,8 +10,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
-<!-- Spline 3D Web Component -->
-<script type="module" src="https://unpkg.com/@splinetool/viewer@latest/build/spline-viewer.js"></script>
+<!-- Three.js 3D WebGL Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 <div id="scrollProgress"></div>
@@ -70,7 +70,7 @@
         </div>
       </div>
       
-      <!-- Interactive 3D Spline Experience with Floating Badges -->
+      <!-- Interactive 3D Architectural Property Experience -->
       <div class="hero-visual-wrapper hero-anim d2">
         <div class="floating-pill pill-left">
           <div class="pill-icon clay">📍</div>
@@ -78,14 +78,34 @@
         </div>
         
         <div class="hero-visual" id="hero3dContainer">
-          <div class="spline-container">
-            <spline-viewer 
-              url="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode" 
-              events-target="global"
-              loading-anim-type="spinner-small-dark">
-            </spline-viewer>
+          <canvas id="property3dCanvas"></canvas>
+          
+          <!-- Interactive 3D Pin Overlay Tooltips -->
+          <div class="pin-marker" id="pinElevation" style="top: 28%; left: 32%;">
+            <div class="pin-dot"><span></span></div>
+            <div class="pin-popup">
+              <strong>Elevated Crest &bull; +42m</strong>
+              <p>Zero overland flow risk, superior street appeal &amp; bay breeze.</p>
+            </div>
           </div>
-          <div class="spline-badge">Interactive 3D &bull; Drag to rotate</div>
+
+          <div class="pin-marker" id="pinSchool" style="top: 48%; right: 26%;">
+            <div class="pin-dot moss"><span></span></div>
+            <div class="pin-popup">
+              <strong>In-Catchment School Zone</strong>
+              <p>Ranked in top 5% of state primaries &mdash; drives continuous owner-occupier demand.</p>
+            </div>
+          </div>
+
+          <div class="pin-marker" id="pinDemographics" style="bottom: 24%; left: 36%;">
+            <div class="pin-dot gold"><span></span></div>
+            <div class="pin-popup">
+              <strong>78% Owner-Occupied Pocket</strong>
+              <p>Tight micro-supply, high maintenance standards, strong capital resilience.</p>
+            </div>
+          </div>
+
+          <div class="spline-badge">✦ Interactive 3D Architecture &bull; Drag to rotate 360&deg;</div>
         </div>
 
         <div class="floating-pill pill-right">
