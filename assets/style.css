@@ -187,6 +187,127 @@ p { margin-bottom: 1.1em; color: var(--ink-soft); font-size: 1.02rem; line-heigh
   display: inline-block;
 }
 
+/* Badges & Section Headers */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--clay);
+  background: var(--clay-subtle);
+  border: 1px solid rgba(178, 84, 42, 0.22);
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.tag::before {
+  content: '✦';
+  font-size: 0.7rem;
+  color: var(--clay);
+}
+
+.lede {
+  font-size: 1.16rem;
+  line-height: 1.68;
+  color: var(--ink-soft);
+  max-width: 68ch;
+  margin-top: 12px;
+  margin-bottom: 28px;
+}
+
+/* Core Differentiator Cards & 3-Column Grid */
+.diff-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 36px 0;
+}
+
+.diff-card {
+  background: var(--paper-surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 34px 28px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.diff-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: color-mix(in srgb, var(--clay) 40%, var(--line));
+}
+
+.diff-num {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--clay);
+  background: var(--clay-subtle);
+  border: 1px solid rgba(178, 84, 42, 0.18);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  display: inline-block;
+  margin-bottom: 18px;
+  width: max-content;
+}
+
+.diff-card h3 {
+  font-size: 1.35rem;
+  color: var(--ink);
+  margin-bottom: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.diff-card p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.62;
+  margin: 0;
+}
+
+/* Editorial Highlight Pull-Quote */
+.pull-quote {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--paper-soft) 70%, var(--paper-surface)) 0%, var(--paper-surface) 100%);
+  border-left: 4px solid var(--clay);
+  padding: 32px 36px 32px 48px;
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--ink);
+  font-style: italic;
+  margin: 38px 0 44px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  border-top: 1px solid var(--line-soft);
+  border-right: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.pull-quote::before {
+  content: '“';
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--clay);
+  opacity: 0.3;
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  pointer-events: none;
+}
+
 /* ---------- Header & Navigation ---------- */
 header.site {
   position: sticky;
@@ -1225,12 +1346,45 @@ section.tight { padding: 56px 0; }
 .cta-band p { color: color-mix(in srgb, var(--paper) 82%, transparent); font-size: 1.1rem; }
 .cta-band .btn-primary { background: var(--clay); color: #ffffff; }
 
-/* ---------- Service / Area Cards ---------- */
+/* ---------- Universal Cards & Service Cards ---------- */
+.card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 34px 28px;
+  background: var(--paper-surface);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: color-mix(in srgb, var(--clay) 35%, var(--line));
+}
+
+.card h3 {
+  font-size: 1.35rem;
+  color: var(--ink);
+  margin-bottom: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.62;
+  margin: 0;
+}
+
 .svc-card {
   border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 28px 24px;
-  background: var(--paper-card);
+  border-radius: var(--radius-lg);
+  padding: 32px 26px;
+  background: var(--paper-surface);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1402,6 +1556,7 @@ footer.site {
   .grid-2 { grid-template-columns: 1fr; gap: 40px; }
   .grid-3 { grid-template-columns: 1fr 1fr; gap: 20px; }
   .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .diff-row { grid-template-columns: 1fr; gap: 20px; }
   
   .stat-cell:nth-child(2) { border-left: 1px solid var(--line); }
   .stat-cell:nth-child(3) { border-left: none; border-top: 1px solid var(--line); }
