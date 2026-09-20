@@ -98,4 +98,40 @@ document.addEventListener('DOMContentLoaded', function () {
     budgetInput.addEventListener('input', calculatePropertyMetrics);
     calculatePropertyMetrics();
   }
+
+  // 5. Micro-Market Street Simulator Toggle Logic
+  var simButtons = document.querySelectorAll('.sim-btn');
+  var cardLeft = document.getElementById('simCardLeft');
+  var cardRight = document.getElementById('simCardRight');
+
+  if (simButtons.length && cardLeft && cardRight) {
+    simButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        simButtons.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        var pocket = btn.getAttribute('data-pocket');
+        if (pocket === 'left') {
+          cardLeft.style.opacity = '1';
+          cardLeft.style.transform = 'scale(1.02)';
+          cardLeft.style.boxShadow = 'var(--shadow-md)';
+          cardRight.style.opacity = '0.45';
+          cardRight.style.transform = 'scale(0.98)';
+          cardRight.style.boxShadow = 'none';
+        } else {
+          cardRight.style.opacity = '1';
+          cardRight.style.transform = 'scale(1.02)';
+          cardRight.style.boxShadow = 'var(--shadow-md)';
+          cardLeft.style.opacity = '0.45';
+          cardLeft.style.transform = 'scale(0.98)';
+          cardLeft.style.boxShadow = 'none';
+        }
+      });
+    });
+
+    // Initialize with left side active emphasis
+    cardLeft.style.transform = 'scale(1.02)';
+    cardLeft.style.boxShadow = 'var(--shadow-md)';
+    cardRight.style.opacity = '0.7';
+  }
 });
