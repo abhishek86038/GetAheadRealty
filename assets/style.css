@@ -1846,3 +1846,388 @@ footer.site {
 @media (max-width: 380px) {
   .hero h1 { font-size: 1.85rem; }
 }
+
+/* ==========================================================================
+   👨‍💻 FLOATING DEVELOPER CONTACT WIDGET STYLES (LEFT CORNER)
+   ========================================================================== */
+.dev-float-widget {
+  position: fixed;
+  bottom: 26px;
+  left: 26px;
+  z-index: 99999;
+  font-family: var(--font-body);
+}
+
+/* Developer Floating Trigger Button */
+.dev-float-btn {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #18221c 0%, #0d1410 100%);
+  color: #55d697;
+  border: 2px solid rgba(85, 214, 151, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 16px rgba(27, 107, 74, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.dev-float-btn:hover {
+  transform: scale(1.1) translateY(-3px);
+  border-color: #55d697;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 24px rgba(85, 214, 151, 0.5);
+  color: #ffffff;
+}
+
+.dev-float-btn.open {
+  transform: rotate(90deg) scale(0.95);
+  background: var(--clay);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.dev-btn-pulse {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(85, 214, 151, 0.6);
+  animation: devPulseGlow 2.5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  pointer-events: none;
+}
+
+.dev-float-btn.open .dev-btn-pulse {
+  display: none;
+}
+
+@keyframes devPulseGlow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+.dev-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+/* Tooltip on Hover */
+.dev-btn-tooltip {
+  position: absolute;
+  left: 68px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-8px);
+  background: var(--ink);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dev-btn-tooltip::before {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-right-color: var(--ink);
+}
+
+.dev-float-btn:hover .dev-btn-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.dev-float-btn.open .dev-btn-tooltip {
+  display: none;
+}
+
+/* Backdrop Overlay */
+.dev-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 99990;
+}
+
+.dev-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Developer Modal Card */
+.dev-modal-card {
+  position: fixed;
+  bottom: 92px;
+  left: 26px;
+  width: 360px;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  background: var(--paper-surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(255, 255, 255, 0.4);
+  padding: 24px;
+  opacity: 0;
+  transform: translateY(20px) scale(0.92);
+  transform-origin: bottom left;
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 99999;
+}
+
+.dev-modal-card.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Header */
+.dev-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.dev-card-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dev-avatar-wrap {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.dev-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--moss);
+  background: var(--paper-warm);
+}
+
+.dev-status-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: #10b981;
+  border: 2px solid var(--paper-surface);
+  border-radius: 50%;
+}
+
+.dev-card-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--moss);
+  background: var(--moss-subtle);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  margin-bottom: 4px;
+}
+
+.dev-card-title {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.dev-card-sub {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.dev-card-close {
+  background: transparent;
+  border: none;
+  color: var(--ink-soft);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.dev-card-close:hover {
+  background: var(--paper-warm);
+  color: var(--clay);
+  transform: rotate(90deg);
+}
+
+/* Tagline */
+.dev-card-tagline {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.45;
+  margin: 12px 0 16px 0;
+}
+
+/* Links Container */
+.dev-links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dev-link-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--paper-warm);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dev-link-row:hover {
+  transform: translateX(4px);
+  background: #ffffff;
+  border-color: var(--accent-color, var(--moss));
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.dev-link-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color, var(--moss));
+  flex-shrink: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dev-link-row:hover .dev-link-icon {
+  background: var(--accent-color, var(--moss));
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.dev-link-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.dev-link-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.dev-link-handle {
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+
+.dev-link-action {
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.dev-link-row:hover .dev-link-action {
+  transform: translateX(3px);
+  color: var(--accent-color, var(--moss));
+}
+
+/* Card Footer */
+.dev-card-footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.dev-footer-cta {
+  font-weight: 700;
+  color: var(--moss);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.dev-footer-cta:hover {
+  color: var(--clay);
+  text-decoration: underline;
+}
+
+/* Responsive Mobile Rules */
+@media (max-width: 480px) {
+  .dev-float-widget {
+    bottom: 20px;
+    left: 18px;
+  }
+
+  .dev-modal-card {
+    left: 14px;
+    right: 14px;
+    bottom: 84px;
+    width: auto;
+    max-width: none;
+    padding: 20px 16px;
+  }
+}

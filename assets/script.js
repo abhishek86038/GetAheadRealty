@@ -1,5 +1,73 @@
+/* ==========================================================================
+   ⭐ DEVELOPER PROFILE CONFIGURATION (EDIT YOUR DETAILS HERE)
+   Yahan aap apna GitHub, LinkedIn, Instagram, Twitter, Email, Portfolio
+   ya koi bhi naya social media link easily add ya edit kar sakte hain.
+   ========================================================================== */
+window.DEVELOPER_CONFIG = {
+  name: "Abhishek",
+  title: "Full-Stack Web Developer",
+  tagline: "Specialized in High-Performance Web Apps, 3D Graphics & Modern UI/UX.",
+  avatarUrl: "https://github.com/abhishek8638.png", // GitHub DP or custom photo URL
+  links: [
+    {
+      name: "GitHub",
+      handle: "@abhishek8638",
+      url: "https://github.com/abhishek8638",
+      icon: "github",
+      accent: "#24292e"
+    },
+    {
+      name: "LinkedIn",
+      handle: "Connect on LinkedIn",
+      url: "https://linkedin.com/in/abhishek", // 👈 Edit your LinkedIn URL
+      icon: "linkedin",
+      accent: "#0A66C2"
+    },
+    {
+      name: "Instagram",
+      handle: "@abhishek_official",
+      url: "https://instagram.com/your_handle", // 👈 Edit your Instagram URL
+      icon: "instagram",
+      accent: "#E1306C"
+    },
+    {
+      name: "Twitter / X",
+      handle: "@abhishek",
+      url: "https://x.com/your_handle", // 👈 Edit your Twitter/X URL
+      icon: "twitter",
+      accent: "#111111"
+    },
+    {
+      name: "Portfolio / Website",
+      handle: "Visit Portfolio",
+      url: "https://github.com/abhishek8638", // 👈 Edit your Portfolio URL
+      icon: "globe",
+      accent: "#1b6b4a"
+    },
+    {
+      name: "Direct Email",
+      handle: "abhishek8638@users.noreply.github.com",
+      url: "mailto:abhishek8638@users.noreply.github.com", // 👈 Edit your Email
+      icon: "mail",
+      accent: "#c25e3d"
+    }
+    /* 👉 Naya link add karne ke liye bas yahan niche comma (,) laga kar copy-paste karein:
+    , {
+      name: "WhatsApp",
+      handle: "+91 9876543210",
+      url: "https://wa.me/919876543210",
+      icon: "phone",
+      accent: "#25D366"
+    }
+    */
+  ]
+};
+
 // Get Ahead Realty — Next-Level Interactive Logic
 document.addEventListener('DOMContentLoaded', function () {
+  
+  // 0. Initialize Floating Developer Contact Widget on Left Corner
+  initDeveloperContactWidget();
   
   // 1. Top Reading Scroll Progress Indicator
   var progressBar = document.getElementById('scrollProgress');
@@ -496,4 +564,136 @@ function initProperty3DScene() {
   }
 
   animate();
+}
+
+/* ==========================================================================
+   👨‍💻 FLOATING DEVELOPER CONTACT WIDGET (LEFT CORNER)
+   ========================================================================== */
+function initDeveloperContactWidget() {
+  if (document.getElementById('devFloatWidget')) return;
+
+  var config = window.DEVELOPER_CONFIG || {
+    name: "Abhishek",
+    title: "Full-Stack Developer",
+    tagline: "Building high-performance modern web experiences.",
+    avatarUrl: "https://github.com/abhishek8638.png",
+    links: []
+  };
+
+  var icons = {
+    code: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>',
+    github: '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>',
+    linkedin: '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>',
+    instagram: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>',
+    twitter: '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',
+    globe: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>',
+    mail: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>',
+    phone: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>',
+    arrowRight: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>',
+    close: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>'
+  };
+
+  // Build Links HTML
+  var linksHtml = '';
+  if (config.links && config.links.length) {
+    config.links.forEach(function (link) {
+      var iconSvg = icons[link.icon] || icons.globe;
+      linksHtml += `
+        <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="dev-link-row" style="--accent-color:${link.accent || '#1b6b4a'};">
+          <div class="dev-link-icon">${iconSvg}</div>
+          <div class="dev-link-info">
+            <div class="dev-link-name">${link.name}</div>
+            <div class="dev-link-handle">${link.handle}</div>
+          </div>
+          <div class="dev-link-action">${icons.arrowRight}</div>
+        </a>
+      `;
+    });
+  }
+
+  // Create Widget Elements
+  var widgetContainer = document.createElement('div');
+  widgetContainer.className = 'dev-float-widget';
+  widgetContainer.id = 'devFloatWidget';
+
+  widgetContainer.innerHTML = `
+    <div class="dev-modal-backdrop" id="devModalBackdrop"></div>
+    <div class="dev-modal-card" id="devModalCard" aria-hidden="true" role="dialog" aria-label="Contact with Developer">
+      <div class="dev-card-header">
+        <div class="dev-card-user">
+          <div class="dev-avatar-wrap">
+            <img src="${config.avatarUrl}" alt="${config.name}" class="dev-avatar-img" onerror="this.src='assets/logo.png';" />
+            <span class="dev-status-indicator" title="Available for projects"></span>
+          </div>
+          <div>
+            <div class="dev-card-badge">👨‍💻 Developer Profile</div>
+            <h3 class="dev-card-title">Contact with Developer</h3>
+            <div class="dev-card-sub">${config.name} &bull; ${config.title}</div>
+          </div>
+        </div>
+        <button class="dev-card-close" id="devCardClose" aria-label="Close Developer Info">${icons.close}</button>
+      </div>
+
+      <p class="dev-card-tagline">${config.tagline}</p>
+
+      <div class="dev-links-container">
+        ${linksHtml}
+      </div>
+
+      <div class="dev-card-footer">
+        <span>Need a website or custom app?</span>
+        <a href="mailto:abhishek8638@users.noreply.github.com" class="dev-footer-cta">Get in Touch &rarr;</a>
+      </div>
+    </div>
+
+    <button class="dev-float-btn" id="devFloatBtn" aria-label="Contact with Developer" title="Contact with Developer" aria-expanded="false">
+      <span class="dev-btn-pulse"></span>
+      <span class="dev-btn-icon">${icons.code}</span>
+      <span class="dev-btn-tooltip">Contact Developer</span>
+    </button>
+  `;
+
+  document.body.appendChild(widgetContainer);
+
+  // Widget Toggle Logic
+  var floatBtn = document.getElementById('devFloatBtn');
+  var modalCard = document.getElementById('devModalCard');
+  var backdrop = document.getElementById('devModalBackdrop');
+  var closeBtn = document.getElementById('devCardClose');
+
+  function openWidget() {
+    modalCard.classList.add('active');
+    backdrop.classList.add('active');
+    floatBtn.classList.add('open');
+    floatBtn.setAttribute('aria-expanded', 'true');
+    modalCard.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeWidget() {
+    modalCard.classList.remove('active');
+    backdrop.classList.remove('active');
+    floatBtn.classList.remove('open');
+    floatBtn.setAttribute('aria-expanded', 'false');
+    modalCard.setAttribute('aria-hidden', 'true');
+  }
+
+  function toggleWidget(e) {
+    if (e) e.stopPropagation();
+    if (modalCard.classList.contains('active')) {
+      closeWidget();
+    } else {
+      openWidget();
+    }
+  }
+
+  floatBtn.addEventListener('click', toggleWidget);
+  if (closeBtn) closeBtn.addEventListener('click', closeWidget);
+  if (backdrop) backdrop.addEventListener('click', closeWidget);
+
+  // Close on Escape Key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modalCard.classList.contains('active')) {
+      closeWidget();
+    }
+  });
 }
