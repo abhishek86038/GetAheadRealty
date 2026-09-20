@@ -1995,10 +1995,12 @@ footer.site {
   max-width: calc(100vw - 48px);
   max-height: calc(100vh - 120px);
   overflow-y: auto;
-  background: var(--paper-surface);
-  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(12, 18, 14, 0.86) 0%, rgba(6, 10, 8, 0.94) 100%), url('dev-bg.png') center / cover no-repeat;
+  border: 1px solid rgba(85, 214, 151, 0.35);
   border-radius: var(--radius-xl);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(85, 214, 151, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   padding: 24px;
   opacity: 0;
   transform: translateY(20px) scale(0.92);
@@ -2006,12 +2008,29 @@ footer.site {
   pointer-events: none;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 99999;
+  color: #ffffff;
 }
 
 .dev-modal-card.active {
   opacity: 1;
   transform: translateY(0) scale(1);
   pointer-events: auto;
+}
+
+/* Custom Scrollbar for Dev Card */
+.dev-modal-card::-webkit-scrollbar {
+  width: 5px;
+}
+.dev-modal-card::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+.dev-modal-card::-webkit-scrollbar-thumb {
+  background: rgba(85, 214, 151, 0.4);
+  border-radius: 4px;
+}
+.dev-modal-card::-webkit-scrollbar-thumb:hover {
+  background: #55d697;
 }
 
 /* Header */
@@ -2021,7 +2040,7 @@ footer.site {
   justify-content: space-between;
   gap: 12px;
   padding-bottom: 14px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .dev-card-user {
@@ -2042,8 +2061,9 @@ footer.site {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--moss);
-  background: var(--paper-warm);
+  border: 2px solid #55d697;
+  background: #111a14;
+  box-shadow: 0 0 12px rgba(85, 214, 151, 0.35);
 }
 
 .dev-status-indicator {
@@ -2053,8 +2073,9 @@ footer.site {
   width: 12px;
   height: 12px;
   background: #10b981;
-  border: 2px solid var(--paper-surface);
+  border: 2px solid #0d1410;
   border-radius: 50%;
+  box-shadow: 0 0 8px #10b981;
 }
 
 .dev-card-badge {
@@ -2063,8 +2084,9 @@ footer.site {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--moss);
-  background: var(--moss-subtle);
+  color: #55d697;
+  background: rgba(85, 214, 151, 0.15);
+  border: 1px solid rgba(85, 214, 151, 0.3);
   padding: 2px 8px;
   border-radius: var(--radius-full);
   margin-bottom: 4px;
@@ -2073,43 +2095,49 @@ footer.site {
 .dev-card-title {
   font-size: 1.12rem;
   font-weight: 800;
-  color: var(--ink);
+  color: #ffffff;
   margin: 0;
   line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .dev-card-sub {
   font-size: 0.8rem;
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.72);
   margin-top: 2px;
   font-weight: 500;
 }
 
 .dev-card-close {
-  background: transparent;
-  border: none;
-  color: var(--ink-soft);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.75);
   cursor: pointer;
-  padding: 4px;
-  border-radius: 6px;
+  padding: 6px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .dev-card-close:hover {
-  background: var(--paper-warm);
-  color: var(--clay);
+  background: rgba(255, 80, 80, 0.2);
+  border-color: rgba(255, 80, 80, 0.4);
+  color: #ff6b6b;
   transform: rotate(90deg);
 }
 
 /* Tagline */
 .dev-card-tagline {
   font-size: 0.85rem;
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.82);
   line-height: 1.45;
   margin: 12px 0 16px 0;
+  background: rgba(0, 0, 0, 0.28);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Links Container */
@@ -2124,38 +2152,42 @@ footer.site {
   align-items: center;
   gap: 12px;
   padding: 10px 14px;
-  background: var(--paper-warm);
-  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: var(--radius-md);
   text-decoration: none;
-  color: var(--ink);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #ffffff;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .dev-link-row:hover {
   transform: translateX(4px);
-  background: #ffffff;
-  border-color: var(--accent-color, var(--moss));
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: var(--accent-color, #55d697);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4), 0 0 12px rgba(85, 214, 151, 0.25);
 }
 
 .dev-link-icon {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 8px;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-color, var(--moss));
+  color: var(--accent-color, #55d697);
   flex-shrink: 0;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .dev-link-row:hover .dev-link-icon {
-  background: var(--accent-color, var(--moss));
+  background: var(--accent-color, #55d697);
   color: #ffffff;
-  transform: scale(1.05);
+  transform: scale(1.08);
+  border-color: transparent;
 }
 
 .dev-link-info {
@@ -2166,13 +2198,13 @@ footer.site {
 .dev-link-name {
   font-size: 0.88rem;
   font-weight: 700;
-  color: var(--ink);
+  color: #ffffff;
   line-height: 1.2;
 }
 
 .dev-link-handle {
   font-size: 0.76rem;
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.65);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2180,7 +2212,7 @@ footer.site {
 }
 
 .dev-link-action {
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.5);
   display: flex;
   align-items: center;
   transition: transform 0.2s ease, color 0.2s ease;
@@ -2188,30 +2220,31 @@ footer.site {
 
 .dev-link-row:hover .dev-link-action {
   transform: translateX(3px);
-  color: var(--accent-color, var(--moss));
+  color: var(--accent-color, #55d697);
 }
 
 /* Card Footer */
 .dev-card-footer {
   margin-top: 16px;
   padding-top: 12px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 0.78rem;
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .dev-footer-cta {
   font-weight: 700;
-  color: var(--moss);
+  color: #55d697;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  text-shadow: 0 0 8px rgba(85, 214, 151, 0.3);
 }
 
 .dev-footer-cta:hover {
-  color: var(--clay);
+  color: #ffffff;
   text-decoration: underline;
 }
 
