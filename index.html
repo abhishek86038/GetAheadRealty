@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=5.6">
+<link rel="stylesheet" href="assets/style.css?v=5.7">
 <!-- Three.js 3D WebGL Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
@@ -1234,10 +1234,16 @@
   </div>
 </section>
 
-<!-- 3D Parallax Advisory & Institutional Compliance Wrapper -->
+<!-- 3D Parallax Advisory & Institutional Compliance Wrapper (16:9 Sticky Frame) -->
 <div class="compliance-parallax-container" id="complianceParallaxWrap">
-  <div class="compliance-parallax-bg" id="complianceParallaxBg" aria-hidden="true"></div>
-  <div class="compliance-parallax-overlay" aria-hidden="true"></div>
+  <!-- Pinned Sticky 16:9 Visual Frame Layer -->
+  <div class="compliance-sticky-layer" aria-hidden="true">
+    <div class="compliance-sticky-window">
+      <div class="compliance-parallax-bg" id="complianceParallaxBg"></div>
+      <div class="compliance-parallax-overlay"></div>
+    </div>
+  </div>
+
   <div class="compliance-parallax-content">
 
     <!-- Qualification / Fit Section -->
@@ -1743,6 +1749,6 @@
   </div>
 </div>
 
-<script src="assets/script.js?v=4.7"></script>
+<script src="assets/script.js?v=4.8"></script>
 </body>
 </html>
