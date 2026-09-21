@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=3.2">
+<link rel="stylesheet" href="assets/style.css?v=4.0">
 <!-- Three.js 3D WebGL Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
@@ -677,316 +677,354 @@
 <!-- 60-Sec Investor Readiness Quiz Section -->
 <section id="readiness-quiz" class="quiz-section reveal">
   <div class="wrap">
-    <div class="quiz-header text-center">
-      <span class="tag">Instant Strategy Assessment</span>
-      <h2>60-Second Investor Readiness Diagnostic</h2>
-      <p class="lede">Answer 4 strategic questions to discover your personalized growth corridor, borrowing readiness score, and projected 10-year equity forecast.</p>
-    </div>
-
-    <div class="quiz-container-box">
-      <!-- Progress Bar & Step Indicator -->
-      <div class="quiz-progress-bar-wrap">
-        <div class="quiz-progress-meta">
-          <span class="quiz-step-indicator" id="quizStepText">Question 1 of 4</span>
-          <span class="quiz-step-percent" id="quizPercentText">25% Completed</span>
+    
+    <div class="quiz-split-layout">
+      <!-- Left Column: Diagnostic Quiz -->
+      <div class="quiz-left-col">
+        <div class="quiz-header">
+          <span class="tag">Instant Strategy Assessment</span>
+          <h2>60-Second Investor Readiness Diagnostic</h2>
+          <p class="lede">Answer 4 strategic questions to discover your personalized growth corridor, borrowing readiness score, and projected 10-year equity forecast.</p>
         </div>
-        <div class="quiz-progress-track">
-          <div class="quiz-progress-fill" id="quizProgressFill" style="width: 25%;"></div>
+
+        <div class="quiz-container-box">
+          <!-- Progress Bar & Step Indicator -->
+          <div class="quiz-progress-bar-wrap">
+            <div class="quiz-progress-meta">
+              <span class="quiz-step-indicator" id="quizStepText">Question 1 of 4</span>
+              <span class="quiz-step-percent" id="quizPercentText">25% Completed</span>
+            </div>
+            <div class="quiz-progress-track">
+              <div class="quiz-progress-fill" id="quizProgressFill" style="width: 25%;"></div>
+            </div>
+          </div>
+
+          <!-- Quiz Form / Multi-Steps Container -->
+          <form id="investorQuizForm" onsubmit="return false;">
+            
+            <!-- STEP 1: Investment Objective -->
+            <div class="quiz-step-pane active" data-step="1">
+              <h3 class="quiz-question-title">What is your primary property investment objective?</h3>
+              <p class="quiz-question-sub">Select the goal that best describes your current wealth-building milestone.</p>
+              <div class="quiz-options-grid">
+                <label class="quiz-opt-card selected">
+                  <input type="radio" name="goal" value="first_prop" checked />
+                  <div class="quiz-opt-content">
+                    <div class="quiz-opt-icon">🏠</div>
+                    <div class="quiz-opt-text">
+                      <strong>First-Time Investment Property</strong>
+                      <span>Build long-term equity, capital growth, and tax depreciation benefits.</span>
+                    </div>
+                    <div class="quiz-opt-radio"></div>
+                  </div>
+                </label>
+
+                <label class="quiz-opt-card">
+                  <input type="radio" name="goal" value="smsf" />
+                  <div class="quiz-opt-content">
+                    <div class="quiz-opt-icon">💼</div>
+                    <div class="quiz-opt-text">
+                      <strong>SMSF Property Acquisition</strong>
+                      <span>Utilize superannuation balance to acquire high-yield tangible assets.</span>
+                    </div>
+                    <div class="quiz-opt-radio"></div>
+                  </div>
+                </label>
+
+                <label class="quiz-opt-card">
+                  <input type="radio" name="goal" value="portfolio" />
+                  <div class="quiz-opt-content">
+                    <div class="quiz-opt-icon">📈</div>
+                    <div class="quiz-opt-text">
+                      <strong>Portfolio Expansion &amp; Repositioning</strong>
+                      <span>Scale from 1-2 properties into a multi-corridor strategic portfolio.</span>
+                    </div>
+                    <div class="quiz-opt-radio"></div>
+                  </div>
+                </label>
+
+                <label class="quiz-opt-card">
+                  <input type="radio" name="goal" value="second_opinion" />
+                  <div class="quiz-opt-content">
+                    <div class="quiz-opt-icon">🔍</div>
+                    <div class="quiz-opt-text">
+                      <strong>Pre-Purchase Second Opinion</strong>
+                      <span>Independent micro-market and street-level risk verification before buying.</span>
+                    </div>
+                    <div class="quiz-opt-radio"></div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- STEP 2: Budget & Equity Readiness -->
+            <div class="quiz-step-pane" data-step="2" style="display:none;">
+              <h3 class="quiz-question-title">What is your ready cash deposit or usable equity?</h3>
+              <p class="quiz-question-sub">Includes savings, home equity line of credit, or SMSF liquid cash balance.</p>
+              <div class="quiz-options-grid">
+                <label class="quiz-opt-card">
+                  <input type="radio" name="budget" value="under_100k" />
+                  <div class="quiz-opt-content">
+                    <div class="quiz-opt-icon">💵</div>
+                    <div class="quiz-opt-text">
+                      <strong>$60,000 &ndash; $100,000</strong>
+                      <span>High-yield regional growth &amp; affordable outer-metro hubs.</span>
+                    </div>
+                    <div class="quiz-opt-radio"></div>
+                  </div>
+                </label>
+
+                <label class="quiz-opt-card selected">
+                  <input type="radio" name="budget" value="100k_200k" checked />
+                  <div class="quiz-opt-content">
+                    <div class="quiz-opt-icon">💰</div>
+                    <div class="quiz-opt-text">
+                      <strong>$100,000 &ndash; $200,000</strong>
+                      <span>Optimal range for SE QLD, Adelaide North &amp; Perth capital growth corridors.</span>
+                    </div>
+                    <div class="quiz-opt-radio"></div>
+                  </div>
+                </label>
+
+                <label class="quiz-opt-card">
+                  <input type="radio" name="budget" value="200k_350k" />
+                  <div class="quiz-opt-content">
+                    <div class="quiz-opt-icon">💎</div>
+                    <div class="quiz-opt-text">
+                      <strong>$200,000 &ndash; $350,000</strong>
+                      <span>Dual-income &amp; premium micro-pocket asset acquisitions.</span>
+                    </div>
+                    <div class="quiz-opt-radio"></div>
+                  </div>
+                </label>
+
+                <label class="quiz-opt-card">
+                  <input type="radio" name="budget" value="350k_plus" />
+                  <div class="quiz-opt-content">
+                    <div class="quiz-opt-icon">🏛️</div>
+                    <div class="quiz-opt-text">
+                      <strong>$350,000+</strong>
+                      <span>Multi-property portfolio scaling or commercial/SMSF diversification.</span>
+                    </div>
+                    <div class="quiz-opt-radio"></div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- STEP 3: Growth vs Cashflow Priority -->
+            <div class="quiz-step-pane" data-step="3" style="display:none;">
+              <h3 class="quiz-question-title">What is your strategic focus &amp; investment priority?</h3>
+              <p class="quiz-question-sub">Different investors have different comfort zones with yield vs capital growth.</p>
+              <div class="quiz-options-grid">
+                <label class="quiz-opt-card selected">
+                  <input type="radio" name="strategy" value="balanced" checked />
+                  <div class="quiz-opt-content">
+                    <div class="quiz-opt-icon">⚖️</div>
+                    <div class="quiz-opt-text">
+                      <strong>Balanced: High Growth + Positive/Neutral Cashflow</strong>
+                      <span>Self-funding investment with strong compounding equity potential.</span>
+                    </div>
+                    <div class="quiz-opt-radio"></div>
+                  </div>
+                </label>
+
+                <label class="quiz-opt-card">
+                  <input type="radio" name="strategy" value="high_yield" />
+                  <div class="quiz-opt-content">
+                    <div class="quiz-opt-icon">🔥</div>
+                    <div class="quiz-opt-text">
+                      <strong>Maximum Rental Yield (5.5%+ Gross)</strong>
+                      <span>Immediate positive cashflow to offset high interest rates.</span>
+                    </div>
+                    <div class="quiz-opt-radio"></div>
+                  </div>
+                </label>
+
+                <label class="quiz-opt-card">
+                  <input type="radio" name="strategy" value="capital_growth" />
+                  <div class="quiz-opt-content">
+                    <div class="quiz-opt-icon">🚀</div>
+                    <div class="quiz-opt-text">
+                      <strong>Aggressive Capital Growth (10-Yr Target)</strong>
+                      <span>Targeting major infrastructure corridors with supply bottlenecks.</span>
+                    </div>
+                    <div class="quiz-opt-radio"></div>
+                  </div>
+                </label>
+
+                <label class="quiz-opt-card">
+                  <input type="radio" name="strategy" value="tax_smsf" />
+                  <div class="quiz-opt-content">
+                    <div class="quiz-opt-icon">📑</div>
+                    <div class="quiz-opt-text">
+                      <strong>Tax Depreciation &amp; Super Wealth Building</strong>
+                      <span>Maximize non-cash deductions and retirement super wealth.</span>
+                    </div>
+                    <div class="quiz-opt-radio"></div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- STEP 4: Action Timeframe -->
+            <div class="quiz-step-pane" data-step="4" style="display:none;">
+              <h3 class="quiz-question-title">What is your planned purchase timeframe?</h3>
+              <p class="quiz-question-sub">Helps our research team gauge current market pipeline availability.</p>
+              <div class="quiz-options-grid">
+                <label class="quiz-opt-card selected">
+                  <input type="radio" name="timeframe" value="immediate" checked />
+                  <div class="quiz-opt-content">
+                    <div class="quiz-opt-icon">⚡</div>
+                    <div class="quiz-opt-text">
+                      <strong>Next 30 &ndash; 60 Days (Finance Ready)</strong>
+                      <span>Ready to review shortlisted micro-pockets and secure opportunities.</span>
+                    </div>
+                    <div class="quiz-opt-radio"></div>
+                  </div>
+                </label>
+
+                <label class="quiz-opt-card">
+                  <input type="radio" name="timeframe" value="short" />
+                  <div class="quiz-opt-content">
+                    <div class="quiz-opt-icon">📅</div>
+                    <div class="quiz-opt-text">
+                      <strong>3 &ndash; 6 Months</strong>
+                      <span>Organizing pre-approval and refining corridor shortlists.</span>
+                    </div>
+                    <div class="quiz-opt-radio"></div>
+                  </div>
+                </label>
+
+                <label class="quiz-opt-card">
+                  <input type="radio" name="timeframe" value="research" />
+                  <div class="quiz-opt-content">
+                    <div class="quiz-opt-icon">🔍</div>
+                    <div class="quiz-opt-text">
+                      <strong>Just Researching &amp; Learning</strong>
+                      <span>Understanding the market before making financial commitments.</span>
+                    </div>
+                    <div class="quiz-opt-radio"></div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Loading Calculation Pane -->
+            <div class="quiz-step-pane" id="quizLoadingPane" style="display:none; text-align:center; padding:44px 20px;">
+              <div class="quiz-spinner"></div>
+              <h3 style="margin-top:20px; font-size:1.3rem;">Analyzing Market Corridors...</h3>
+              <ul class="quiz-loading-checks" id="quizLoadingChecks">
+                <li>Cross-referencing borrowing parameters against national yield databases...</li>
+                <li>Filtering out flood-risk and high-vacancy postcodes...</li>
+                <li>Structuring personalized 10-year equity roadmap...</li>
+              </ul>
+            </div>
+
+            <!-- RESULT PANE -->
+            <div class="quiz-step-pane" id="quizResultPane" style="display:none;">
+              <div class="quiz-result-header">
+                <div class="quiz-score-badge">
+                  <span class="quiz-score-num" id="resScore">96%</span>
+                  <span class="quiz-score-label">Readiness Score</span>
+                </div>
+                <div>
+                  <h3 style="margin:0 0 6px 0; font-size:1.35rem;">Strategic Assessment Complete</h3>
+                  <p style="margin:0; font-size:0.92rem; color:var(--ink-soft);">Based on your parameters, here is your shortlisted micro-market corridor and capital forecast:</p>
+                </div>
+              </div>
+
+              <div class="quiz-result-grid">
+                <div class="quiz-res-card">
+                  <div class="quiz-res-kicker">Recommended Corridor</div>
+                  <div class="quiz-res-val" id="resCorridor">Moreton Bay / SE QLD Metro</div>
+                  <div class="quiz-res-sub">Tight &lt;1.0% vacancy &amp; infrastructure pipeline</div>
+                </div>
+
+                <div class="quiz-res-card">
+                  <div class="quiz-res-kicker">10-Yr Projected Equity</div>
+                  <div class="quiz-res-val moss" id="resEquity">+$360,000 &ndash; $480,000</div>
+                  <div class="quiz-res-sub">Based on compound 6.8% p.a. historical trend</div>
+                </div>
+
+                <div class="quiz-res-card">
+                  <div class="quiz-res-kicker">Cashflow Profile</div>
+                  <div class="quiz-res-val" id="resCashflow">+$15 &ndash; $45 / week</div>
+                  <div class="quiz-res-sub">Self-funding asset with tax depreciation</div>
+                </div>
+
+                <div class="quiz-res-card">
+                  <div class="quiz-res-kicker">Advisory Fee to You</div>
+                  <div class="quiz-res-val moss">$0 Upfront</div>
+                  <div class="quiz-res-sub">100% transparent settlement model</div>
+                </div>
+              </div>
+
+              <!-- Lead Capture Form -->
+              <div class="quiz-lead-box">
+                <h4 style="margin:0 0 6px 0; font-size:1.15rem;">Get Your Complete Suburb Due Diligence Pack (Free)</h4>
+                <p style="margin:0 0 16px 0; font-size:0.88rem; color:var(--ink-soft);">Enter your details to receive the full data brief and schedule your 15-min strategy session.</p>
+                
+                <div class="quiz-form-row">
+                  <input type="text" id="quizLeadName" placeholder="Your Full Name" class="quiz-input" required />
+                  <input type="email" id="quizLeadEmail" placeholder="Your Email Address" class="quiz-input" required />
+                  <input type="tel" id="quizLeadPhone" placeholder="Mobile Number" class="quiz-input" required />
+                  <button type="button" class="btn btn-primary btn-small" id="btnClaimStrategyReport">Send My Strategy Brief &rarr;</button>
+                </div>
+                <div id="quizSuccessMsg" style="display:none; color:var(--moss); font-weight:700; margin-top:14px; font-size:0.95rem; background:var(--moss-subtle); padding:12px; border-radius:var(--radius-sm);">
+                  🎉 Thank you! Your customized strategy blueprint has been generated. Aaron will connect with you shortly for your 15-min discovery review.
+                </div>
+              </div>
+
+              <div style="text-align:center; margin-top:18px;">
+                <button type="button" class="btn btn-secondary btn-small" id="btnRetakeQuiz">&#8635; Retake Diagnostic</button>
+              </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="quiz-nav-footer" id="quizNavFooter">
+              <button type="button" class="btn btn-secondary btn-small" id="btnQuizPrev" style="display:none;">&larr; Back</button>
+              <div style="flex:1;"></div>
+              <button type="button" class="btn btn-primary btn-small" id="btnQuizNext">Next Question &rarr;</button>
+            </div>
+
+          </form>
         </div>
       </div>
 
-      <!-- Quiz Form / Multi-Steps Container -->
-      <form id="investorQuizForm" onsubmit="return false;">
-        
-        <!-- STEP 1: Investment Objective -->
-        <div class="quiz-step-pane active" data-step="1">
-          <h3 class="quiz-question-title">What is your primary property investment objective?</h3>
-          <p class="quiz-question-sub">Select the goal that best describes your current wealth-building milestone.</p>
-          <div class="quiz-options-grid">
-            <label class="quiz-opt-card selected">
-              <input type="radio" name="goal" value="first_prop" checked />
-              <div class="quiz-opt-content">
-                <div class="quiz-opt-icon">🏠</div>
-                <div class="quiz-opt-text">
-                  <strong>First-Time Investment Property</strong>
-                  <span>Build long-term equity, capital growth, and tax depreciation benefits.</span>
-                </div>
-                <div class="quiz-opt-radio"></div>
+      <!-- Right Column: Family & Home Showcase Card -->
+      <div class="quiz-right-col">
+        <div class="quiz-family-showcase">
+          <div class="quiz-family-img-wrap">
+            <img src="assets/quiz-family-bg.jpg" alt="Happy Australian Homeowner Family" class="quiz-family-img" />
+          </div>
+          <div class="quiz-family-caption-box">
+            <div class="family-badge">
+              <span class="family-badge-icon">🏡</span>
+              <div>
+                <strong>From Discovery to Settlement</strong>
+                <p>Helping Australian families secure high-growth properties with 100% physical due diligence and $0 upfront advisory cost.</p>
               </div>
-            </label>
-
-            <label class="quiz-opt-card">
-              <input type="radio" name="goal" value="smsf" />
-              <div class="quiz-opt-content">
-                <div class="quiz-opt-icon">💼</div>
-                <div class="quiz-opt-text">
-                  <strong>SMSF Property Acquisition</strong>
-                  <span>Utilize superannuation balance to acquire high-yield tangible assets.</span>
-                </div>
-                <div class="quiz-opt-radio"></div>
+            </div>
+            <div class="family-metrics-row">
+              <div class="family-stat-item">
+                <span class="family-stat-num">★ 4.9 / 5.0</span>
+                <span class="family-stat-label">Client Rating</span>
               </div>
-            </label>
-
-            <label class="quiz-opt-card">
-              <input type="radio" name="goal" value="portfolio" />
-              <div class="quiz-opt-content">
-                <div class="quiz-opt-icon">📈</div>
-                <div class="quiz-opt-text">
-                  <strong>Portfolio Expansion &amp; Repositioning</strong>
-                  <span>Scale from 1-2 properties into a multi-corridor strategic portfolio.</span>
-                </div>
-                <div class="quiz-opt-radio"></div>
+              <div class="family-stat-item">
+                <span class="family-stat-num">180+</span>
+                <span class="family-stat-label">Settled Properties</span>
               </div>
-            </label>
-
-            <label class="quiz-opt-card">
-              <input type="radio" name="goal" value="second_opinion" />
-              <div class="quiz-opt-content">
-                <div class="quiz-opt-icon">🔍</div>
-                <div class="quiz-opt-text">
-                  <strong>Pre-Purchase Second Opinion</strong>
-                  <span>Independent micro-market and street-level risk verification before buying.</span>
-                </div>
-                <div class="quiz-opt-radio"></div>
+              <div class="family-stat-item">
+                <span class="family-stat-num">$0</span>
+                <span class="family-stat-label">Upfront Retainers</span>
               </div>
-            </label>
+            </div>
           </div>
         </div>
-
-        <!-- STEP 2: Available Deposit / Budget -->
-        <div class="quiz-step-pane" data-step="2" style="display:none;">
-          <h3 class="quiz-question-title">What is your ready cash deposit or usable equity?</h3>
-          <p class="quiz-question-sub">Includes savings, home equity line of credit, or SMSF liquid cash balance.</p>
-          <div class="quiz-options-grid">
-            <label class="quiz-opt-card">
-              <input type="radio" name="budget" value="entry" />
-              <div class="quiz-opt-content">
-                <div class="quiz-opt-icon">🌱</div>
-                <div class="quiz-opt-text">
-                  <strong>$80,000 &ndash; $150,000</strong>
-                  <span>Entry-level investment budget / Emerging high-growth satellite pockets.</span>
-                </div>
-                <div class="quiz-opt-radio"></div>
-              </div>
-            </label>
-
-            <label class="quiz-opt-card selected">
-              <input type="radio" name="budget" value="growth" checked />
-              <div class="quiz-opt-content">
-                <div class="quiz-opt-icon">⚡</div>
-                <div class="quiz-opt-text">
-                  <strong>$150,000 &ndash; $300,000</strong>
-                  <span>Prime growth corridors / High-yield metro &amp; infrastructure pockets.</span>
-                </div>
-                <div class="quiz-opt-radio"></div>
-              </div>
-            </label>
-
-            <label class="quiz-opt-card">
-              <input type="radio" name="budget" value="premium" />
-              <div class="quiz-opt-content">
-                <div class="quiz-opt-icon">💎</div>
-                <div class="quiz-opt-text">
-                  <strong>$300,000+ (High Capacity)</strong>
-                  <span>Multiple property acquisitions / High-yielding diversified assets.</span>
-                </div>
-                <div class="quiz-opt-radio"></div>
-              </div>
-            </label>
-
-            <label class="quiz-opt-card">
-              <input type="radio" name="budget" value="equity" />
-              <div class="quiz-opt-content">
-                <div class="quiz-opt-icon">🏦</div>
-                <div class="quiz-opt-text">
-                  <strong>Existing Property Equity / Super</strong>
-                  <span>Unlocking equity from existing home without using personal cash savings.</span>
-                </div>
-                <div class="quiz-opt-radio"></div>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <!-- STEP 3: Strategic Priority -->
-        <div class="quiz-step-pane" data-step="3" style="display:none;">
-          <h3 class="quiz-question-title">What is your strategic focus &amp; investment priority?</h3>
-          <p class="quiz-question-sub">Different investors have different comfort zones with yield vs capital growth.</p>
-          <div class="quiz-options-grid">
-            <label class="quiz-opt-card selected">
-              <input type="radio" name="priority" value="growth" checked />
-              <div class="quiz-opt-content">
-                <div class="quiz-opt-icon">🚀</div>
-                <div class="quiz-opt-text">
-                  <strong>Maximum Capital Growth</strong>
-                  <span>Targeting historical supply-constrained pockets with high equity upside.</span>
-                </div>
-                <div class="quiz-opt-radio"></div>
-              </div>
-            </label>
-
-            <label class="quiz-opt-card">
-              <input type="radio" name="priority" value="yield" />
-              <div class="quiz-opt-content">
-                <div class="quiz-opt-icon">💵</div>
-                <div class="quiz-opt-text">
-                  <strong>High Positive Cashflow (5.5%+ Yield)</strong>
-                  <span>Self-sustaining investment that generates immediate weekly cash surplus.</span>
-                </div>
-                <div class="quiz-opt-radio"></div>
-              </div>
-            </label>
-
-            <label class="quiz-opt-card">
-              <input type="radio" name="priority" value="balanced" />
-              <div class="quiz-opt-content">
-                <div class="quiz-opt-icon">⚖️</div>
-                <div class="quiz-opt-text">
-                  <strong>Balanced Growth &amp; Neutral Cashflow</strong>
-                  <span>Equal balance between long-term equity compounding and low holding costs.</span>
-                </div>
-                <div class="quiz-opt-radio"></div>
-              </div>
-            </label>
-
-            <label class="quiz-opt-card">
-              <input type="radio" name="priority" value="tax" />
-              <div class="quiz-opt-content">
-                <div class="quiz-opt-icon">📊</div>
-                <div class="quiz-opt-text">
-                  <strong>Tax Minimization &amp; Depreciation</strong>
-                  <span>Optimizing personal PAYG tax bracket via strategic depreciation schedules.</span>
-                </div>
-                <div class="quiz-opt-radio"></div>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <!-- STEP 4: Purchase Timeframe -->
-        <div class="quiz-step-pane" data-step="4" style="display:none;">
-          <h3 class="quiz-question-title">What is your planned purchase timeframe?</h3>
-          <p class="quiz-question-sub">Helps our research team gauge current market pipeline availability.</p>
-          <div class="quiz-options-grid">
-            <label class="quiz-opt-card selected">
-              <input type="radio" name="timeline" value="now" checked />
-              <div class="quiz-opt-content">
-                <div class="quiz-opt-icon">⚡</div>
-                <div class="quiz-opt-text">
-                  <strong>Ready Now (Next 30&ndash;60 Days)</strong>
-                  <span>Pre-approval arranged or ready to initiate street-level due diligence.</span>
-                </div>
-                <div class="quiz-opt-radio"></div>
-              </div>
-            </label>
-
-            <label class="quiz-opt-card">
-              <input type="radio" name="timeline" value="medium" />
-              <div class="quiz-opt-content">
-                <div class="quiz-opt-icon">📅</div>
-                <div class="quiz-opt-text">
-                  <strong>3 to 6 Months</strong>
-                  <span>Organizing finance, waiting on bonus/savings, or planning strategy.</span>
-                </div>
-                <div class="quiz-opt-radio"></div>
-              </div>
-            </label>
-
-            <label class="quiz-opt-card">
-              <input type="radio" name="timeline" value="exploring" />
-              <div class="quiz-opt-content">
-                <div class="quiz-opt-icon">🧭</div>
-                <div class="quiz-opt-text">
-                  <strong>6 to 12 Months / Exploring</strong>
-                  <span>Researching options and building knowledge on location fundamentals.</span>
-                </div>
-                <div class="quiz-opt-radio"></div>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <!-- STEP 5: Loading State -->
-        <div class="quiz-step-pane" id="quizLoadingPane" style="display:none; text-align:center; padding:44px 20px;">
-          <div class="quiz-spinner"></div>
-          <h3 style="margin-top:22px; font-size:1.35rem;">Analyzing Your Strategy Profile...</h3>
-          <ul class="quiz-loading-checks" id="quizLoadingChecks">
-            <li class="checked">✓ Mapping borrowing capacity &amp; equity leverage</li>
-            <li class="checked">✓ Scanning national growth corridors &amp; vacancy data</li>
-            <li class="checked">✓ Generating custom 10-year equity forecast model</li>
-          </ul>
-        </div>
-
-        <!-- STEP 6: Result Card -->
-        <div class="quiz-step-pane" id="quizResultPane" style="display:none;">
-          <div class="quiz-result-header">
-            <div class="quiz-score-badge">
-              <span class="quiz-score-num" id="resScore">96%</span>
-              <span class="quiz-score-label">Readiness Score</span>
-            </div>
-            <div>
-              <span class="tag" style="background:var(--moss-subtle); color:var(--moss); font-weight:700;">Grade-A Growth Profile</span>
-              <h3 style="margin:4px 0 6px 0; font-size:1.45rem;" id="resHeadline">High-Growth Strategic Fit</h3>
-              <p style="margin:0; font-size:0.92rem; color:var(--ink-soft);" id="resSummary">Your parameters match prime high-demand growth pockets with low vacancy and infrastructure tailwinds.</p>
-            </div>
-          </div>
-
-          <div class="quiz-result-grid">
-            <div class="quiz-res-card">
-              <div class="quiz-res-kicker">Recommended Corridor</div>
-              <div class="quiz-res-val" id="resCorridor">Moreton Bay / SE QLD Metro</div>
-              <div class="quiz-res-sub">Tight &lt;1.0% vacancy &amp; infrastructure pipeline</div>
-            </div>
-
-            <div class="quiz-res-card">
-              <div class="quiz-res-kicker">10-Yr Projected Equity</div>
-              <div class="quiz-res-val moss" id="resEquity">+$360,000 &ndash; $480,000</div>
-              <div class="quiz-res-sub">Based on compound 6.8% p.a. historical trend</div>
-            </div>
-
-            <div class="quiz-res-card">
-              <div class="quiz-res-kicker">Cashflow Profile</div>
-              <div class="quiz-res-val" id="resCashflow">+$15 &ndash; $45 / week</div>
-              <div class="quiz-res-sub">Self-funding asset with tax depreciation</div>
-            </div>
-
-            <div class="quiz-res-card">
-              <div class="quiz-res-kicker">Advisory Fee to You</div>
-              <div class="quiz-res-val moss">$0 Upfront</div>
-              <div class="quiz-res-sub">100% transparent settlement model</div>
-            </div>
-          </div>
-
-          <!-- Lead Capture Action Card -->
-          <div class="quiz-lead-box">
-            <h4 style="font-size:1.2rem; margin-bottom:6px;">Claim Your Full Suburb Growth Blueprint &amp; 15-Min Strategy Call</h4>
-            <p style="font-size:0.9rem; color:var(--ink-soft); margin-bottom:16px;">We will prepare your tailored street-by-street research analysis with zero obligation.</p>
-            
-            <div class="quiz-form-row">
-              <input type="text" id="quizLeadName" placeholder="Your Full Name" class="quiz-input" required />
-              <input type="email" id="quizLeadEmail" placeholder="Your Email Address" class="quiz-input" required />
-              <input type="tel" id="quizLeadPhone" placeholder="Mobile Number" class="quiz-input" required />
-              <button type="button" class="btn btn-primary" id="btnClaimStrategy">Get Strategy Plan &rarr;</button>
-            </div>
-            <div id="quizSuccessMsg" style="display:none; color:var(--moss); font-weight:700; margin-top:14px; font-size:0.95rem; background:var(--moss-subtle); padding:12px; border-radius:var(--radius-sm);">
-              🎉 Thank you! Your customized strategy blueprint has been generated. Aaron will connect with you shortly for your 15-min discovery review.
-            </div>
-          </div>
-
-          <div style="text-align:center; margin-top:18px;">
-            <button type="button" class="btn btn-secondary btn-small" id="btnRetakeQuiz">&#8635; Retake Diagnostic</button>
-          </div>
-        </div>
-
-        <!-- Navigation Buttons -->
-        <div class="quiz-nav-footer" id="quizNavFooter">
-          <button type="button" class="btn btn-secondary btn-small" id="btnQuizPrev" style="display:none;">&larr; Back</button>
-          <div style="flex:1;"></div>
-          <button type="button" class="btn btn-primary btn-small" id="btnQuizNext">Next Question &rarr;</button>
-        </div>
-
-      </form>
+      </div>
     </div>
+
   </div>
 </section>
 
