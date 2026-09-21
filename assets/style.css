@@ -1032,7 +1032,7 @@ section.tight {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: #0c0d10;
+  background-color: #557595;
   padding: 0;
 }
 
@@ -1043,20 +1043,18 @@ section.tight {
   }
 }
 
-/* 1. Sky Canvas Layer: Dramatic Charcoal Black through Deep Dusk Orange to Warm Cream Horizon */
+/* 1. Sky Canvas Layer */
 .hero-sky-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(180deg,
-      #0b0c10 0%,
-      #16171d 18%,
-      #2e1914 38%,
-      #5c2714 60%,
-      #a84315 78%,
-      #cd591e 90%,
-      #ecd5bb 100%);
+      #537392 0%,
+      #6c8ba8 25%,
+      #8ea6bd 55%,
+      #bfa8aa 82%,
+      #d9957d 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -1064,7 +1062,7 @@ section.tight {
 /* 1.5. Monumental Stroked "REALTY" Typography Directly Behind "GET AHEAD" (Colossal Architectural Frame) */
 .hero-realty-solid-bg {
   position: absolute;
-  bottom: calc(64% - 10px);
+  bottom: calc(64% - 26px);
   left: 0;
   width: 100%;
   top: auto;
@@ -1105,7 +1103,7 @@ section.tight {
 
 @media (max-width: 768px) {
   .hero-realty-solid-bg {
-    bottom: calc(66% - 8px);
+    bottom: calc(66% - 20px);
     top: auto;
   }
 
