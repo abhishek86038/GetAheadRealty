@@ -801,10 +801,10 @@ section.tight {
 .hero .hero-3d-title,
 div.hero-3d-title {
   margin: 0 !important;
-  font-family: 'Syne', 'Unbounded', 'Outfit', sans-serif !important;
-  font-size: clamp(1.5rem, 3.8vw, 3.8rem) !important;
-  font-weight: 900 !important;
-  letter-spacing: 0.08em !important;
+  font-family: 'Montserrat', 'Syncopate', 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+  font-size: clamp(1.4rem, 3.5vw, 3.4rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.09em !important;
   line-height: 1 !important;
   text-transform: uppercase !important;
   white-space: nowrap !important;
@@ -839,8 +839,8 @@ div.hero-3d-title {
   .hero-3d-title,
   .hero .hero-3d-title,
   div.hero-3d-title {
-    font-size: clamp(1.05rem, 4.4vw, 1.65rem) !important;
-    letter-spacing: 0.05em !important;
+    font-size: clamp(1rem, 4.2vw, 1.55rem) !important;
+    letter-spacing: 0.06em !important;
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
     text-shadow:
