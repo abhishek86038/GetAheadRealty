@@ -3795,12 +3795,11 @@ footer.site .brand svg circle {
   height: 100%;
   background: linear-gradient(
     180deg,
-    rgba(248, 244, 235, 0.72) 0%,
-    rgba(248, 244, 235, 0.42) 40%,
-    rgba(248, 244, 235, 0.76) 100%
+    rgba(17, 27, 19, 0.12) 0%,
+    rgba(17, 27, 19, 0.02) 50%,
+    rgba(17, 27, 19, 0.20) 100%
   );
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
+  pointer-events: none;
 }
 
 .parallax-scroll-content {
