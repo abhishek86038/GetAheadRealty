@@ -97,15 +97,28 @@ document.addEventListener('DOMContentLoaded', function () {
   initComplianceParallaxZoom();
 
   // 1. Top Reading Scroll Progress Indicator
+  // 1. Interactive Scroll Progress Bar & Dynamic Transparent/Floating Navbar
   var progressBar = document.getElementById('scrollProgress');
-  window.addEventListener('scroll', function () {
+  var siteHeader = document.querySelector('header.site');
+
+  function updateScrollState() {
     var winScroll = document.documentElement.scrollTop || document.body.scrollTop;
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
+    var scrolledPercent = (winScroll / height) * 100;
     if (progressBar) {
-      progressBar.style.width = scrolled + '%';
+      progressBar.style.width = scrolledPercent + '%';
     }
-  });
+    if (siteHeader) {
+      if (winScroll > 25) {
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', updateScrollState, { passive: true });
+  updateScrollState();
 
   // 2. Mobile Navigation Toggle
   var mobileNav = document.getElementById('primaryNav');

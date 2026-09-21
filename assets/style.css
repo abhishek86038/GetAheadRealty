@@ -118,7 +118,7 @@ body {
   -webkit-font-smoothing: antialiased;
   width: 100%;
   max-width: 100%;
-  padding-top: 86px;
+  padding-top: 0;
   overflow-x: hidden;
   position: relative;
   background-image: 
@@ -331,30 +331,49 @@ p { margin-bottom: 1.1em; color: var(--ink-soft); font-size: 1.02rem; line-heigh
   pointer-events: none;
 }
 
-/* ---------- Floating & Fixed Navbar ---------- */
+/* ---------- Transparent In-Hero Navbar & Fixed Floating on Scroll ---------- */
 header.site {
   position: fixed;
-  top: 14px;
+  top: 16px;
   left: 0;
   right: 0;
   width: calc(100% - 36px);
   max-width: 1240px;
   margin: 0 auto;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border-radius: var(--radius-full, 9999px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 10px 32px rgba(17, 27, 19, 0.10);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+  box-shadow: none;
+  transition: background 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              top 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              backdrop-filter 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* When Scrolled: Transforms into an Individual Floating Fixed Glass Pill */
 header.site.scrolled {
-  top: 10px;
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 14px 40px rgba(17, 27, 19, 0.15);
-  border-color: #ffffff;
+  top: 12px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 14px 40px rgba(17, 27, 19, 0.12), 0 2px 6px rgba(17, 27, 19, 0.04);
+}
+
+header.site.scrolled .brand {
+  background: transparent;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+header.site.scrolled nav.primary {
+  background: transparent;
+  box-shadow: none;
+  border-color: transparent;
 }
 
 .header-row {
@@ -765,55 +784,7 @@ section.tight { padding: 56px 0; }
   transform: scale(1.015);
 }
 
-/* 4. Atmospheric Layered Cloud Drift Animation (Subtle at the Base) */
-.hero-cloud-drift-layer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 200%;
-  height: 18%;
-  background-image: url('hero-cloud-strip.png');
-  background-repeat: repeat-x;
-  background-size: cover;
-  background-position: bottom left;
-  opacity: 0.50;
-  pointer-events: none;
-  animation: cloudDriftSlow 38s linear infinite;
-  z-index: 4;
-}
-
-.hero-cloud-drift-layer.cloud-layer-2 {
-  bottom: -10px;
-  height: 24%;
-  opacity: 0.35;
-  animation: cloudDriftReverse 52s linear infinite;
-  filter: blur(3px);
-  z-index: 4;
-}
-
-@keyframes cloudDriftSlow {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes cloudDriftReverse {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-
-.hero-atmosphere-tint {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(248, 244, 235, 0.88) 0%,
-    rgba(248, 244, 235, 0.55) 45%,
-    rgba(248, 244, 235, 0.15) 75%,
-    rgba(248, 244, 235, 0.0) 100%
-  );
-  pointer-events: none;
-  z-index: 2;
-}
+/* Hero atmosphere clean (no white overlay) */
 
 /* High-End Frosted Content Plate */
 .hero-content-plate {
