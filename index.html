@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=6.2">
+<link rel="stylesheet" href="assets/style.css?v=6.3">
 <!-- Three.js 3D WebGL Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
@@ -44,7 +44,7 @@
 <main id="main">
 
 <!-- Hero Section with Monumental GET AHEAD REALTY Architectural Sky Backdrop -->
-<div class="hero">
+<div class="hero hero-image-only">
   <!-- Sky + Monumental 'GET AHEAD REALTY' Typography + Modern Villa Backdrop -->
   <div class="hero-villa-sky-backdrop" aria-hidden="true">
     <img 
@@ -59,73 +59,6 @@
     
     <!-- Atmospheric Ambient Lighting Gradient -->
     <div class="hero-atmosphere-tint"></div>
-  </div>
-
-  <svg class="hero-contours" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
-    <g fill="none" stroke="var(--moss)" stroke-width="1">
-      <path d="M-50 420 C 200 380, 300 460, 550 400 S 900 320, 1250 380" opacity="0.35"/>
-      <path d="M-50 460 C 220 420, 320 480, 560 440 S 920 360, 1250 420" opacity="0.25"/>
-      <path d="M-50 380 C 180 340, 280 410, 540 360 S 880 280, 1250 340" opacity="0.2"/>
-    </g>
-    <g fill="var(--clay)" opacity="0.7"><circle cx="860" cy="150" r="4"/><circle cx="900" cy="210" r="3"/></g>
-  </svg>
-  
-  <div class="wrap hero-inner">
-    <div class="grid-2">
-      <div class="hero-content-plate">
-        <p class="hero-kicker hero-anim">✦ Australia-Wide &middot; Research Before Property</p>
-        <h1 class="hero-anim d1"><span class="brk">The data tells you where to look.</span><span class="brk">We <span class="gradient-text">walk the street</span> to tell you where to buy.</span></h1>
-        <p class="hero-sub hero-anim d2">Suburb-level numbers miss the pocket, the street and the neighbor about to sell for the wrong reason. We shortlist markets on the data, then physically stand on the footpath before we recommend anything.</p>
-        <div class="hero-actions hero-anim d3">
-          <a class="btn btn-primary" href="contact.html">Book a free strategy call</a>
-          <span class="hero-micro">15 mins &middot; $0 fee to buyers &middot; 0 properties pitched on 1st call</span>
-        </div>
-      </div>
-      
-      <!-- Interactive 3D Architectural Property Experience -->
-      <div class="hero-visual-wrapper hero-anim d2">
-        <div class="floating-pill pill-left">
-          <div class="pill-icon clay">📍</div>
-          <span>Street-Walked Ground Truth</span>
-        </div>
-        
-        <div class="hero-visual" id="hero3dContainer">
-          <canvas id="property3dCanvas"></canvas>
-          
-          <!-- Interactive 3D Pin Overlay Tooltips -->
-          <div class="pin-marker" id="pinElevation" style="top: 28%; left: 32%;">
-            <div class="pin-dot"><span></span></div>
-            <div class="pin-popup">
-              <strong>Elevated Crest &bull; +42m</strong>
-              <p>Zero overland flow risk, superior street appeal &amp; bay breeze.</p>
-            </div>
-          </div>
-
-          <div class="pin-marker" id="pinSchool" style="top: 48%; right: 26%;">
-            <div class="pin-dot moss"><span></span></div>
-            <div class="pin-popup">
-              <strong>In-Catchment School Zone</strong>
-              <p>Ranked in top 5% of state primaries &mdash; drives continuous owner-occupier demand.</p>
-            </div>
-          </div>
-
-          <div class="pin-marker" id="pinDemographics" style="bottom: 24%; left: 36%;">
-            <div class="pin-dot gold"><span></span></div>
-            <div class="pin-popup">
-              <strong>78% Owner-Occupied Pocket</strong>
-              <p>Tight micro-supply, high maintenance standards, strong capital resilience.</p>
-            </div>
-          </div>
-
-          <div class="spline-badge">✦ Interactive 3D Architecture &bull; Drag to rotate 360&deg;</div>
-        </div>
-
-        <div class="floating-pill pill-right">
-          <img src="assets/settlement-handover.jpg" alt="Verified Handover" class="pill-thumb" />
-          <span>$0 Advisory Fee &bull; Key Handover</span>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
