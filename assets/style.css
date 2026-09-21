@@ -118,6 +118,7 @@ body {
   -webkit-font-smoothing: antialiased;
   width: 100%;
   max-width: 100%;
+  padding-top: 86px;
   overflow-x: hidden;
   position: relative;
   background-image: 
@@ -330,35 +331,36 @@ p { margin-bottom: 1.1em; color: var(--ink-soft); font-size: 1.02rem; line-heigh
   pointer-events: none;
 }
 
-/* ---------- Header & Navigation with Full Prominent Image Background ---------- */
+/* ---------- Floating & Fixed Navbar ---------- */
 header.site {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-image: 
-    linear-gradient(90deg, rgba(248, 244, 235, 0.82) 0%, rgba(248, 244, 235, 0.42) 50%, rgba(248, 244, 235, 0.85) 100%),
-    url('settlement-handover.jpg');
-  background-position: center 30%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-bottom: 1px solid rgba(17, 27, 19, 0.14);
-  box-shadow: 0 4px 20px rgba(17, 27, 19, 0.08);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  transition: all 0.3s ease;
+  position: fixed;
+  top: 14px;
+  left: 0;
+  right: 0;
+  width: calc(100% - 36px);
+  max-width: 1240px;
+  margin: 0 auto;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: var(--radius-full, 9999px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 32px rgba(17, 27, 19, 0.10);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 header.site.scrolled {
-  background-image: 
-    linear-gradient(90deg, rgba(248, 244, 235, 0.94) 0%, rgba(248, 244, 235, 0.82) 50%, rgba(248, 244, 235, 0.96) 100%),
-    url('settlement-handover.jpg');
-  box-shadow: var(--shadow-md);
+  top: 10px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 14px 40px rgba(17, 27, 19, 0.15);
+  border-color: #ffffff;
 }
 
 .header-row {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 8px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -636,83 +638,143 @@ section.tight { padding: 56px 0; }
   margin-bottom: 18px;
 }
 
-/* ---------- Hero & Spline 3D Scene ---------- */
+/* ---------- Hero & Pure CSS Monumental Architecture Frame ---------- */
 .hero {
   position: relative;
-  padding: 72px 0 88px;
-  min-height: 820px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background-color: #a6bbd3;
-}
-
-.hero.hero-image-only {
   width: 100%;
-  height: 85vh;
-  min-height: 580px;
-  max-height: 960px;
-  padding: 0;
+  height: 52vh;
+  min-height: 400px;
+  max-height: 540px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: #6c8cae;
+  padding: 0;
 }
 
 @media (max-width: 768px) {
-  .hero.hero-image-only {
-    height: 65vh;
-    min-height: 420px;
+  .hero {
+    height: 46vh;
+    min-height: 350px;
   }
 }
 
-.hero-villa-sky-backdrop {
+/* 1. Sky Canvas Layer */
+.hero-sky-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    #5f7f9f 0%,
+    #7a97b5 30%,
+    #9cb3cc 60%,
+    #c4b5b7 82%,
+    #dc9f88 100%
+  );
+  z-index: 1;
   pointer-events: none;
 }
 
-.hero-villa-backdrop-img {
+/* 2. Pure CSS Monumental 3D Typography */
+.hero-monumental-text {
+  position: absolute;
+  top: 5%;
+  left: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+  text-align: center;
+}
+
+.hero-css-line-1 {
+  font-family: 'Syne', 'Plus Jakarta Sans', Arial, -apple-system, sans-serif;
+  font-size: clamp(3.2rem, 9.8vw, 9.4rem);
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  line-height: 0.88;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F9FF 30%, #D4E3F3 80%, #B4CEE8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 8px 24px rgba(17, 27, 19, 0.50)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.40));
+}
+
+.hero-css-line-2 {
+  font-family: 'Syne', 'Plus Jakarta Sans', Arial, -apple-system, sans-serif;
+  font-size: clamp(1.6rem, 5vw, 4.8rem);
+  font-weight: 900;
+  letter-spacing: 0.26em;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-top: 4px;
+  color: #FFFFFF;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F6FD 45%, #C8DBEE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 6px 18px rgba(17, 27, 19, 0.45));
+}
+
+/* 3. Foreground Architectural Luxury Villa */
+.hero-villa-foreground-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 84%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero-villa-foreground-img {
+  width: 100%;
+  max-width: 980px;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center bottom;
-  filter: contrast(1.03) brightness(0.98);
-  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: contrast(1.04) brightness(0.99);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hero:hover .hero-villa-backdrop-img {
-  transform: scale(1.02);
+.hero:hover .hero-villa-foreground-img {
+  transform: scale(1.015);
 }
 
-/* Atmospheric Layered Cloud Drift Animation */
+/* 4. Atmospheric Layered Cloud Drift Animation */
 .hero-cloud-drift-layer {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 200%;
-  height: 38%;
+  height: 34%;
   background-image: url('hero-cloud-strip.png');
   background-repeat: repeat-x;
   background-size: contain;
   background-position: bottom left;
-  opacity: 0.65;
+  opacity: 0.70;
   pointer-events: none;
   animation: cloudDriftSlow 38s linear infinite;
-  z-index: 1;
+  z-index: 4;
 }
 
 .hero-cloud-drift-layer.cloud-layer-2 {
-  bottom: -20px;
-  height: 48%;
+  bottom: -15px;
+  height: 42%;
   opacity: 0.45;
   animation: cloudDriftReverse 52s linear infinite;
   filter: blur(4px);
-  z-index: 1;
+  z-index: 4;
 }
 
 @keyframes cloudDriftSlow {
