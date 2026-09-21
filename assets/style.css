@@ -3318,3 +3318,360 @@ footer.site .brand svg circle {
     padding: 20px 16px;
   }
 }
+
+/* ==========================================================================
+   ⭐ 5. TRUST BADGES & COMPLIANCE SIGNALS SECTION
+   ========================================================================== */
+.trust-compliance-section {
+  padding: 80px 0;
+  background: var(--paper-warm, #f8f6f0);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+
+/* Trust Scoreboard Banner */
+.trust-scoreboard-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--paper-surface, #ffffff);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-lg, 16px);
+  padding: 24px 32px;
+  box-shadow: var(--shadow-sm);
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.trust-score-col {
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.trust-score-stars {
+  color: #f59e0b;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.trust-score-icon {
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+}
+
+.trust-score-main {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.trust-score-sub {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 3px;
+}
+
+.trust-score-divider {
+  width: 1px;
+  height: 48px;
+  background: var(--line);
+}
+
+@media (max-width: 768px) {
+  .trust-scoreboard-banner {
+    flex-direction: column;
+    padding: 20px;
+    gap: 18px;
+  }
+  .trust-score-divider {
+    width: 80%;
+    height: 1px;
+  }
+}
+
+/* 6 Trust & Compliance Pillars Grid */
+.trust-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+@media (max-width: 960px) {
+  .trust-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .trust-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.trust-pillar-card {
+  background: var(--paper-surface, #ffffff);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg, 16px);
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.trust-pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md, 0 10px 24px rgba(0,0,0,0.08));
+  border-color: var(--moss);
+}
+
+.trust-pillar-card.highlight {
+  border: 1.5px solid #d4af37;
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.04) 0%, var(--paper-surface, #ffffff) 100%);
+}
+
+.pillar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.pillar-badge {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 9px;
+  border-radius: var(--radius-full, 99px);
+}
+
+.pillar-badge.moss {
+  background: rgba(27, 77, 62, 0.1);
+  color: var(--moss, #1b4d3e);
+  border: 1px solid rgba(27, 77, 62, 0.2);
+}
+
+.pillar-badge.gold {
+  background: rgba(212, 175, 55, 0.15);
+  color: #926c00;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.pillar-badge.clay {
+  background: rgba(163, 72, 40, 0.1);
+  color: var(--clay, #a34828);
+  border: 1px solid rgba(163, 72, 40, 0.2);
+}
+
+.pillar-badge.blue {
+  background: rgba(26, 90, 160, 0.1);
+  color: #1a5aa0;
+  border: 1px solid rgba(26, 90, 160, 0.2);
+}
+
+.pillar-seal {
+  font-size: 1.4rem;
+}
+
+.trust-pillar-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.18rem;
+  color: var(--ink);
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+}
+
+.trust-pillar-card p {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+
+.pillar-checks {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0 0;
+  border-top: 1px dashed var(--line);
+  padding-top: 14px;
+}
+
+.pillar-checks li {
+  font-size: 0.82rem;
+  color: var(--ink);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.pillar-checks li:last-child {
+  margin-bottom: 0;
+}
+
+/* Trust Action Banner */
+.trust-action-banner {
+  margin-top: 36px;
+  background: linear-gradient(135deg, var(--moss, #1b4d3e) 0%, #123329 100%);
+  border-radius: var(--radius-lg, 16px);
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(18, 51, 41, 0.2);
+  flex-wrap: wrap;
+}
+
+.trust-action-badge {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.15);
+  color: #e2ede8;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: 8px;
+}
+
+.trust-action-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+}
+
+.trust-action-content p {
+  font-size: 0.9rem;
+  color: #d1dfd8;
+  margin: 0;
+  max-width: 650px;
+  line-height: 1.5;
+}
+
+.trust-action-btn-wrap .btn-primary {
+  background: var(--clay, #a34828);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  white-space: nowrap;
+}
+
+.trust-action-btn-wrap .btn-primary:hover {
+  background: #bd5632;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .trust-action-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+  }
+}
+
+/* ==========================================================================
+   ⭐ LIVE SOCIAL PROOF ACTIVITY TOAST NOTIFICATION
+   ========================================================================== */
+.live-activity-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(20, 24, 23, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-md, 12px);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  z-index: 9980;
+  max-width: 380px;
+  color: #ffffff;
+  transform: translateY(120%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.live-activity-toast.visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.toast-icon-pulse {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(85, 214, 151, 0.15);
+  border: 1px solid rgba(85, 214, 151, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+  animation: pulseGlow 2.5s infinite;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(85, 214, 151, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(85, 214, 151, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(85, 214, 151, 0); }
+}
+
+.toast-body {
+  flex: 1;
+}
+
+.toast-title {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.toast-sub {
+  font-size: 0.74rem;
+  color: #9cb5a9;
+  margin-top: 2px;
+}
+
+.toast-close-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+}
+
+.toast-close-btn:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .live-activity-toast {
+    bottom: 80px;
+    right: 14px;
+    left: 14px;
+    max-width: none;
+  }
+}
