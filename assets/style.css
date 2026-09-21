@@ -3821,37 +3821,85 @@ footer.site .brand svg circle {
   position: relative;
 }
 
-/* Glass Enhancement for Fit & Compliance Cards over the Parallax Backdrop */
-.parallax-scroll-content .fit-col {
-  background: rgba(255, 255, 255, 0.94);
+/* High-Contrast Frosted Header Plate */
+.parallax-header-plate {
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1.5px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 16px 36px rgba(17, 27, 19, 0.08);
+  padding: 24px 32px;
+  border-radius: var(--radius-lg, 20px);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 16px 36px rgba(17, 27, 19, 0.09);
+  margin-bottom: 28px;
+  display: inline-block;
+  text-align: left;
+}
+
+.parallax-header-plate h2 {
+  color: var(--ink, #111b13);
+  margin-top: 6px;
+  margin-bottom: 8px;
+  font-weight: 800;
+}
+
+.parallax-header-plate .lede {
+  color: #2b3b2f;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+/* Glass Enhancement for Fit & Compliance Cards over the Parallax Backdrop */
+.parallax-scroll-content .fit-col {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid #ffffff;
+  box-shadow: 0 16px 36px rgba(17, 27, 19, 0.10);
+}
+
+.parallax-scroll-content .fit-col h3 {
+  color: #111b13;
+  font-weight: 800;
+}
+
+.parallax-scroll-content .fit-col li {
+  color: #203325;
+  font-weight: 600;
 }
 
 .parallax-scroll-content .fee-model-box {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1.5px solid rgba(255, 255, 255, 0.95);
-  box-shadow: 0 20px 48px rgba(17, 27, 19, 0.10);
+  border: 1.5px solid #ffffff;
+  box-shadow: 0 20px 48px rgba(17, 27, 19, 0.12);
 }
 
 .parallax-scroll-content .trust-scoreboard-banner {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1.5px solid rgba(255, 255, 255, 0.95);
-  box-shadow: 0 16px 40px rgba(17, 27, 19, 0.09);
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid #ffffff;
+  box-shadow: 0 16px 40px rgba(17, 27, 19, 0.10);
 }
 
 .parallax-scroll-content .trust-pillar-card {
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1.5px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 0 12px 32px rgba(17, 27, 19, 0.06);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid #ffffff;
+  box-shadow: 0 14px 34px rgba(17, 27, 19, 0.08);
+}
+
+.parallax-scroll-content .trust-pillar-card h3 {
+  color: #111b13;
+  font-weight: 800;
+}
+
+.parallax-scroll-content .trust-pillar-card p {
+  color: #36483a;
+  font-weight: 500;
 }
 
 /* Trust Scoreboard Banner */
