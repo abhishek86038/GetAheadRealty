@@ -1053,10 +1053,10 @@ section.tight {
   pointer-events: none;
 }
 
-/* 1.5. Monumental Stroked "REALTY" Typography Directly Behind "GET AHEAD" (Bigger Monumental Scale) */
+/* 1.5. Monumental Stroked "REALTY" Typography Directly Behind "GET AHEAD" (Wide Spaced Architectural Frame) */
 .hero-realty-solid-bg {
   position: absolute;
-  bottom: calc(64% - 22px);
+  bottom: calc(64% + 2px);
   left: 0;
   width: 100%;
   top: auto;
@@ -1078,38 +1078,41 @@ section.tight {
 
 .realty-solid-text {
   font-family: 'Inter Tight', 'Montserrat', 'Outfit', -apple-system, sans-serif;
-  font-size: clamp(6.8rem, 16.5vw, 20rem);
+  font-size: clamp(5.8rem, 14.5vw, 17.5rem);
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: -0.025em;
-  line-height: 0.84;
+  letter-spacing: 0.16em;
+  text-indent: 0.16em;
+  line-height: 0.88;
   white-space: nowrap;
   display: inline-block;
   pointer-events: none;
   /* Pure Crisp White Strokes with Transparent Interior */
   color: transparent;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 3.8px #FFFFFF;
+  -webkit-text-stroke: 3.5px #FFFFFF;
   opacity: 0.94;
   filter: drop-shadow(0 4px 18px rgba(10, 24, 42, 0.40));
 }
 
 @media (max-width: 768px) {
   .hero-realty-solid-bg {
-    bottom: calc(66% - 15px);
+    bottom: calc(66% + 2px);
     top: auto;
   }
 
   .realty-solid-text {
-    font-size: clamp(3.4rem, 14vw, 6.2rem);
-    -webkit-text-stroke: 2.4px #FFFFFF;
+    font-size: clamp(2.8rem, 11.5vw, 4.8rem);
+    letter-spacing: 0.12em;
+    text-indent: 0.12em;
+    -webkit-text-stroke: 2.2px #FFFFFF;
   }
 }
 
-/* 2. Pure CSS Monumental 3D Typography: "GET AHEAD" - Behind Villa Roofline, In Front of REALTY */
+/* 2. Pure CSS Monumental 3D Typography: "GET AHEAD" - Lifted A Little Bit Up */
 .hero-monumental-text {
   position: absolute;
-  bottom: calc(64% - 16px);
+  bottom: calc(64% + 6px);
   left: 0;
   width: 100%;
   display: flex;
@@ -1125,7 +1128,7 @@ section.tight {
 
 @media (max-width: 768px) {
   .hero-monumental-text {
-    bottom: calc(66% - 10px);
+    bottom: calc(66% + 4px);
     padding: 0 8px;
   }
 }
@@ -1135,9 +1138,9 @@ section.tight {
 div.hero-3d-title {
   margin: 0 !important;
   font-family: 'Inter Tight', 'Plus Jakarta Sans', -apple-system, sans-serif !important;
-  font-size: clamp(4.4rem, 9.6vw, 11.8rem) !important;
+  font-size: clamp(4.8rem, 10.5vw, 12.8rem) !important;
   font-weight: 900 !important;
-  letter-spacing: 0.045em !important;
+  letter-spacing: -0.015em !important;
   line-height: 0.96 !important;
   text-transform: uppercase !important;
   white-space: nowrap !important;
@@ -1164,8 +1167,8 @@ div.hero-3d-title {
   .hero-3d-title,
   .hero .hero-3d-title,
   div.hero-3d-title {
-    font-size: clamp(2.1rem, 8.4vw, 3.6rem) !important;
-    letter-spacing: 0.03em !important;
+    font-size: clamp(2.2rem, 8.8vw, 3.8rem) !important;
+    letter-spacing: 0 !important;
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
     text-shadow:
