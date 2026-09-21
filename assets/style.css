@@ -730,13 +730,13 @@ section.tight { padding: 56px 0; }
   filter: drop-shadow(0 8px 20px rgba(17, 27, 19, 0.48));
 }
 
-/* 3. Foreground Architectural Luxury Villa (Full Width Edge-to-Edge) */
+/* 3. Foreground Architectural Luxury Villa (Fully Visible & Brought Down to Bottom) */
 .hero-villa-foreground-wrap {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 80%;
+  height: 66%;
   z-index: 3;
   pointer-events: none;
   overflow: hidden;
@@ -745,12 +745,18 @@ section.tight { padding: 56px 0; }
   align-items: flex-end;
 }
 
+@media (max-width: 768px) {
+  .hero-villa-foreground-wrap {
+    height: 58%;
+  }
+}
+
 .hero-villa-foreground-img {
   width: 100%;
+  max-width: 1360px;
   height: 100%;
-  max-width: none;
-  object-fit: cover;
-  object-position: center 86%;
+  object-fit: contain;
+  object-position: center bottom;
   filter: contrast(1.04) brightness(0.99);
   transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -759,29 +765,29 @@ section.tight { padding: 56px 0; }
   transform: scale(1.015);
 }
 
-/* 4. Atmospheric Layered Cloud Drift Animation */
+/* 4. Atmospheric Layered Cloud Drift Animation (Subtle at the Base) */
 .hero-cloud-drift-layer {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 200%;
-  height: 32%;
+  height: 18%;
   background-image: url('hero-cloud-strip.png');
   background-repeat: repeat-x;
   background-size: cover;
   background-position: bottom left;
-  opacity: 0.75;
+  opacity: 0.50;
   pointer-events: none;
   animation: cloudDriftSlow 38s linear infinite;
   z-index: 4;
 }
 
 .hero-cloud-drift-layer.cloud-layer-2 {
-  bottom: -15px;
-  height: 40%;
-  opacity: 0.50;
+  bottom: -10px;
+  height: 24%;
+  opacity: 0.35;
   animation: cloudDriftReverse 52s linear infinite;
-  filter: blur(4px);
+  filter: blur(3px);
   z-index: 4;
 }
 
