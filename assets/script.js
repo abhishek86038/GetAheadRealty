@@ -99,7 +99,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // 1. Interactive Scroll Progress Bar & Dynamic Transparent Hero/Floating Scrolled Navbar
   var progressBar = document.getElementById('scrollProgress');
   var siteHeader = document.querySelector('header.site');
-  var heroSection = document.querySelector('.hero, .page-hero, .kontako-hero');
+  var heroSection = document.querySelector('.hero');
+  var pageHeroSection = document.querySelector('.page-hero, .kontako-hero');
 
   function updateScrollState() {
     var winScroll = document.documentElement.scrollTop || document.body.scrollTop;
@@ -109,16 +110,24 @@ document.addEventListener('DOMContentLoaded', function () {
       progressBar.style.width = scrolledPercent + '%';
     }
     if (siteHeader) {
-      // Dynamic threshold: Only pop out when the hero section is scrolled over
-      var heroThreshold = 500;
       if (heroSection) {
-        // Pop out when the user scrolls past the hero section
-        heroThreshold = heroSection.offsetTop + heroSection.offsetHeight - 80;
-      }
-      if (winScroll > heroThreshold) {
-        siteHeader.classList.add('scrolled');
+        // Hero page (Home): In-hero state is pure clean text, only becomes a navbar when scrolled over
+        var heroThreshold = heroSection.offsetTop + heroSection.offsetHeight - 80;
+        if (winScroll > heroThreshold) {
+          siteHeader.classList.add('scrolled');
+          siteHeader.classList.remove('on-hero');
+        } else {
+          siteHeader.classList.remove('scrolled');
+          siteHeader.classList.add('on-hero');
+        }
       } else {
-        siteHeader.classList.remove('scrolled');
+        // Inner pages without monumental hero
+        var innerThreshold = pageHeroSection ? (pageHeroSection.offsetTop + pageHeroSection.offsetHeight - 80) : 60;
+        if (winScroll > innerThreshold) {
+          siteHeader.classList.add('scrolled');
+        } else {
+          siteHeader.classList.remove('scrolled');
+        }
       }
     }
   }
