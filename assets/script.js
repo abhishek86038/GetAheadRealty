@@ -81,6 +81,15 @@ document.addEventListener('DOMContentLoaded', function () {
   // 0.4 Initialize Verified Investor Social Proof Ticker
   initLiveActivityTicker();
 
+  // 0.5 Initialize Kinetic Number Counter Scroll Animations
+  initKineticCounters();
+
+  // 0.6 Initialize Mobile Sticky Quick-Action Bar Controller
+  initMobileThumbActionBar();
+
+  // 0.7 Initialize Card Dynamic Radial Glow Physics
+  initCursorGlowPhysics();
+
   // 1. Top Reading Scroll Progress Indicator
   var progressBar = document.getElementById('scrollProgress');
   window.addEventListener('scroll', function () {
@@ -171,6 +180,9 @@ document.addEventListener('DOMContentLoaded', function () {
         cashflowDisplay.className = 'calc-metric-val';
       }
     }
+
+    // Live update 10-Year Compounding Visual SVG Graph
+    updateEquityCompoundingGraph(deposit, budget, borrowing);
   }
 
   if (depositInput && budgetInput) {
@@ -1205,4 +1217,161 @@ function initLiveActivityTicker() {
     // Subsequent toasts every 14 seconds
     setInterval(showNextActivity, 14000);
   }, 4000);
+}
+
+/* ==========================================================================
+   ⭐ INTERACTIVE 10-YEAR EQUITY COMPOUNDING GRAPH UPDATER
+   ========================================================================== */
+function updateEquityCompoundingGraph(deposit, budget, borrowing) {
+  var equityPath = document.getElementById('equityPath');
+  var equityArea = document.getElementById('equityArea');
+  var savingsPath = document.getElementById('savingsPath');
+  var markerYear5 = document.getElementById('markerYear5');
+  var markerYear10 = document.getElementById('markerYear10');
+  var lblMidEquity = document.getElementById('lblMidEquity');
+  var lblEndEquity = document.getElementById('lblEndEquity');
+  var dynEquityGain = document.getElementById('dynEquityGain');
+
+  if (!equityPath || !lblEndEquity) return;
+
+  // 7.5% p.a. average compounded property growth across target research corridors
+  var year5PropVal = Math.round(budget * Math.pow(1 + 0.075, 5));
+  var year10PropVal = Math.round(budget * Math.pow(1 + 0.075, 10));
+
+  // 4.0% p.a. term deposit equivalent for the deposit capital
+  var year10BankSavings = Math.round(deposit * Math.pow(1 + 0.04, 10));
+
+  // Net equity generated = (Year 10 property value - remaining debt) - initial bank savings
+  var netCreatedEquity = Math.max(0, (year10PropVal - (borrowing * 0.9)) - year10BankSavings);
+
+  if (lblMidEquity) lblMidEquity.textContent = 'Year 5 (~$' + (year5PropVal / 1000).toFixed(0) + 'k)';
+  if (lblEndEquity) lblEndEquity.textContent = 'Year 10 (~$' + year10PropVal.toLocaleString() + ' Asset Value)';
+  if (dynEquityGain) dynEquityGain.textContent = '+$' + Math.round(netCreatedEquity).toLocaleString();
+
+  // Dynamic SVG curve coordinate calculation
+  // Base baseline Y is 180, Top Y is 30
+  var startY = 180;
+  var midY = Math.max(40, 180 - ((year5PropVal - budget) / budget) * 160);
+  var endY = Math.max(25, 180 - ((year10PropVal - budget) / budget) * 140);
+
+  var dPath = 'M 50 ' + startY + ' Q 365 ' + midY.toFixed(1) + ' 680 ' + endY.toFixed(1);
+  var dArea = dPath + ' L 680 190 L 50 190 Z';
+
+  equityPath.setAttribute('d', dPath);
+  if (equityArea) equityArea.setAttribute('d', dArea);
+
+  if (markerYear5) {
+    markerYear5.setAttribute('cy', midY.toFixed(1));
+  }
+  if (markerYear10) {
+    markerYear10.setAttribute('cy', endY.toFixed(1));
+  }
+}
+
+/* ==========================================================================
+   ⭐ KINETIC NUMBER COUNTER ANIMATIONS (ON SCROLL REVEAL)
+   ========================================================================== */
+function initKineticCounters() {
+  var statElements = document.querySelectorAll('.stat-num, .trust-score-main');
+  if (!statElements.length) return;
+
+  var observer = new IntersectionObserver(function (entries, obs) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        obs.unobserve(el);
+        animateCounter(el);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  statElements.forEach(function (el) {
+    observer.observe(el);
+  });
+
+  function animateCounter(el) {
+    var rawText = el.textContent.trim();
+    // Match numbers like 5,000 or 100 or 20,000,000
+    var match = rawText.match(/([^\d]*)([\d,\.]+)([^\d]*)/);
+    if (!match) return;
+
+    var prefix = match[1] || '';
+    var numericStr = match[2].replace(/,/g, '');
+    var suffix = match[3] || '';
+    var targetVal = parseFloat(numericStr);
+    var isDecimal = numericStr.indexOf('.') !== -1;
+
+    if (isNaN(targetVal) || targetVal <= 0) return;
+
+    var duration = 1400; // ms
+    var startTime = null;
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      // Ease out cubic
+      var easeProgress = 1 - Math.pow(1 - progress, 3);
+      var currentVal = easeProgress * targetVal;
+
+      if (isDecimal) {
+        el.textContent = prefix + currentVal.toFixed(1) + suffix;
+      } else {
+        el.textContent = prefix + Math.floor(currentVal).toLocaleString() + suffix;
+      }
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        el.textContent = rawText; // Ensure exact original string
+      }
+    }
+
+    window.requestAnimationFrame(step);
+  }
+}
+
+/* ==========================================================================
+   ⭐ MOBILE STICKY THUMB-ZONE BAR CONTROLLER
+   ========================================================================== */
+function initMobileThumbActionBar() {
+  var bar = document.getElementById('mobileThumbBar');
+  if (!bar) return;
+
+  var lastScrollY = window.scrollY;
+  var ticking = false;
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        var currentScrollY = window.scrollY;
+        // If scrolling down fast beyond hero, hide bar to increase reading space
+        if (currentScrollY > 400 && currentScrollY > lastScrollY + 12) {
+          bar.classList.add('hidden-down');
+        } else if (currentScrollY < lastScrollY - 6 || currentScrollY <= 400) {
+          // If scrolling up or near top, show bar
+          bar.classList.remove('hidden-down');
+        }
+        lastScrollY = currentScrollY;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+}
+
+/* ==========================================================================
+   ⭐ CARD RADIAL GLOW PHYSICS
+   ========================================================================== */
+function initCursorGlowPhysics() {
+  var glowCards = document.querySelectorAll('.suburb-market-card, .case-study-card, .trust-pillar-card, .diff-card, .testi-card');
+  glowCards.forEach(function (card) {
+    card.classList.add('cursor-glow-card');
+    card.addEventListener('mousemove', function (e) {
+      var rect = card.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', x + 'px');
+      card.style.setProperty('--mouse-y', y + 'px');
+    });
+  });
 }

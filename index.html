@@ -289,6 +289,60 @@
           <a class="btn btn-primary btn-small" href="contact.html" style="margin-top:14px; width:100%;">Discuss on a Free Call</a>
         </div>
       </div>
+
+      <!-- Live 10-Year Equity Compounding Visual Graph -->
+      <div class="calc-equity-chart-wrap" id="calcEquityChartWrap">
+        <div class="chart-header-flex">
+          <div>
+            <span class="chart-tag">Visual Wealth Simulation</span>
+            <h3 style="margin:2px 0 0 0; font-size:1.15rem;">10-Year Equity Compounding Projection</h3>
+          </div>
+          <div class="chart-legend">
+            <span class="legend-item"><span class="legend-dot property"></span> Target Property (@ 7.5% p.a.)</span>
+            <span class="legend-item"><span class="legend-dot savings"></span> Bank Savings (@ 4.0%)</span>
+          </div>
+        </div>
+
+        <div class="svg-chart-container">
+          <svg viewBox="0 0 700 220" class="equity-svg-chart" id="equitySvgChart" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="equityGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1b4d3e" stop-opacity="0.35" />
+                <stop offset="100%" stop-color="#1b4d3e" stop-opacity="0.0" />
+              </linearGradient>
+            </defs>
+            <!-- Grid Lines -->
+            <line x1="50" y1="30" x2="680" y2="30" stroke="rgba(0,0,0,0.06)" stroke-dasharray="4,4" />
+            <line x1="50" y1="90" x2="680" y2="90" stroke="rgba(0,0,0,0.06)" stroke-dasharray="4,4" />
+            <line x1="50" y1="150" x2="680" y2="150" stroke="rgba(0,0,0,0.06)" stroke-dasharray="4,4" />
+            <line x1="50" y1="190" x2="680" y2="190" stroke="rgba(0,0,0,0.15)" />
+
+            <!-- Bank Savings Line -->
+            <path id="savingsPath" d="M 50 180 Q 365 160 680 140" fill="none" stroke="#a0aec0" stroke-width="2.5" stroke-dasharray="6,4" />
+
+            <!-- Property Equity Area & Line -->
+            <path id="equityArea" d="M 50 180 Q 365 100 680 35 L 680 190 L 50 190 Z" fill="url(#equityGrad)" />
+            <path id="equityPath" d="M 50 180 Q 365 100 680 35" fill="none" stroke="#1b4d3e" stroke-width="3.5" />
+
+            <!-- Year Milestones Markers -->
+            <circle cx="50" cy="180" r="4.5" fill="#1b4d3e" />
+            <circle id="markerYear5" cx="365" cy="100" r="5" fill="#1b4d3e" />
+            <circle id="markerYear10" cx="680" cy="35" r="6" fill="#a34828" stroke="#ffffff" stroke-width="2" />
+          </svg>
+        </div>
+
+        <div class="chart-timeline-labels">
+          <span>Today (Year 0)</span>
+          <span>Year 3</span>
+          <span id="lblMidEquity">Year 5 (~$935k)</span>
+          <span>Year 7</span>
+          <strong id="lblEndEquity" class="moss">Year 10 (~$1,340,000 Asset Value)</strong>
+        </div>
+
+        <div class="chart-bottom-callout">
+          <span>💡 <strong>Projected Net Equity Created:</strong> <span id="dynEquityGain" class="moss" style="font-size:1.05rem; font-weight:800;">+$690,000</span> in 10 years compared to sitting in bank cash.</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1583,6 +1637,24 @@
     </div>
   </div>
 </footer>
+
+<!-- Mobile Sticky Thumb-Zone Quick Action Bar (Visible only on mobile viewports) -->
+<div class="mobile-thumb-action-bar" id="mobileThumbBar" aria-label="Quick Mobile Actions">
+  <div class="thumb-bar-inner">
+    <a href="tel:+61466191055" class="thumb-btn thumb-btn-call" aria-label="Call Aaron directly">
+      <span class="thumb-icon">📞</span>
+      <span class="thumb-label">Call Now</span>
+    </a>
+    <a href="#readiness-quiz" class="thumb-btn thumb-btn-quiz" aria-label="Take 60-second diagnostic quiz">
+      <span class="thumb-icon">⚡</span>
+      <span class="thumb-label">60s Quiz</span>
+    </a>
+    <a href="contact.html" class="thumb-btn thumb-btn-book" aria-label="Book 15-minute strategy call">
+      <span class="thumb-icon">📅</span>
+      <span class="thumb-label">Book Call</span>
+    </a>
+  </div>
+</div>
 
 <script src="assets/script.js?v=2.2"></script>
 </body>

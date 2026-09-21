@@ -3675,3 +3675,214 @@ footer.site .brand svg circle {
     max-width: none;
   }
 }
+
+/* ==========================================================================
+   ⭐ 10-YEAR EQUITY COMPOUNDING VISUAL GRAPH
+   ========================================================================== */
+.calc-equity-chart-wrap {
+  margin-top: 28px;
+  background: var(--paper-warm, #f8f6f0);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg, 16px);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.chart-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(27, 77, 62, 0.1);
+  color: var(--moss, #1b4d3e);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+.chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-dot.property {
+  background: var(--moss, #1b4d3e);
+}
+
+.legend-dot.savings {
+  background: #a0aec0;
+}
+
+.svg-chart-container {
+  width: 100%;
+  height: 180px;
+  position: relative;
+}
+
+.equity-svg-chart {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.chart-timeline-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  margin-top: 6px;
+}
+
+.chart-bottom-callout {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(27, 77, 62, 0.08);
+  border: 1px solid rgba(27, 77, 62, 0.2);
+  border-radius: var(--radius-md, 10px);
+  font-size: 0.88rem;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ==========================================================================
+   ⭐ MOBILE STICKY THUMB-ZONE QUICK ACTION BAR (< 768px)
+   ========================================================================== */
+.mobile-thumb-action-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(20, 26, 24, 0.94);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px)) 12px;
+  z-index: 9970;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-thumb-action-bar.hidden-down {
+  transform: translateY(100%);
+}
+
+.thumb-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.thumb-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 8px;
+  border-radius: var(--radius-md, 10px);
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.thumb-btn:active {
+  transform: scale(0.96);
+}
+
+.thumb-btn-call {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.thumb-btn-quiz {
+  background: rgba(85, 214, 151, 0.2);
+  color: #55d697;
+  border: 1px solid rgba(85, 214, 151, 0.4);
+}
+
+.thumb-btn-book {
+  background: var(--clay, #a34828);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(163, 72, 40, 0.4);
+}
+
+.thumb-icon {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .mobile-thumb-action-bar {
+    display: block;
+  }
+  
+  /* Add padding to body so footer content is not blocked by bottom bar */
+  body {
+    padding-bottom: 64px;
+  }
+  
+  .dev-float-widget {
+    bottom: 74px !important;
+  }
+}
+
+/* ==========================================================================
+   ⭐ DYNAMIC CURSOR RADIAL GLOW PHYSICS
+   ========================================================================== */
+.cursor-glow-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.cursor-glow-card::after {
+  content: '';
+  position: absolute;
+  top: var(--mouse-y, 50%);
+  left: var(--mouse-x, 50%);
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(27, 77, 62, 0.08) 0%, rgba(27, 77, 62, 0) 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+}
+
+.cursor-glow-card:hover::after {
+  opacity: 1;
+}
