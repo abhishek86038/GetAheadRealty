@@ -1033,23 +1033,35 @@ section.tight {
   pointer-events: none;
 }
 
-/* 1.5. Colossal Stroked "REALTY" Typography Behind the Whole Hero Image */
-.hero-realty-stroked-bg {
+/* 1.5. Dual-Layer Composite "REALTY" Typography:
+   - Behind Villa (.hero-realty-solid-bg): Solid Opaque White on top of Sky Background
+   - In Front of Villa (.hero-realty-stroked-fg): Thick Stroked Outline over Villa Architecture
+*/
+.hero-realty-solid-bg,
+.hero-realty-stroked-fg {
   position: absolute;
-  top: 48%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2; /* Sits behind foreground villa (z-index: 3) and above sky canvas (z-index: 1) */
   pointer-events: none;
   user-select: none;
   text-align: center;
   overflow: hidden;
 }
 
+.hero-realty-solid-bg {
+  z-index: 2; /* Sits behind foreground villa (z-index: 3) and above sky canvas (z-index: 1) */
+}
+
+.hero-realty-stroked-fg {
+  z-index: 4; /* Sits in front of villa (z-index: 3) and behind clouds (z-index: 5) */
+}
+
+.realty-solid-text,
 .realty-stroked-text {
   font-family: 'Inter Tight', 'Montserrat', 'Syne', -apple-system, sans-serif;
   font-size: clamp(8.5rem, 25vw, 29rem);
@@ -1059,21 +1071,37 @@ section.tight {
   line-height: 0.80;
   white-space: nowrap;
   display: inline-block;
-  color: transparent;
-  -webkit-text-stroke: 2.5px rgba(255, 255, 255, 0.28);
-  filter: drop-shadow(0 4px 22px rgba(10, 24, 42, 0.25));
-  opacity: 0.90;
   pointer-events: none;
 }
 
+/* Layer 1 (Behind Villa): Pure Solid White & Opaque against the Sky */
+.realty-solid-text {
+  color: #FFFFFF;
+  -webkit-text-fill-color: #FFFFFF;
+  -webkit-text-stroke: 4.5px #FFFFFF;
+  opacity: 0.96;
+  filter: drop-shadow(0 6px 28px rgba(10, 24, 42, 0.35));
+}
+
+/* Layer 2 (Over Villa): Thick White Stroke with Transparent Interior revealing the Villa */
+.realty-stroked-text {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 4.5px #FFFFFF;
+  opacity: 1;
+  filter: drop-shadow(0 4px 18px rgba(10, 24, 42, 0.40));
+}
+
 @media (max-width: 768px) {
-  .hero-realty-stroked-bg {
-    top: 46%;
+  .hero-realty-solid-bg,
+  .hero-realty-stroked-fg {
+    top: 48%;
   }
 
+  .realty-solid-text,
   .realty-stroked-text {
     font-size: clamp(4.6rem, 23vw, 9.5rem);
-    -webkit-text-stroke: 1.8px rgba(255, 255, 255, 0.26);
+    -webkit-text-stroke: 2.8px #FFFFFF;
   }
 }
 
