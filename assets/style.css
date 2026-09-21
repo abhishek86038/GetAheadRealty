@@ -659,8 +659,8 @@ section.tight { padding: 56px 0; }
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  opacity: 0.42;
-  filter: saturate(1.15) brightness(0.96);
+  opacity: 0.88;
+  filter: saturate(1.1) brightness(1.0);
   transition: opacity 0.5s ease;
 }
 
@@ -668,8 +668,12 @@ section.tight { padding: 56px 0; }
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(circle at 70% 45%, rgba(248, 244, 235, 0.40) 0%, rgba(248, 244, 235, 0.78) 55%, rgba(248, 244, 235, 0.94) 100%),
-    linear-gradient(180deg, rgba(248, 244, 235, 0.6) 0%, rgba(248, 244, 235, 0.85) 100%);
+    linear-gradient(90deg, 
+      rgba(248, 244, 235, 0.72) 0%, 
+      rgba(248, 244, 235, 0.45) 42%, 
+      rgba(248, 244, 235, 0.18) 72%, 
+      rgba(248, 244, 235, 0.05) 100%
+    );
   pointer-events: none;
   z-index: 1;
 }
@@ -677,28 +681,36 @@ section.tight { padding: 56px 0; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .hero-video-overlay {
     background: 
-      radial-gradient(circle at 70% 45%, rgba(11, 17, 11, 0.48) 0%, rgba(11, 17, 11, 0.82) 55%, rgba(11, 17, 11, 0.96) 100%),
-      linear-gradient(180deg, rgba(11, 17, 11, 0.6) 0%, rgba(11, 17, 11, 0.92) 100%);
+      linear-gradient(90deg, 
+        rgba(11, 17, 11, 0.78) 0%, 
+        rgba(11, 17, 11, 0.50) 42%, 
+        rgba(11, 17, 11, 0.20) 72%, 
+        rgba(11, 17, 11, 0.08) 100%
+      );
   }
   :root:not([data-theme="light"]) .hero-bg-video {
-    opacity: 0.35;
+    opacity: 0.85;
   }
 }
 
 :root[data-theme="dark"] .hero-video-overlay {
   background: 
-    radial-gradient(circle at 70% 45%, rgba(11, 17, 11, 0.48) 0%, rgba(11, 17, 11, 0.82) 55%, rgba(11, 17, 11, 0.96) 100%),
-    linear-gradient(180deg, rgba(11, 17, 11, 0.6) 0%, rgba(11, 17, 11, 0.92) 100%);
+    linear-gradient(90deg, 
+      rgba(11, 17, 11, 0.78) 0%, 
+      rgba(11, 17, 11, 0.50) 42%, 
+      rgba(11, 17, 11, 0.20) 72%, 
+      rgba(11, 17, 11, 0.08) 100%
+    );
 }
 :root[data-theme="dark"] .hero-bg-video {
-  opacity: 0.35;
+  opacity: 0.85;
 }
 
 .hero-contours {
   position: absolute;
   inset: 0;
   z-index: 1;
-  opacity: 0.45;
+  opacity: 0.25;
   pointer-events: none;
 }
 
