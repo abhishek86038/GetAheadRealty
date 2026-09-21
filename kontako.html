@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KONTAKO — The Future of Home Living | Architectural Agency</title>
+  <meta name="description" content="Kontako designs and builds next-generation sustainable luxury residences, combining cutting-edge alpine engineering, net-zero efficiency, and bespoke architectural mastery.">
+  <link rel="stylesheet" href="assets/kontako.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       SECTION 1: HERO (Full-Width Glass Cabin at Dusk)
+       ========================================================================= -->
+  <header class="kontako-hero" id="heroSection">
+    <!-- Background Image & Atmospheric Gradient -->
+    <img 
+      src="assets/kontako/hero_cabin.jpg" 
+      alt="Modern glass-walled cabin house in a forest at dusk with warm glowing interior and lake reflection" 
+      class="hero-bg-img"
+    >
+    <div class="hero-gradient-overlay"></div>
+
+    <!-- Top Navbar -->
+    <nav class="kontako-nav" aria-label="Main Navigation">
+      <button class="nav-menu-btn" id="kontakoMenuBtn" aria-label="Open Navigation Menu">
+        <div class="hamburger-bars">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <span>MENU</span>
+      </button>
+
+      <a href="#heroSection" class="nav-brand-logo">
+        KONTAKO<span class="dot">.</span>
+      </a>
+
+      <div class="nav-right-action">
+        <a href="#footerTalk" class="btn-pill-orange">
+          <span>CONTACT US</span>
+          <span class="arrow-circle">&#8599;</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Bottom Left Headline & Floating Action Button -->
+    <div class="hero-bottom-grid">
+      <div class="hero-headline-wrap">
+        <h1 class="hero-headline">
+          THE FUTURE OF HOME <span class="accent">LIVING.</span>
+        </h1>
+        <p class="hero-subtext">
+          Sculpting spaces where avant-garde architecture merges with pristine nature. High-precision net-zero engineering crafted for visionary living.
+        </p>
+      </div>
+
+      <div class="hero-floating-action">
+        <a href="#quoteSection" class="floating-arrow-btn" id="heroFloatingBtn" aria-label="Scroll Down">
+          &#8599;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fullscreen Mobile Menu Modal Overlay -->
+  <div class="menu-modal-overlay" id="kontakoMenuModal">
+    <div class="menu-modal-header">
+      <div class="nav-brand-logo">KONTAKO<span class="dot">.</span></div>
+      <button class="menu-modal-close-btn" id="kontakoMenuCloseBtn" aria-label="Close Menu">&times;</button>
+    </div>
+    <div class="menu-modal-links">
+      <a href="#heroSection">01. Overview</a>
+      <a href="#quoteSection">02. Philosophy</a>
+      <a href="#advantagesSection">03. Advantages</a>
+      <a href="#statsSection">04. Innovation</a>
+      <a href="#portfolioSection">05. Pedro Residence</a>
+      <a href="#faqSection">06. FAQ</a>
+      <a href="#footerTalk">07. Contact</a>
+    </div>
+    <div class="footer-copyright-row" style="color: #888;">
+      <span>GENEVA &bull; OSLO &bull; TOKYO &bull; NEW YORK</span>
+      <span>&copy; 2026 KONTAKO STUDIO</span>
+    </div>
+  </div>
+
+  <main>
+    <!-- =======================================================================
+         SECTION 2: QUOTE (Company Mission & Founder)
+         ======================================================================= -->
+    <section class="kontako-quote-section" id="quoteSection">
+      <div class="container">
+        <div class="quote-inner">
+          <span class="section-label">FULFIL YOUR DREAMS</span>
+          <blockquote class="mission-quote">
+            &ldquo;We believe architecture is not merely about erecting walls, but sculpting living ecosystems that inspire the human soul and redefine sustainable modern living for centuries to come.&rdquo;
+          </blockquote>
+
+          <div class="founder-profile">
+            <img 
+              src="assets/kontako/founder_portrait.jpg" 
+              alt="Alexander Vance — Founder and Principal Architect at Kontako" 
+              class="founder-avatar"
+            >
+            <div class="founder-meta">
+              <div class="founder-name">Alexander Vance</div>
+              <div class="founder-title">Founder &amp; Principal Architect</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 3: ADVANTAGES SPLIT LAYOUT
+         ======================================================================= -->
+    <section class="kontako-advantages-section" id="advantagesSection">
+      <div class="container">
+        <div class="advantages-grid">
+          
+          <!-- Left: White Card with Our Advantages List -->
+          <div class="advantages-card">
+            <div class="advantages-card-header">
+              <span class="section-label">OUR ADVANTAGES</span>
+              <h2 class="section-title" style="font-size: clamp(2rem, 3.2vw, 2.7rem);">
+                ELEVATING EVERY DIMENSION OF CRAFT.
+              </h2>
+            </div>
+
+            <ul class="advantages-list">
+              <li class="advantage-item">
+                <span>01. Architectural Precision &amp; Vision</span>
+                <span class="item-arrow">&#8599;</span>
+              </li>
+              <li class="advantage-item highlighted">
+                <span>02. Sustainable Net-Zero Engineering</span>
+                <span class="item-arrow">&#8599;</span>
+              </li>
+              <li class="advantage-item">
+                <span>03. Premium Scandinavian &amp; Alpine Materials</span>
+                <span class="item-arrow">&#8599;</span>
+              </li>
+              <li class="advantage-item">
+                <span>04. Seamless Smart Living Ecosystems</span>
+                <span class="item-arrow">&#8599;</span>
+              </li>
+              <li class="advantage-item">
+                <span>05. Transparent End-to-End Delivery</span>
+                <span class="item-arrow">&#8599;</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right: Night House Visual Card with Overlay Headline -->
+          <div class="advantages-visual-card">
+            <img 
+              src="assets/kontako/advantage_night_villa.jpg" 
+              alt="Striking modern luxury villa illuminated at night with infinity pool reflection" 
+              class="visual-card-bg"
+            >
+            <div class="visual-card-overlay"></div>
+            
+            <div class="visual-card-content">
+              <h2 class="visual-card-title">
+                TAKE A BIG STEP INTO THE FUTURE OF LIVING
+              </h2>
+              <a href="#footerTalk" class="btn-pill-outline">
+                <span>EXPLORE THE BLUEPRINT</span>
+                <span>&#8599;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 4: DARK STATS SECTION (Interactive Vertical Slat Tabs)
+         ======================================================================= -->
+    <section class="kontako-stats-section" id="statsSection">
+      <div class="container">
+        <div class="stats-container-grid">
+          
+          <!-- Left Content Area -->
+          <div class="stats-left-card">
+            <span class="section-label">INNOVATION ON MULTIPLE LEVELS</span>
+            <h2 class="stats-main-heading" id="statsHeading">COMFORT &amp; SPACE</h2>
+            
+            <div class="stats-interior-frame">
+              <img 
+                src="assets/kontako/interior_comfort.jpg" 
+                alt="Minimalist double-height contemporary living space with floor-to-ceiling glass" 
+                class="stats-interior-img"
+              >
+            </div>
+
+            <p class="stats-caption" id="statsCaption">
+              Double-height ceilings, bespoke travertine stone surfaces, and natural daylight orientation maximize emotional well-being and energy conservation in harmony.
+            </p>
+          </div>
+
+          <!-- Right: Vertical Numbered Tabs / Slats (02 - 06) -->
+          <div class="vertical-slats-wrap" role="tablist">
+            
+            <div class="stat-slat" data-num="02" role="tab" tabindex="0" title="Quality & Craftsmanship">
+              <div class="stat-slat-num">02</div>
+              <div class="stat-slat-label">QUALITY &amp; CRAFTSMANSHIP</div>
+              <div class="stat-slat-indicator"></div>
+            </div>
+
+            <div class="stat-slat" data-num="03" role="tab" tabindex="0" title="Web3 Ownership">
+              <div class="stat-slat-num">03</div>
+              <div class="stat-slat-label">WEB3 OWNERSHIP</div>
+              <div class="stat-slat-indicator"></div>
+            </div>
+
+            <div class="stat-slat active" data-num="04" role="tab" tabindex="0" title="Energy Net Zero">
+              <div class="stat-slat-num">04</div>
+              <div class="stat-slat-label">ENERGY NET ZERO</div>
+              <div class="stat-slat-indicator"></div>
+            </div>
+
+            <div class="stat-slat" data-num="05" role="tab" tabindex="0" title="Marketplace">
+              <div class="stat-slat-num">05</div>
+              <div class="stat-slat-label">MARKETPLACE</div>
+              <div class="stat-slat-indicator"></div>
+            </div>
+
+            <div class="stat-slat" data-num="06" role="tab" tabindex="0" title="Affordable Luxury">
+              <div class="stat-slat-num">06</div>
+              <div class="stat-slat-label">AFFORDABLE LUXURY</div>
+              <div class="stat-slat-indicator"></div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 5: PROJECT PORTFOLIO (Pedro Residence & Asymmetric Grid)
+         ======================================================================= -->
+    <section class="kontako-portfolio-section" id="portfolioSection">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="portfolio-header-wrap">
+          <div>
+            <span class="section-label">OUR PROJECT</span>
+            <h2 class="section-title" style="font-size: clamp(2.4rem, 5vw, 4.4rem);">
+              PEDRO RESIDENCE
+            </h2>
+          </div>
+
+          <div class="portfolio-desc-wrap">
+            <p class="portfolio-desc">
+              A masterclass in cantilevered alpine geometry, framed in raw architectural concrete, glass curatorship, and panoramic forest vistas.
+            </p>
+            <a href="#footerTalk" class="floating-arrow-btn" style="width:52px; height:52px; font-size:1.3rem;" aria-label="View Project Details">
+              &#8599;
+            </a>
+          </div>
+        </div>
+
+        <!-- Asymmetric Overlapping Photo Grid (4 Layered Architecture Photos) -->
+        <div class="asymmetric-grid">
+          <div class="photo-cell photo-cell-1">
+            <img src="assets/kontako/pedro_1.jpg" alt="Pedro Residence — Main Cantilevered Facade">
+            <div class="photo-cell-badge">Exterior North &bull; 01</div>
+          </div>
+          <div class="photo-cell photo-cell-2">
+            <img src="assets/kontako/pedro_2.jpg" alt="Pedro Residence — Private Sun Terrace">
+            <div class="photo-cell-badge">Terrace Pavilion &bull; 02</div>
+          </div>
+          <div class="photo-cell photo-cell-3">
+            <img src="assets/kontako/pedro_3.jpg" alt="Pedro Residence — Infinity Glass Lounge">
+            <div class="photo-cell-badge">Twilight Suite &bull; 03</div>
+          </div>
+          <div class="photo-cell photo-cell-4">
+            <img src="assets/kontako/pedro_4.jpg" alt="Pedro Residence — Atrium and Grounds">
+            <div class="photo-cell-badge">Estate Courtyard &bull; 04</div>
+          </div>
+        </div>
+
+        <!-- Below: Project Names List with Inline Previews & Numbers -->
+        <div class="project-list">
+          
+          <div class="project-row">
+            <div class="project-title-group">
+              <span class="project-name">SUNSET PLAZA DRIVE</span>
+            </div>
+            <div class="project-number">02</div>
+          </div>
+
+          <div class="project-row">
+            <div class="project-title-group">
+              <span class="project-name">HIGH-END VILLA OVERLOOKING</span>
+              <img src="assets/kontako/thumb_1.jpg" alt="High-End Villa Thumbnail Preview" class="project-inline-thumb">
+            </div>
+            <div class="project-number">03</div>
+          </div>
+
+          <div class="project-row">
+            <div class="project-title-group">
+              <span class="project-name">CLIFFWOOD AVENUE</span>
+            </div>
+            <div class="project-number">04</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 6: FAQ (Common Questions Accordion)
+         ======================================================================= -->
+    <section class="kontako-faq-section" id="faqSection">
+      <div class="container">
+        
+        <div class="faq-header">
+          <span class="section-label">FAQs</span>
+          <h2 class="section-title" style="font-size: clamp(2.2rem, 4vw, 3.4rem);">
+            COMMON QUESTIONS
+          </h2>
+        </div>
+
+        <div class="faq-accordion-wrap">
+          
+          <!-- FAQ 1 (Expanded by Default) -->
+          <div class="faq-item active">
+            <button class="faq-question-btn" aria-expanded="true">
+              <span class="faq-question-text">What is the typical timeframe for a bespoke Kontako architectural build?</span>
+              <span class="faq-chevron">&#8595;</span>
+            </button>
+            <div class="faq-answer-panel">
+              <p class="faq-answer-text">
+                From initial blueprint conceptualization to final turnkey handover, our streamlined precision-fabrication workflow typically spans 8 to 14 months, reducing standard architectural project timelines by over 40% while preserving museum-grade finish quality.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span class="faq-question-text">How do you achieve true Net-Zero Energy efficiency in residential projects?</span>
+              <span class="faq-chevron">&#8595;</span>
+            </button>
+            <div class="faq-answer-panel">
+              <p class="faq-answer-text">
+                We integrate triple-glazed photovoltaic solar glass, deep geothermal heat pump loops, airtight envelope sealing, and smart thermal mass storage, allowing every Kontako residence to generate surplus green energy year-round.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span class="faq-question-text">Can Kontako assist with land acquisition and site topography feasibility?</span>
+              <span class="faq-chevron">&#8595;</span>
+            </button>
+            <div class="faq-answer-panel">
+              <p class="faq-answer-text">
+                Yes. Our in-house spatial advisory team conducts LiDAR topographic scanning, solar path modeling, geotechnical testing, and municipal zoning verifications before property purchase to ensure build viability.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span class="faq-question-text">What materials and sustainable engineering practices are standard?</span>
+              <span class="faq-chevron">&#8595;</span>
+            </button>
+            <div class="faq-answer-panel">
+              <p class="faq-answer-text">
+                We utilize certified cross-laminated Nordic timber (CLT), low-carbon sintered stone, recyclable steel frames, and non-toxic mineral lime renders sourced directly from certified European artisan suppliers.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span class="faq-question-text">How does the initial architectural consultation and discovery work?</span>
+              <span class="faq-chevron">&#8595;</span>
+            </button>
+            <div class="faq-answer-panel">
+              <p class="faq-answer-text">
+                We begin with a confidential 60-minute strategy session with our Principal Architect to review your lifestyle goals, spatial program, budget parameters, and site vision followed by a 3D architectural brief.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       SECTION 7: FOOTER / CTA (Dark Theme with Photo Ribbon & Huge LET'S TALK)
+       ========================================================================= -->
+  <footer class="kontako-footer" id="footerTalk">
+    <div class="container">
+      
+      <!-- Top Row of Architecture Photo Thumbnails (Ribbon) -->
+      <div class="footer-thumbnails-ribbon">
+        <div class="footer-thumb-item">
+          <img src="assets/kontako/thumb_1.jpg" alt="Architectural Masterplan Vignette 1">
+        </div>
+        <div class="footer-thumb-item">
+          <img src="assets/kontako/thumb_2.jpg" alt="Architectural Masterplan Vignette 2">
+        </div>
+        <div class="footer-thumb-item">
+          <img src="assets/kontako/thumb_3.jpg" alt="Architectural Masterplan Vignette 3">
+        </div>
+        <div class="footer-thumb-item">
+          <img src="assets/kontako/thumb_4.jpg" alt="Architectural Masterplan Vignette 4">
+        </div>
+        <div class="footer-thumb-item">
+          <img src="assets/kontako/thumb_5.jpg" alt="Architectural Masterplan Vignette 5">
+        </div>
+        <div class="footer-thumb-item">
+          <img src="assets/kontako/thumb_6.jpg" alt="Architectural Masterplan Vignette 6">
+        </div>
+      </div>
+
+      <!-- Huge Bold Headline "LET'S TALK" with Overlapping Orange Circular Button -->
+      <div class="footer-cta-headline-wrap">
+        <div class="footer-huge-headline">LET'S TALK</div>
+        <a href="mailto:hello@kontakostudio.com" class="footer-overlap-arrow-btn" id="footerArrowBtn" aria-label="Get in Touch with Kontako">
+          &#8599;
+        </a>
+      </div>
+
+      <!-- Bottom 3-Column Navigation Row -->
+      <div class="footer-bottom-grid">
+        
+        <!-- Left: Logo + Tagline -->
+        <div class="footer-brand-block">
+          <div class="footer-brand-name">KONTAKO<span class="dot">.</span></div>
+          <p class="footer-brand-tagline">
+            Sculpting the next era of architectural living and net-zero residences.
+          </p>
+        </div>
+
+        <!-- Center: Nav Links -->
+        <div class="footer-nav-links">
+          <a href="#">PRIVACY POLICY</a>
+          <span class="footer-nav-divider">|</span>
+          <a href="#">TERMS &amp; CONDITION</a>
+          <span class="footer-nav-divider">|</span>
+          <a href="#">ABOUT US</a>
+          <span class="footer-nav-divider">|</span>
+          <a href="#faqSection">FAQ</a>
+        </div>
+
+        <!-- Right: Social Media Icons -->
+        <div class="footer-social-icons">
+          <a href="#" class="social-icon-btn" aria-label="Instagram">IG</a>
+          <a href="#" class="social-icon-btn" aria-label="Twitter X">X</a>
+          <a href="#" class="social-icon-btn" aria-label="LinkedIn">LN</a>
+          <a href="#" class="social-icon-btn" aria-label="Pinterest">PIN</a>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="footer-copyright-row">
+        <span>&copy; 2026 KONTAKO ARCHITECTURE STUDIO. ALL RIGHTS RESERVED.</span>
+        <span>DESIGNED WITH PRECISION FOR VISIONARY HOMES</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="assets/kontako.js"></script>
+</body>
+</html>
