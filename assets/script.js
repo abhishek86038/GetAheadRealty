@@ -78,8 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // 0.3 Initialize Suburb Heatmap & Filter Explorer
   initSuburbExplorer();
 
-  // 0.4 Initialize Verified Investor Social Proof Ticker
-  initLiveActivityTicker();
+  // 0.4 Live Activity Ticker disabled per user request
 
   // 0.5 Initialize Kinetic Number Counter Scroll Animations
   initKineticCounters();
@@ -1143,95 +1142,10 @@ function initSuburbExplorer() {
 }
 
 /* ==========================================================================
-   ⭐ VERIFIED LIVE SOCIAL PROOF ACTIVITY TOAST CONTROLLER
+   ⭐ VERIFIED LIVE SOCIAL PROOF ACTIVITY TOAST CONTROLLER (DISABLED)
    ========================================================================== */
 function initLiveActivityTicker() {
-  var activities = [
-    {
-      icon: "⚡",
-      title: "New Strategy Assessment Completed",
-      sub: "Investor from Brisbane just achieved a 94% Readiness Score • 2m ago"
-    },
-    {
-      icon: "📈",
-      title: "Data Corridor Brief Requested",
-      sub: "Moreton Bay QLD Suburb Pack downloaded • 7m ago"
-    },
-    {
-      icon: "💼",
-      title: "15-Min SMSF Discovery Booked",
-      sub: "Marcus & Elena (Melbourne) scheduled a zero-cost strategy call • 14m ago"
-    },
-    {
-      icon: "★",
-      title: "5-Star Client Review Submitted",
-      sub: "\"Saved us from buying near a flood-risk zone.\" — Anita M. • 28m ago"
-    },
-    {
-      icon: "🛡️",
-      title: "Settlement Protected & Finalized",
-      sub: "Rockingham WA High-Yield property settled ($0 upfront fee) • 45m ago"
-    }
-  ];
-
-  var currentIndex = 0;
-  var isDismissed = false;
-
-  // Create Toast DOM Element
-  var toast = document.createElement('div');
-  toast.className = 'live-activity-toast';
-  toast.setAttribute('role', 'status');
-  toast.setAttribute('aria-live', 'polite');
-
-  toast.innerHTML = [
-    '<div class="toast-icon-pulse" id="liveToastIcon">⚡</div>',
-    '<div class="toast-body">',
-    '  <div class="toast-title" id="liveToastTitle">New Strategy Assessment</div>',
-    '  <div class="toast-sub" id="liveToastSub">Investor from Brisbane • 2m ago</div>',
-    '</div>',
-    '<button type="button" class="toast-close-btn" id="liveToastClose" aria-label="Dismiss notification">&times;</button>'
-  ].join('');
-
-  document.body.appendChild(toast);
-
-  var toastIcon = document.getElementById('liveToastIcon');
-  var toastTitle = document.getElementById('liveToastTitle');
-  var toastSub = document.getElementById('liveToastSub');
-  var closeBtn = document.getElementById('liveToastClose');
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', function () {
-      isDismissed = true;
-      toast.classList.remove('visible');
-    });
-  }
-
-  function showNextActivity() {
-    if (isDismissed) return;
-
-    var item = activities[currentIndex];
-    if (toastIcon) toastIcon.textContent = item.icon;
-    if (toastTitle) toastTitle.textContent = item.title;
-    if (toastSub) toastSub.textContent = item.sub;
-
-    toast.classList.add('visible');
-
-    // Hide after 5.5 seconds
-    setTimeout(function () {
-      if (!isDismissed) {
-        toast.classList.remove('visible');
-      }
-    }, 5500);
-
-    currentIndex = (currentIndex + 1) % activities.length;
-  }
-
-  // Initial delay of 4 seconds before first toast
-  setTimeout(function () {
-    showNextActivity();
-    // Subsequent toasts every 14 seconds
-    setInterval(showNextActivity, 14000);
-  }, 4000);
+  // Constant notifications disabled per user request
 }
 
 /* ==========================================================================
