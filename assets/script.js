@@ -1203,6 +1203,9 @@ function initHero3DInteractive() {
     targetY = 0;
   });
 
+  title.style.color = '#FFFFFF';
+  title.style.setProperty('-webkit-text-fill-color', '#FFFFFF');
+
   function renderLoop() {
     // Smooth lerp damping (0.08)
     currentX += (targetX - currentX) * 0.08;
@@ -1217,19 +1220,21 @@ function initHero3DInteractive() {
     var sx = -currentX * 14;
     var sy = -currentY * 10 + 6;
 
+    title.style.color = '#FFFFFF';
     title.style.transform = 'perspective(1100px) rotateX(' + rotX.toFixed(2) + 'deg) rotateY(' + rotY.toFixed(2) + 'deg) translateZ(' + transZ + 'px) scale(' + scale + ')';
 
     // Pure White luminous 3D extrusion shadows
     title.style.textShadow = [
-      (sx * 0.1).toFixed(1) + 'px ' + (sy * 0.1 + 1).toFixed(1) + 'px 0 #F4F7FB',
-      (sx * 0.2).toFixed(1) + 'px ' + (sy * 0.2 + 2).toFixed(1) + 'px 0 #E5EDF5',
-      (sx * 0.3).toFixed(1) + 'px ' + (sy * 0.3 + 3).toFixed(1) + 'px 0 #D3E1EE',
-      (sx * 0.4).toFixed(1) + 'px ' + (sy * 0.4 + 4).toFixed(1) + 'px 0 #BDD3E6',
-      (sx * 0.5).toFixed(1) + 'px ' + (sy * 0.5 + 5).toFixed(1) + 'px 0 #A5C3DD',
-      (sx * 0.6).toFixed(1) + 'px ' + (sy * 0.6 + 6).toFixed(1) + 'px 1px rgba(16, 37, 60, 0.22)',
-      '0 0 24px rgba(255, 255, 255, 0.70)',
-      (sx * 1.1).toFixed(1) + 'px ' + (sy * 1.1 + 12).toFixed(1) + 'px 26px rgba(11, 24, 40, 0.42)',
-      (sx * 1.6).toFixed(1) + 'px ' + (sy * 1.6 + 24).toFixed(1) + 'px 48px rgba(5, 15, 26, 0.55)'
+      (sx * 0.1).toFixed(1) + 'px ' + (sy * 0.1 + 1).toFixed(1) + 'px 0 #FFFFFF',
+      (sx * 0.2).toFixed(1) + 'px ' + (sy * 0.2 + 2).toFixed(1) + 'px 0 #EDF3F9',
+      (sx * 0.3).toFixed(1) + 'px ' + (sy * 0.3 + 3).toFixed(1) + 'px 0 #DEEAF4',
+      (sx * 0.4).toFixed(1) + 'px ' + (sy * 0.4 + 4).toFixed(1) + 'px 0 #CCE0EF',
+      (sx * 0.5).toFixed(1) + 'px ' + (sy * 0.5 + 5).toFixed(1) + 'px 0 #BAD5EA',
+      (sx * 0.6).toFixed(1) + 'px ' + (sy * 0.6 + 6).toFixed(1) + 'px 1px rgba(16, 37, 60, 0.20)',
+      '0 0 30px rgba(255, 255, 255, 0.90)',
+      '0 0 55px rgba(255, 255, 255, 0.45)',
+      (sx * 1.1).toFixed(1) + 'px ' + (sy * 1.1 + 12).toFixed(1) + 'px 28px rgba(11, 24, 40, 0.40)',
+      (sx * 1.6).toFixed(1) + 'px ' + (sy * 1.6 + 24).toFixed(1) + 'px 50px rgba(5, 15, 26, 0.55)'
     ].join(', ');
 
     requestAnimationFrame(renderLoop);
