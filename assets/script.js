@@ -72,6 +72,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // 0.1 Initialize 60-Sec Investor Readiness Quiz
   initInvestorReadinessQuiz();
 
+  // 0.2 Initialize Case Study Interactive Filters
+  initCaseStudyFilters();
+
   // 1. Top Reading Scroll Progress Indicator
   var progressBar = document.getElementById('scrollProgress');
   window.addEventListener('scroll', function () {
@@ -918,4 +921,31 @@ function initInvestorReadinessQuiz() {
 
   // Initial Step Render
   renderStep(1);
+}
+
+/* ==========================================================================
+   ⭐ CASE STUDY INTERACTIVE FILTER CONTROLLER
+   ========================================================================== */
+function initCaseStudyFilters() {
+  var filterButtons = document.querySelectorAll('.case-tab-btn');
+  var caseCards = document.querySelectorAll('.case-study-card');
+  if (!filterButtons.length || !caseCards.length) return;
+
+  filterButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterButtons.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var filter = btn.getAttribute('data-filter');
+      caseCards.forEach(function (card) {
+        var category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'flex';
+          card.style.animation = 'fadeInCard 0.35s ease';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
 }
