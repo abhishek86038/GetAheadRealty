@@ -3795,9 +3795,9 @@ footer.site .brand svg circle {
   height: 100%;
   background: linear-gradient(
     180deg,
-    rgba(17, 27, 19, 0.12) 0%,
-    rgba(17, 27, 19, 0.02) 50%,
-    rgba(17, 27, 19, 0.20) 100%
+    rgba(248, 244, 235, 0.45) 0%,
+    rgba(248, 244, 235, 0.20) 45%,
+    rgba(248, 244, 235, 0.50) 100%
   );
   pointer-events: none;
 }
@@ -3805,6 +3805,16 @@ footer.site .brand svg circle {
 .parallax-scroll-content {
   position: relative;
   z-index: 2;
+}
+
+.parallax-scroll-content h2 {
+  color: var(--ink, #111b13);
+  font-weight: 800;
+}
+
+.parallax-scroll-content .lede {
+  color: var(--ink-soft, #314235);
+  font-weight: 500;
 }
 
 .fit-compliance-section {
@@ -3819,34 +3829,6 @@ footer.site .brand svg circle {
   border-top: none !important;
   border-bottom: none !important;
   position: relative;
-}
-
-/* High-Contrast Frosted Header Plate */
-.parallax-header-plate {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  padding: 24px 32px;
-  border-radius: var(--radius-lg, 20px);
-  border: 1.5px solid rgba(255, 255, 255, 0.95);
-  box-shadow: 0 16px 36px rgba(17, 27, 19, 0.09);
-  margin-bottom: 28px;
-  display: inline-block;
-  text-align: left;
-}
-
-.parallax-header-plate h2 {
-  color: var(--ink, #111b13);
-  margin-top: 6px;
-  margin-bottom: 8px;
-  font-weight: 800;
-}
-
-.parallax-header-plate .lede {
-  color: #2b3b2f;
-  font-size: 1.05rem;
-  line-height: 1.55;
-  margin-bottom: 0;
 }
 
 /* Glass Enhancement for Fit & Compliance Cards over the Parallax Backdrop */
