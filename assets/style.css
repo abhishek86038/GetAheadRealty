@@ -424,19 +424,21 @@ header.site.on-hero .brand {
 
 header.site.on-hero .brand-word {
   color: #ffffff;
-  font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Outfit', 'Plus Jakarta Sans', -apple-system, sans-serif;
   font-weight: 800;
-  font-size: 1.32rem;
+  font-size: 1.30rem;
   letter-spacing: -0.02em;
   text-shadow: 0 2px 10px rgba(10, 24, 42, 0.50);
 }
 
 header.site.on-hero .brand-logo,
 header.site.on-hero .brand-avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 11px;
-  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.35));
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
+  border: 1.5px solid rgba(255, 255, 255, 0.40);
 }
 
 /* Nav Links: Just Pure Text Links on Hero */
@@ -597,19 +599,19 @@ header.site.scrolled .brand {
 
 header.site.scrolled .brand-word {
   color: var(--ink);
-  font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Outfit', 'Plus Jakarta Sans', -apple-system, sans-serif;
   font-weight: 800;
-  font-size: 1.18rem;
+  font-size: 1.20rem;
   letter-spacing: -0.02em;
-  text-shadow: none;
 }
 
 header.site.scrolled .brand-logo,
 header.site.scrolled .brand-avatar {
   width: 32px;
   height: 32px;
-  border-radius: 9px;
-  filter: drop-shadow(0 2px 6px rgba(10, 24, 42, 0.12));
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(10, 24, 42, 0.12);
 }
 
 header.site.scrolled nav.primary {
@@ -714,10 +716,10 @@ header.site.scrolled .menu-toggle span::after {
 
 .brand-logo,
 .brand-avatar {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  object-fit: contain;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
   flex: none;
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -739,7 +741,7 @@ header.site.scrolled .menu-toggle span::after {
 }
 
 .brand-word {
-  font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Outfit', 'Plus Jakarta Sans', -apple-system, sans-serif;
   font-weight: 800;
   font-size: 1.25rem;
   letter-spacing: -0.02em;
@@ -1035,10 +1037,10 @@ section.tight {
   pointer-events: none;
 }
 
-/* 1.5. Monumental Stroked "REALTY" Typography Directly Behind "GET AHEAD" */
+/* 1.5. Monumental Stroked "REALTY" Typography Directly Behind "GET AHEAD" (Just Bigger Than GET AHEAD) */
 .hero-realty-solid-bg {
   position: absolute;
-  bottom: calc(64% - 24px);
+  bottom: calc(64% - 19px);
   left: 0;
   width: 100%;
   top: auto;
@@ -1059,32 +1061,32 @@ section.tight {
 }
 
 .realty-solid-text {
-  font-family: 'Inter Tight', 'Montserrat', 'Syne', -apple-system, sans-serif;
-  font-size: clamp(7.2rem, 19.5vw, 23rem);
+  font-family: 'Inter Tight', 'Montserrat', 'Outfit', -apple-system, sans-serif;
+  font-size: clamp(5.4rem, 12.2vw, 14.6rem);
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: -0.025em;
-  line-height: 0.82;
+  letter-spacing: -0.02em;
+  line-height: 0.88;
   white-space: nowrap;
   display: inline-block;
   pointer-events: none;
   /* Pure Crisp White Strokes with Transparent Interior */
   color: transparent;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 4px #FFFFFF;
+  -webkit-text-stroke: 3.2px #FFFFFF;
   opacity: 0.94;
   filter: drop-shadow(0 4px 18px rgba(10, 24, 42, 0.40));
 }
 
 @media (max-width: 768px) {
   .hero-realty-solid-bg {
-    bottom: calc(66% - 16px);
+    bottom: calc(66% - 12px);
     top: auto;
   }
 
   .realty-solid-text {
-    font-size: clamp(3.8rem, 18vw, 7.8rem);
-    -webkit-text-stroke: 2.5px #FFFFFF;
+    font-size: clamp(2.5rem, 10.2vw, 4.4rem);
+    -webkit-text-stroke: 2px #FFFFFF;
   }
 }
 
