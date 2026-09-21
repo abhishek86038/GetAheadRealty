@@ -96,19 +96,26 @@ document.addEventListener('DOMContentLoaded', function () {
   initComplianceParallaxZoom();
 
   // 1. Top Reading Scroll Progress Indicator
-  // 1. Interactive Scroll Progress Bar & Dynamic Transparent/Floating Navbar
+  // 1. Interactive Scroll Progress Bar & Dynamic Transparent Hero/Floating Scrolled Navbar
   var progressBar = document.getElementById('scrollProgress');
   var siteHeader = document.querySelector('header.site');
+  var heroSection = document.querySelector('.hero, .page-hero, .kontako-hero');
 
   function updateScrollState() {
     var winScroll = document.documentElement.scrollTop || document.body.scrollTop;
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolledPercent = (winScroll / height) * 100;
+    var scrolledPercent = height > 0 ? (winScroll / height) * 100 : 0;
     if (progressBar) {
       progressBar.style.width = scrolledPercent + '%';
     }
     if (siteHeader) {
-      if (winScroll > 25) {
+      // Dynamic threshold: Only pop out when the hero section is scrolled over
+      var heroThreshold = 500;
+      if (heroSection) {
+        // Pop out when the user scrolls past the hero section
+        heroThreshold = heroSection.offsetTop + heroSection.offsetHeight - 80;
+      }
+      if (winScroll > heroThreshold) {
         siteHeader.classList.add('scrolled');
       } else {
         siteHeader.classList.remove('scrolled');
@@ -117,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   window.addEventListener('scroll', updateScrollState, { passive: true });
+  window.addEventListener('resize', updateScrollState, { passive: true });
   updateScrollState();
 
   // 2. Mobile Navigation Toggle
