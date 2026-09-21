@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=5.7">
+<link rel="stylesheet" href="assets/style.css?v=5.8">
 <!-- Three.js 3D WebGL Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
@@ -1234,18 +1234,19 @@
   </div>
 </section>
 
-<!-- 3D Parallax Advisory & Institutional Compliance Wrapper (16:9 Sticky Frame) -->
-<div class="compliance-parallax-container" id="complianceParallaxWrap">
+<!-- ==========================================================================
+     ⭐ SECTION 1: 3D PARALLAX "WHO WE WORK WITH" & TRANSPARENT ECONOMICS
+     ========================================================================== -->
+<div class="parallax-section-wrapper" id="fitParallaxWrap">
   <!-- Pinned Sticky 16:9 Visual Frame Layer -->
-  <div class="compliance-sticky-layer" aria-hidden="true">
-    <div class="compliance-sticky-window">
-      <div class="compliance-parallax-bg" id="complianceParallaxBg"></div>
-      <div class="compliance-parallax-overlay"></div>
+  <div class="parallax-sticky-layer" aria-hidden="true">
+    <div class="parallax-16-9-window">
+      <div class="parallax-bg" id="fitParallaxBg" style="background-image: url('assets/fit-parallax-bg.jpg');"></div>
+      <div class="parallax-overlay"></div>
     </div>
   </div>
 
-  <div class="compliance-parallax-content">
-
+  <div class="parallax-scroll-content">
     <!-- Qualification / Fit Section -->
     <section class="tight fit-compliance-section">
       <div class="wrap">
@@ -1420,7 +1421,22 @@
         </div>
       </div>
     </section>
+  </div>
+</div>
 
+<!-- ==========================================================================
+     ⭐ SECTION 2: 3D PARALLAX INSTITUTIONAL COMPLIANCE & SAFEGUARDS
+     ========================================================================== -->
+<div class="parallax-section-wrapper" id="complianceParallaxWrap">
+  <!-- Pinned Sticky 16:9 Visual Frame Layer -->
+  <div class="parallax-sticky-layer" aria-hidden="true">
+    <div class="parallax-16-9-window">
+      <div class="parallax-bg" id="complianceParallaxBg" style="background-image: url('assets/compliance-parallax-bg.jpg');"></div>
+      <div class="parallax-overlay"></div>
+    </div>
+  </div>
+
+  <div class="parallax-scroll-content">
     <!-- Trust Badges & Institutional Compliance Section -->
     <section id="trust-compliance" class="trust-compliance-section reveal">
       <div class="wrap">
@@ -1568,7 +1584,6 @@
 
       </div>
     </section>
-
   </div>
 </div>
 
@@ -1749,6 +1764,6 @@
   </div>
 </div>
 
-<script src="assets/script.js?v=4.8"></script>
+<script src="assets/script.js?v=4.9"></script>
 </body>
 </html>

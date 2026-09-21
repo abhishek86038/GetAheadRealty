@@ -3727,19 +3727,19 @@ footer.site .brand svg circle {
 }
 
 /* ==========================================================================
-   ⭐ 3D PARALLAX 16:9 STICKY FRAME COMPLIANCE & ADVISORY SECTION
+   ⭐ 3D PARALLAX 16:9 STICKY FRAME SECTIONS (FIT & COMPLIANCE)
    ========================================================================== */
-.compliance-parallax-container {
+.parallax-section-wrapper {
   position: relative;
   overflow: visible;
   background-color: #f7f3ea;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  padding: 30px 0;
+  padding: 36px 0;
 }
 
-/* Pinned Layer that spans the height of the dual-section wrapper */
-.compliance-sticky-layer {
+/* Pinned Layer that spans the height of each respective section */
+.parallax-sticky-layer {
   position: absolute;
   top: 0;
   left: 0;
@@ -3750,7 +3750,7 @@ footer.site .brand svg circle {
 }
 
 /* 16:9 Sticky Window pinned in center viewport */
-.compliance-sticky-window {
+.parallax-16-9-window {
   position: sticky;
   top: calc(50vh - 27vw);
   width: calc(100% - 48px);
@@ -3765,7 +3765,7 @@ footer.site .brand svg circle {
 }
 
 @media (max-width: 960px) {
-  .compliance-sticky-window {
+  .parallax-16-9-window {
     top: 75px;
     width: calc(100% - 24px);
     aspect-ratio: 16 / 10;
@@ -3773,13 +3773,12 @@ footer.site .brand svg circle {
   }
 }
 
-.compliance-parallax-bg {
+.parallax-bg {
   position: absolute;
   top: -8%;
   left: -8%;
   width: 116%;
   height: 116%;
-  background-image: url('compliance-parallax-bg.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3788,7 +3787,7 @@ footer.site .brand svg circle {
   transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.compliance-parallax-overlay {
+.parallax-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -3797,14 +3796,14 @@ footer.site .brand svg circle {
   background: linear-gradient(
     180deg,
     rgba(248, 244, 235, 0.72) 0%,
-    rgba(248, 244, 235, 0.45) 40%,
-    rgba(248, 244, 235, 0.75) 100%
+    rgba(248, 244, 235, 0.42) 40%,
+    rgba(248, 244, 235, 0.76) 100%
   );
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
 }
 
-.compliance-parallax-content {
+.parallax-scroll-content {
   position: relative;
   z-index: 2;
 }
@@ -3812,7 +3811,7 @@ footer.site .brand svg circle {
 .fit-compliance-section {
   background: transparent !important;
   border-bottom: none !important;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .trust-compliance-section {
@@ -3824,7 +3823,7 @@ footer.site .brand svg circle {
 }
 
 /* Glass Enhancement for Fit & Compliance Cards over the Parallax Backdrop */
-.compliance-parallax-content .fit-col {
+.parallax-scroll-content .fit-col {
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -3832,7 +3831,7 @@ footer.site .brand svg circle {
   box-shadow: 0 16px 36px rgba(17, 27, 19, 0.08);
 }
 
-.compliance-parallax-content .fee-model-box {
+.parallax-scroll-content .fee-model-box {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -3840,7 +3839,7 @@ footer.site .brand svg circle {
   box-shadow: 0 20px 48px rgba(17, 27, 19, 0.10);
 }
 
-.compliance-parallax-content .trust-scoreboard-banner {
+.parallax-scroll-content .trust-scoreboard-banner {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -3848,7 +3847,7 @@ footer.site .brand svg circle {
   box-shadow: 0 16px 40px rgba(17, 27, 19, 0.09);
 }
 
-.compliance-parallax-content .trust-pillar-card {
+.parallax-scroll-content .trust-pillar-card {
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);

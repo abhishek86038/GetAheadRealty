@@ -1412,30 +1412,35 @@ function initHeroBackgroundVideo() {
 }
 
 /* ==========================================================================
-   ⭐ 3D COMPLIANCE PARALLAX & DEPTH ZOOM CONTROLLER
+   ⭐ 3D PARALLAX & DEPTH ZOOM CONTROLLER (FOR ALL 16:9 FRAMED SECTIONS)
    ========================================================================== */
 function initComplianceParallaxZoom() {
-  var wrap = document.getElementById('complianceParallaxWrap');
-  var bg = document.getElementById('complianceParallaxBg');
-  if (!wrap || !bg) return;
+  var wrappers = document.querySelectorAll('.parallax-section-wrapper');
+  if (!wrappers.length) return;
 
   var ticking = false;
 
   function updateParallax() {
-    var rect = wrap.getBoundingClientRect();
     var windowHeight = window.innerHeight || document.documentElement.clientHeight;
 
-    if (rect.top < windowHeight && rect.bottom > 0) {
-      var totalDistance = rect.height + windowHeight;
-      var currentOffset = windowHeight - rect.top;
-      var progress = Math.max(0, Math.min(1, currentOffset / totalDistance));
+    wrappers.forEach(function (wrap) {
+      var bg = wrap.querySelector('.parallax-bg');
+      if (!bg) return;
 
-      // 3D Depth Zoom: scale smoothly from 1.00 to 1.15 with subtle counter-scroll parallax
-      var scale = 1.0 + progress * 0.15;
-      var translateY = (progress - 0.5) * 45;
+      var rect = wrap.getBoundingClientRect();
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        var totalDistance = rect.height + windowHeight;
+        var currentOffset = windowHeight - rect.top;
+        var progress = Math.max(0, Math.min(1, currentOffset / totalDistance));
 
-      bg.style.transform = 'translate3d(0, ' + translateY.toFixed(2) + 'px, 0) scale(' + scale.toFixed(4) + ')';
-    }
+        // 3D Depth Zoom inside 16:9 frame: scale smoothly from 1.00 to 1.18 with vertical parallax
+        var scale = 1.0 + progress * 0.18;
+        var translateY = (progress - 0.5) * 50;
+
+        bg.style.transform = 'translate3d(0, ' + translateY.toFixed(2) + 'px, 0) scale(' + scale.toFixed(4) + ')';
+      }
+    });
+
     ticking = false;
   }
 
