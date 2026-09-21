@@ -75,6 +75,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // 0.2 Initialize Case Study Interactive Filters
   initCaseStudyFilters();
 
+  // 0.3 Initialize Suburb Heatmap & Filter Explorer
+  initSuburbExplorer();
+
   // 1. Top Reading Scroll Progress Indicator
   var progressBar = document.getElementById('scrollProgress');
   window.addEventListener('scroll', function () {
@@ -948,4 +951,163 @@ function initCaseStudyFilters() {
       });
     });
   });
+}
+
+/* ==========================================================================
+   ⭐ INTERACTIVE SUBURB HEATMAP & FILTER CONTROLLER
+   ========================================================================== */
+function initSuburbExplorer() {
+  var searchInput = document.getElementById('suburbSearchInput');
+  var sortSelect = document.getElementById('suburbSortSelect');
+  var pills = document.querySelectorAll('.suburb-pill');
+  var grid = document.getElementById('suburbCardsGrid');
+  var emptyState = document.getElementById('suburbEmptyState');
+  var btnReset = document.getElementById('btnResetSuburbFilters');
+
+  if (!grid) return;
+
+  var cards = Array.from(grid.querySelectorAll('.suburb-market-card'));
+  var selectedState = 'all';
+  var selectedStrategy = null;
+  var searchQuery = '';
+  var currentSort = 'score';
+
+  function applyFiltersAndSort() {
+    var visibleCards = [];
+
+    cards.forEach(function (card) {
+      var state = card.getAttribute('data-state') || '';
+      var strategy = card.getAttribute('data-strategy') || '';
+      var textContent = card.innerText.toLowerCase();
+
+      // State check
+      var matchesState = (selectedState === 'all' || state.toLowerCase() === selectedState.toLowerCase());
+
+      // Strategy check
+      var matchesStrategy = (!selectedStrategy || strategy.indexOf(selectedStrategy) !== -1);
+
+      // Search query check
+      var matchesSearch = (!searchQuery || textContent.indexOf(searchQuery) !== -1);
+
+      if (matchesState && matchesStrategy && matchesSearch) {
+        card.style.display = 'flex';
+        visibleCards.push(card);
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Sort visible cards
+    visibleCards.sort(function (a, b) {
+      var scoreA = parseFloat(a.getAttribute('data-score') || 0);
+      var scoreB = parseFloat(b.getAttribute('data-score') || 0);
+      var yieldA = parseFloat(a.getAttribute('data-yield') || 0);
+      var yieldB = parseFloat(b.getAttribute('data-yield') || 0);
+      var growthA = parseFloat(a.getAttribute('data-growth') || 0);
+      var growthB = parseFloat(b.getAttribute('data-growth') || 0);
+      var priceA = parseFloat(a.getAttribute('data-price') || 0);
+      var priceB = parseFloat(b.getAttribute('data-price') || 0);
+
+      if (currentSort === 'score') {
+        return scoreB - scoreA;
+      } else if (currentSort === 'yield') {
+        return yieldB - yieldA;
+      } else if (currentSort === 'growth') {
+        return growthB - growthA;
+      } else if (currentSort === 'price_low') {
+        return priceA - priceB;
+      }
+      return 0;
+    });
+
+    // Re-append sorted cards into grid
+    visibleCards.forEach(function (card) {
+      grid.appendChild(card);
+    });
+
+    // Handle empty state
+    if (emptyState) {
+      if (visibleCards.length === 0) {
+        emptyState.style.display = 'block';
+      } else {
+        emptyState.style.display = 'none';
+      }
+    }
+  }
+
+  // Search input handler
+  if (searchInput) {
+    searchInput.addEventListener('input', function () {
+      searchQuery = this.value.trim().toLowerCase();
+      applyFiltersAndSort();
+    });
+  }
+
+  // Sort select handler
+  if (sortSelect) {
+    sortSelect.addEventListener('change', function () {
+      currentSort = this.value;
+      applyFiltersAndSort();
+    });
+  }
+
+  // Filter pills click handler
+  pills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      var stateAttr = pill.getAttribute('data-state');
+      var strategyAttr = pill.getAttribute('data-strategy');
+
+      if (stateAttr !== null) {
+        // State pill clicked: deactivate other state pills
+        document.querySelectorAll('.suburb-pill[data-state]').forEach(function (p) {
+          p.classList.remove('active');
+        });
+        pill.classList.add('active');
+        selectedState = stateAttr;
+      } else if (strategyAttr !== null) {
+        // Strategy pill clicked: toggle active
+        if (pill.classList.contains('active')) {
+          pill.classList.remove('active');
+          selectedStrategy = null;
+        } else {
+          document.querySelectorAll('.suburb-pill[data-strategy]').forEach(function (p) {
+            p.classList.remove('active');
+          });
+          pill.classList.add('active');
+          selectedStrategy = strategyAttr;
+        }
+      }
+
+      applyFiltersAndSort();
+    });
+  });
+
+  // Reset button
+  if (btnReset) {
+    btnReset.addEventListener('click', function () {
+      if (searchInput) searchInput.value = '';
+      searchQuery = '';
+
+      selectedState = 'all';
+      selectedStrategy = null;
+      currentSort = 'score';
+
+      if (sortSelect) sortSelect.value = 'score';
+
+      document.querySelectorAll('.suburb-pill[data-state]').forEach(function (p) {
+        p.classList.remove('active');
+      });
+      var allPill = document.querySelector('.suburb-pill[data-state="all"]');
+      if (allPill) allPill.classList.add('active');
+
+      document.querySelectorAll('.suburb-pill[data-strategy]').forEach(function (p) {
+        p.classList.remove('active');
+      });
+
+      applyFiltersAndSort();
+    });
+  }
+
+  // Initial call
+  applyFiltersAndSort();
 }

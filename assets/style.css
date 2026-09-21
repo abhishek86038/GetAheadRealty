@@ -1517,6 +1517,288 @@ section.tight { padding: 56px 0; }
 }
 
 /* ==========================================================================
+   ⭐ INTERACTIVE SUBURB EXPLORER & LIVE MARKET HEATMAP
+   ========================================================================== */
+.suburb-explorer-section {
+  padding: 76px 0;
+  background: var(--paper-warm);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.suburb-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.suburb-controls-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.suburb-search-input-wrap {
+  position: relative;
+}
+
+.suburb-search-input {
+  padding: 10px 18px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  background: var(--paper-surface);
+  color: var(--ink);
+  outline: none;
+  width: 230px;
+  transition: all 0.3s ease;
+}
+
+.suburb-search-input:focus {
+  border-color: var(--moss);
+  box-shadow: 0 0 0 3px rgba(27, 77, 62, 0.15);
+  width: 270px;
+}
+
+.suburb-sort-select {
+  padding: 10px 16px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  background: var(--paper-surface);
+  color: var(--ink);
+  outline: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.suburb-sort-select:focus {
+  border-color: var(--moss);
+}
+
+.suburb-filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.suburb-pill {
+  background: var(--paper-surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-full);
+  padding: 7px 16px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.suburb-pill:hover {
+  color: var(--ink);
+  border-color: var(--moss);
+  background: var(--moss-subtle);
+}
+
+.suburb-pill.active {
+  background: var(--moss);
+  color: #ffffff;
+  border-color: var(--moss);
+  box-shadow: 0 2px 8px rgba(27, 77, 62, 0.25);
+}
+
+.suburb-pill-separator {
+  width: 1px;
+  height: 20px;
+  background: var(--line);
+  margin: 0 4px;
+}
+
+.suburb-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.suburb-market-card {
+  background: var(--paper-card);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.suburb-market-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--moss);
+}
+
+.suburb-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.suburb-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.suburb-state-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.suburb-state-badge.qld { background: #800020; }
+.suburb-state-badge.wa { background: #003366; }
+.suburb-state-badge.sa { background: #A34828; }
+
+.suburb-name {
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin: 0 0 2px 0;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.suburb-sub {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.suburb-score-pill {
+  background: var(--moss-subtle);
+  border: 1px solid var(--moss);
+  color: var(--moss);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.score-star {
+  color: #d97706;
+  margin-right: 2px;
+}
+
+.score-sub {
+  display: block;
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin-top: 1px;
+}
+
+.suburb-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  background: var(--paper-warm);
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  margin-bottom: 14px;
+}
+
+.suburb-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-lbl {
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stat-val {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-top: 2px;
+}
+
+.stat-val.good {
+  color: var(--moss);
+}
+
+.suburb-infra-tag {
+  background: rgba(27, 77, 62, 0.05);
+  border: 1px solid rgba(27, 77, 62, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.suburb-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.suburb-profile-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.suburb-view-btn {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--moss);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.suburb-view-btn:hover {
+  color: var(--clay);
+  text-decoration: underline;
+}
+
+@media (max-width: 960px) {
+  .suburb-cards-grid { grid-template-columns: 1fr; }
+  .suburb-header-flex { flex-direction: column; align-items: flex-start; }
+  .suburb-controls-wrap { width: 100%; }
+  .suburb-search-input { width: 100% !important; }
+}
+
+/* ==========================================================================
    ⭐ 60-SEC INVESTOR READINESS DIAGNOSTIC QUIZ
    ========================================================================== */
 .quiz-section {

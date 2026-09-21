@@ -293,6 +293,333 @@
   </div>
 </section>
 
+<!-- Interactive Suburb & Corridor Heatmap & Filter Section -->
+<section id="suburb-explorer" class="suburb-explorer-section reveal">
+  <div class="wrap">
+    <div class="suburb-header-flex">
+      <div>
+        <span class="tag">National Market Intelligence</span>
+        <h2>High-Growth Australian Corridors &bull; Live Market Heatmap</h2>
+        <p class="lede" style="margin-bottom:0; max-width:680px;">Filter verified investment corridors by gross rental yield, capital growth momentum, vacancy tightness, and infrastructure spend.</p>
+      </div>
+      
+      <!-- Search & Sort Controls -->
+      <div class="suburb-controls-wrap">
+        <div class="suburb-search-input-wrap">
+          <input type="text" id="suburbSearchInput" placeholder="Search region or suburb..." class="suburb-search-input" />
+        </div>
+        <div class="suburb-sort-wrap">
+          <select id="suburbSortSelect" class="suburb-sort-select">
+            <option value="score">Highest Growth Score</option>
+            <option value="yield">Highest Rental Yield</option>
+            <option value="growth">Highest 12-Mo Growth</option>
+            <option value="price_low">Entry Price (Low to High)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Pills / Categories -->
+    <div class="suburb-filter-pills">
+      <button type="button" class="suburb-pill active" data-state="all">All Regions (6)</button>
+      <button type="button" class="suburb-pill" data-state="QLD">Queensland (3)</button>
+      <button type="button" class="suburb-pill" data-state="WA">Western Australia (2)</button>
+      <button type="button" class="suburb-pill" data-state="SA">South Australia (1)</button>
+      <div class="suburb-pill-separator"></div>
+      <button type="button" class="suburb-pill strategy-pill" data-strategy="high_yield">🔥 High Yield (5.5%+)</button>
+      <button type="button" class="suburb-pill strategy-pill" data-strategy="smsf">💼 SMSF Under $600k</button>
+    </div>
+
+    <!-- Suburb Cards Grid -->
+    <div class="suburb-cards-grid" id="suburbCardsGrid">
+      
+      <!-- Corridor 1 -->
+      <div class="suburb-market-card" data-state="QLD" data-strategy="high_yield smsf" data-score="9.6" data-yield="5.6" data-growth="12.4" data-price="595000">
+        <div class="suburb-card-top">
+          <div class="suburb-location">
+            <span class="suburb-state-badge qld">QLD</span>
+            <div>
+              <h3 class="suburb-name">Moreton Bay Growth Corridor</h3>
+              <div class="suburb-sub">Caboolture South &bull; Morayfield Pocket</div>
+            </div>
+          </div>
+          <div class="suburb-score-pill">
+            <span class="score-star">★</span> 9.6 / 10
+            <span class="score-sub">Growth Score</span>
+          </div>
+        </div>
+
+        <div class="suburb-metrics-strip">
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Median Price</span>
+            <span class="stat-val">$595,000</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Gross Yield</span>
+            <span class="stat-val good">5.6%</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">12-Mo Growth</span>
+            <span class="stat-val good">+12.4%</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Vacancy Rate</span>
+            <span class="stat-val good">0.8% (Tight)</span>
+          </div>
+        </div>
+
+        <div class="suburb-infra-tag">
+          <span class="infra-icon">🏗️</span>
+          <span><strong>$1.8B Major Projects:</strong> Petrie University Precinct &amp; Rail Duplication</span>
+        </div>
+
+        <div class="suburb-card-footer">
+          <span class="suburb-profile-badge">Prime First-Home &amp; SMSF Asset</span>
+          <a href="contact.html" class="suburb-view-btn">Request Data Brief &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Corridor 2 -->
+      <div class="suburb-market-card" data-state="WA" data-strategy="high_yield smsf" data-score="9.7" data-yield="6.4" data-growth="18.8" data-price="485000">
+        <div class="suburb-card-top">
+          <div class="suburb-location">
+            <span class="suburb-state-badge wa">WA</span>
+            <div>
+              <h3 class="suburb-name">Armadale &amp; Kwinana Outer Metro</h3>
+              <div class="suburb-sub">Perth South-East Infrastructure Hub</div>
+            </div>
+          </div>
+          <div class="suburb-score-pill">
+            <span class="score-star">★</span> 9.7 / 10
+            <span class="score-sub">Growth Score</span>
+          </div>
+        </div>
+
+        <div class="suburb-metrics-strip">
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Median Price</span>
+            <span class="stat-val">$485,000</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Gross Yield</span>
+            <span class="stat-val good">6.4%</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">12-Mo Growth</span>
+            <span class="stat-val good">+18.8%</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Vacancy Rate</span>
+            <span class="stat-val good">0.6% (Extreme)</span>
+          </div>
+        </div>
+
+        <div class="suburb-infra-tag">
+          <span class="infra-icon">🏗️</span>
+          <span><strong>$2.1B Major Projects:</strong> Armadale Rail Upgrade &amp; Kwinana Hydrogen Port</span>
+        </div>
+
+        <div class="suburb-card-footer">
+          <span class="suburb-profile-badge">High Cashflow Positive Surplus</span>
+          <a href="contact.html" class="suburb-view-btn">Request Data Brief &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Corridor 3 -->
+      <div class="suburb-market-card" data-state="QLD" data-strategy="high_yield smsf" data-score="9.3" data-yield="5.8" data-growth="13.6" data-price="550000">
+        <div class="suburb-card-top">
+          <div class="suburb-location">
+            <span class="suburb-state-badge qld">QLD</span>
+            <div>
+              <h3 class="suburb-name">Ipswich &amp; Ripley Valley Region</h3>
+              <div class="suburb-sub">South-East QLD Masterplanned Corridor</div>
+            </div>
+          </div>
+          <div class="suburb-score-pill">
+            <span class="score-star">★</span> 9.3 / 10
+            <span class="score-sub">Growth Score</span>
+          </div>
+        </div>
+
+        <div class="suburb-metrics-strip">
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Median Price</span>
+            <span class="stat-val">$550,000</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Gross Yield</span>
+            <span class="stat-val good">5.8%</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">12-Mo Growth</span>
+            <span class="stat-val good">+13.6%</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Vacancy Rate</span>
+            <span class="stat-val good">0.9% (Tight)</span>
+          </div>
+        </div>
+
+        <div class="suburb-infra-tag">
+          <span class="infra-icon">🏗️</span>
+          <span><strong>$1.5B Major Projects:</strong> Ripley Town Centre Expansion &amp; Hospital Wing</span>
+        </div>
+
+        <div class="suburb-card-footer">
+          <span class="suburb-profile-badge">High Tenant Demand Catchment</span>
+          <a href="contact.html" class="suburb-view-btn">Request Data Brief &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Corridor 4 -->
+      <div class="suburb-market-card" data-state="SA" data-strategy="high_yield smsf" data-score="9.2" data-yield="5.6" data-growth="14.8" data-price="530000">
+        <div class="suburb-card-top">
+          <div class="suburb-location">
+            <span class="suburb-state-badge sa">SA</span>
+            <div>
+              <h3 class="suburb-name">Playford &amp; Munno Para Precinct</h3>
+              <div class="suburb-sub">Adelaide Northern Employment Fringe</div>
+            </div>
+          </div>
+          <div class="suburb-score-pill">
+            <span class="score-star">★</span> 9.2 / 10
+            <span class="score-sub">Growth Score</span>
+          </div>
+        </div>
+
+        <div class="suburb-metrics-strip">
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Median Price</span>
+            <span class="stat-val">$530,000</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Gross Yield</span>
+            <span class="stat-val good">5.6%</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">12-Mo Growth</span>
+            <span class="stat-val good">+14.8%</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Vacancy Rate</span>
+            <span class="stat-val good">0.7% (Tight)</span>
+          </div>
+        </div>
+
+        <div class="suburb-infra-tag">
+          <span class="infra-icon">🏗️</span>
+          <span><strong>$850M Major Projects:</strong> Edinburgh Defence &amp; Lyell McEwin Health Precinct</span>
+        </div>
+
+        <div class="suburb-card-footer">
+          <span class="suburb-profile-badge">Affordable Entry + Steady Compounding</span>
+          <a href="contact.html" class="suburb-view-btn">Request Data Brief &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Corridor 5 -->
+      <div class="suburb-market-card" data-state="WA" data-strategy="high_yield" data-score="9.5" data-yield="5.9" data-growth="15.7" data-price="570000">
+        <div class="suburb-card-top">
+          <div class="suburb-location">
+            <span class="suburb-state-badge wa">WA</span>
+            <div>
+              <h3 class="suburb-name">Rockingham Coastal Urban Hub</h3>
+              <div class="suburb-sub">Perth South-West Maritime Corridor</div>
+            </div>
+          </div>
+          <div class="suburb-score-pill">
+            <span class="score-star">★</span> 9.5 / 10
+            <span class="score-sub">Growth Score</span>
+          </div>
+        </div>
+
+        <div class="suburb-metrics-strip">
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Median Price</span>
+            <span class="stat-val">$570,000</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Gross Yield</span>
+            <span class="stat-val good">5.9%</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">12-Mo Growth</span>
+            <span class="stat-val good">+15.7%</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Vacancy Rate</span>
+            <span class="stat-val good">0.7% (Tight)</span>
+          </div>
+        </div>
+
+        <div class="suburb-infra-tag">
+          <span class="infra-icon">🏗️</span>
+          <span><strong>$8.0B Major Projects:</strong> Henderson Maritime Precinct &amp; Naval Base</span>
+        </div>
+
+        <div class="suburb-card-footer">
+          <span class="suburb-profile-badge">High Owner-Occupier Growth</span>
+          <a href="contact.html" class="suburb-view-btn">Request Data Brief &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Corridor 6 -->
+      <div class="suburb-market-card" data-state="QLD" data-strategy="high_yield smsf" data-score="9.0" data-yield="5.7" data-growth="11.2" data-price="540000">
+        <div class="suburb-card-top">
+          <div class="suburb-location">
+            <span class="suburb-state-badge qld">QLD</span>
+            <div>
+              <h3 class="suburb-name">Toowoomba Regional Inland Port</h3>
+              <div class="suburb-sub">High-Growth Agricultural &amp; Freight Hub</div>
+            </div>
+          </div>
+          <div class="suburb-score-pill">
+            <span class="score-star">★</span> 9.0 / 10
+            <span class="score-sub">Growth Score</span>
+          </div>
+        </div>
+
+        <div class="suburb-metrics-strip">
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Median Price</span>
+            <span class="stat-val">$540,000</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Gross Yield</span>
+            <span class="stat-val good">5.7%</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">12-Mo Growth</span>
+            <span class="stat-val good">+11.2%</span>
+          </div>
+          <div class="suburb-stat-item">
+            <span class="stat-lbl">Vacancy Rate</span>
+            <span class="stat-val good">1.0% (Stable)</span>
+          </div>
+        </div>
+
+        <div class="suburb-infra-tag">
+          <span class="infra-icon">🏗️</span>
+          <span><strong>$14.5B Major Projects:</strong> Inland Rail &amp; Wellcamp Trade Freight Hub</span>
+        </div>
+
+        <div class="suburb-card-footer">
+          <span class="suburb-profile-badge">Diversified Regional Economy</span>
+          <a href="contact.html" class="suburb-view-btn">Request Data Brief &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Empty search result note -->
+    <div id="suburbEmptyState" style="display:none; text-align:center; padding:40px 20px; background:var(--paper-card); border-radius:var(--radius-lg); border:1px solid var(--line); margin-top:20px;">
+      <h3 style="font-size:1.2rem; margin-bottom:6px;">No corridors matched your exact filter.</h3>
+      <p style="font-size:0.92rem; color:var(--ink-soft); margin-bottom:14px;">Try searching for a state like "QLD" or "WA", or reset your filters.</p>
+      <button type="button" class="btn btn-secondary btn-small" id="btnResetSuburbFilters">Reset All Filters</button>
+    </div>
+  </div>
+</section>
+
 <!-- 60-Sec Investor Readiness Quiz Section -->
 <section id="readiness-quiz" class="quiz-section reveal">
   <div class="wrap">
