@@ -642,9 +642,9 @@ section.tight { padding: 56px 0; }
 .hero {
   position: relative;
   width: 100%;
-  height: 52vh;
-  min-height: 400px;
-  max-height: 540px;
+  height: 72vh;
+  min-height: 600px;
+  max-height: 780px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -655,8 +655,8 @@ section.tight { padding: 56px 0; }
 
 @media (max-width: 768px) {
   .hero {
-    height: 46vh;
-    min-height: 350px;
+    height: 58vh;
+    min-height: 440px;
   }
 }
 
@@ -668,9 +668,9 @@ section.tight { padding: 56px 0; }
   height: 100%;
   background: linear-gradient(
     180deg,
-    #5f7f9f 0%,
-    #7a97b5 30%,
-    #9cb3cc 60%,
+    #587898 0%,
+    #718fae 28%,
+    #93abc4 58%,
     #c4b5b7 82%,
     #dc9f88 100%
   );
@@ -678,10 +678,10 @@ section.tight { padding: 56px 0; }
   pointer-events: none;
 }
 
-/* 2. Pure CSS Monumental 3D Typography */
+/* 2. Pure CSS Monumental 3D Typography (Positioned Safely Below Floating Navbar) */
 .hero-monumental-text {
   position: absolute;
-  top: 5%;
+  top: 90px;
   left: 0;
   width: 100%;
   display: flex;
@@ -692,56 +692,61 @@ section.tight { padding: 56px 0; }
   pointer-events: none;
   user-select: none;
   text-align: center;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .hero-monumental-text {
+    top: 75px;
+  }
 }
 
 .hero-css-line-1 {
   font-family: 'Syne', 'Plus Jakarta Sans', Arial, -apple-system, sans-serif;
-  font-size: clamp(3.2rem, 9.8vw, 9.4rem);
+  font-size: clamp(3.2rem, 9.6vw, 9.5rem);
   font-weight: 900;
-  letter-spacing: 0.03em;
-  line-height: 0.88;
+  letter-spacing: 0.04em;
+  line-height: 0.90;
   text-transform: uppercase;
   color: #FFFFFF;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F5F9FF 30%, #D4E3F3 80%, #B4CEE8 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F9FF 32%, #D4E3F3 80%, #B4CEE8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 8px 24px rgba(17, 27, 19, 0.50)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.40));
+  filter: drop-shadow(0 10px 28px rgba(17, 27, 19, 0.55)) drop-shadow(0 3px 8px rgba(0, 0, 0, 0.45));
 }
 
 .hero-css-line-2 {
   font-family: 'Syne', 'Plus Jakarta Sans', Arial, -apple-system, sans-serif;
   font-size: clamp(1.6rem, 5vw, 4.8rem);
   font-weight: 900;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.28em;
   line-height: 1;
   text-transform: uppercase;
-  margin-top: 4px;
+  margin-top: 6px;
   color: #FFFFFF;
   background: linear-gradient(180deg, #FFFFFF 0%, #F0F6FD 45%, #C8DBEE 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 6px 18px rgba(17, 27, 19, 0.45));
+  filter: drop-shadow(0 8px 20px rgba(17, 27, 19, 0.48));
 }
 
-/* 3. Foreground Architectural Luxury Villa */
+/* 3. Foreground Architectural Luxury Villa (Full Width Edge-to-Edge) */
 .hero-villa-foreground-wrap {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 84%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  height: 78%;
   z-index: 3;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .hero-villa-foreground-img {
   width: 100%;
-  max-width: 980px;
   height: 100%;
-  object-fit: contain;
+  max-width: none;
+  object-fit: cover;
   object-position: center bottom;
   filter: contrast(1.04) brightness(0.99);
   transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -757,12 +762,12 @@ section.tight { padding: 56px 0; }
   bottom: 0;
   left: 0;
   width: 200%;
-  height: 34%;
+  height: 32%;
   background-image: url('hero-cloud-strip.png');
   background-repeat: repeat-x;
-  background-size: contain;
+  background-size: cover;
   background-position: bottom left;
-  opacity: 0.70;
+  opacity: 0.75;
   pointer-events: none;
   animation: cloudDriftSlow 38s linear infinite;
   z-index: 4;
@@ -770,8 +775,8 @@ section.tight { padding: 56px 0; }
 
 .hero-cloud-drift-layer.cloud-layer-2 {
   bottom: -15px;
-  height: 42%;
-  opacity: 0.45;
+  height: 40%;
+  opacity: 0.50;
   animation: cloudDriftReverse 52s linear infinite;
   filter: blur(4px);
   z-index: 4;
