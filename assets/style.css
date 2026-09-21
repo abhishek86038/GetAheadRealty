@@ -776,7 +776,7 @@ section.tight {
 /* 2. Pure CSS Monumental 3D Typography in One Line - Behind Hero Image (Fixed, Crisp, Non-Glow) */
 .hero-monumental-text {
   position: absolute;
-  bottom: calc(65% - 46px);
+  bottom: calc(74% - 20px);
   left: 0;
   width: 100%;
   display: flex;
@@ -791,7 +791,7 @@ section.tight {
 
 @media (max-width: 768px) {
   .hero-monumental-text {
-    bottom: calc(70% - 24px);
+    bottom: calc(76% - 12px);
     padding: 0 8px;
   }
 }
@@ -849,7 +849,7 @@ div.hero-3d-title {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 65%;
+  height: 74%;
   z-index: 3;
   pointer-events: none;
   overflow: hidden;
@@ -860,13 +860,13 @@ div.hero-3d-title {
 
 @media (max-width: 768px) {
   .hero-villa-foreground-wrap {
-    height: 70%;
+    height: 76%;
   }
 }
 
 .hero-villa-foreground-img {
   width: 100%;
-  max-width: 1560px;
+  max-width: 1760px;
   height: 100%;
   object-fit: contain;
   object-position: center bottom;
@@ -878,13 +878,13 @@ div.hero-3d-title {
   transform: scale(1.018);
 }
 
-/* 4. Atmospheric Clouds at Bottom of Hero Image */
+/* 4. Atmospheric Clouds at Bottom of Hero Image (Realistic Fluffy Cumulus Banks) */
 .hero-clouds-container {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 130px;
+  height: 180px;
   z-index: 5;
   pointer-events: none;
   overflow: hidden;
@@ -907,23 +907,24 @@ div.hero-3d-title {
 }
 
 .hero-cloud-back {
-  height: 125px;
-  animation: cloudDriftSlow 52s linear infinite;
-  opacity: 0.60;
-  filter: blur(4px);
+  height: 175px;
+  animation: cloudDriftSlow 58s linear infinite;
+  opacity: 0.70;
+  filter: blur(6px);
 }
 
 .hero-cloud-mid {
-  height: 100px;
-  animation: cloudDriftMid 36s linear infinite reverse;
-  opacity: 0.80;
-  filter: blur(2px);
+  height: 145px;
+  animation: cloudDriftMid 40s linear infinite reverse;
+  opacity: 0.86;
+  filter: blur(3px);
 }
 
 .hero-cloud-front {
-  height: 75px;
-  animation: cloudDriftFast 25s linear infinite;
-  opacity: 0.96;
+  height: 115px;
+  animation: cloudDriftFast 26s linear infinite;
+  opacity: 0.98;
+  filter: blur(1px);
 }
 
 .hero-cloud-fog-bed {
@@ -931,12 +932,14 @@ div.hero-3d-title {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 42px;
-  background: linear-gradient(180deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.45) 40%,
-      rgba(248, 244, 235, 0.85) 80%,
-      rgba(248, 244, 235, 1) 100%);
+  height: 60px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.40) 25%,
+    rgba(248, 244, 235, 0.85) 75%,
+    rgba(248, 244, 235, 1) 100%
+  );
   z-index: 6;
 }
 
