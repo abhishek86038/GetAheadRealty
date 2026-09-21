@@ -1156,23 +1156,33 @@ section.tight { padding: 56px 0; }
 .sim-metrics-list li:first-child { border-top: none; }
 
 /* ---------- Interactive Calculator Widget ---------- */
-.calculator-section {
-  background-color: #f8f4eb;
+section.calc-custom-section {
+  position: relative;
+  padding: 88px 0;
+  background-color: #f6efe1;
   background-image: 
     linear-gradient(135deg, 
-      rgba(248, 244, 235, 0.93) 0%, 
-      rgba(248, 244, 235, 0.84) 50%, 
-      rgba(248, 244, 235, 0.94) 100%
+      rgba(248, 244, 235, 0.48) 0%, 
+      rgba(248, 244, 235, 0.28) 50%, 
+      rgba(248, 244, 235, 0.52) 100%
     ),
     url('calc-ambient-bg.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  border: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.calculator-section {
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
   border-radius: var(--radius-xl);
   padding: 42px;
-  box-shadow: var(--shadow-md, 0 16px 36px rgba(17, 27, 19, 0.08));
-  margin-top: 40px;
+  box-shadow: 0 20px 48px -10px rgba(17, 27, 19, 0.12);
+  margin-top: 36px;
 }
 
 .calc-grid {
@@ -1641,13 +1651,13 @@ section.tight { padding: 56px 0; }
    ⭐ INTERACTIVE SUBURB EXPLORER & LIVE MARKET HEATMAP
    ========================================================================== */
 .suburb-explorer-section {
-  padding: 84px 0;
-  background-color: var(--paper-warm, #f8f4eb);
+  padding: 88px 0;
+  background-color: #0c1c14;
   background-image: 
     linear-gradient(180deg, 
-      rgba(248, 244, 235, 0.94) 0%, 
-      rgba(248, 244, 235, 0.88) 45%, 
-      rgba(248, 244, 235, 0.96) 100%
+      rgba(248, 244, 235, 0.48) 0%, 
+      rgba(248, 244, 235, 0.22) 40%, 
+      rgba(248, 244, 235, 0.58) 100%
     ),
     url('suburb-aerial-bg.jpg');
   background-position: center top;
@@ -2768,10 +2778,10 @@ section.tight { padding: 56px 0; }
   background-color: #08140c;
   background-image: 
     linear-gradient(90deg, 
-      rgba(7, 18, 12, 0.94) 0%, 
-      rgba(7, 18, 12, 0.82) 48%, 
-      rgba(7, 18, 12, 0.38) 78%, 
-      rgba(7, 18, 12, 0.12) 100%
+      rgba(7, 18, 12, 0.92) 0%, 
+      rgba(7, 18, 12, 0.76) 45%, 
+      rgba(7, 18, 12, 0.20) 75%, 
+      rgba(7, 18, 12, 0.02) 100%
     ),
     url('cta-estate-dusk.jpg');
   background-position: right center;
@@ -2784,7 +2794,7 @@ section.tight { padding: 56px 0; }
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .cta-band::after {
