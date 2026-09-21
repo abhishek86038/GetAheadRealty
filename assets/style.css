@@ -5,34 +5,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --ink: #111b13;
-  --ink-soft: #3d4d41;
-  --ink-faint: #6c7d70;
+  /* Rich Black Tones */
+  --ink: #0c0d10;
+  --ink-soft: #2c2f37;
+  --ink-faint: #595f6c;
 
-  --paper: #f8f4eb;
-  --paper-soft: #ece4d2;
+  /* Luxurious Warm Cream Tones */
+  --paper: #f8f4ec;
+  --paper-soft: #ece5d6;
   --paper-card: #fdfbf7;
   --paper-surface: #ffffff;
 
-  --clay: #b2542a;
-  --clay-hover: #96421c;
-  --clay-dark: #783214;
-  --clay-glow: rgba(178, 84, 42, 0.28);
-  --clay-subtle: rgba(178, 84, 42, 0.08);
+  /* Vibrant Dark Orange / Burnt Terracotta Accents */
+  --clay: #c84e16;
+  --clay-hover: #ad3e0a;
+  --clay-dark: #7b2905;
+  --clay-glow: rgba(200, 78, 22, 0.32);
+  --clay-subtle: rgba(200, 78, 22, 0.08);
 
-  --moss: #426346;
-  --moss-light: #567e5a;
-  --moss-dark: #2a432e;
-  --moss-glow: rgba(66, 99, 70, 0.22);
-  --moss-subtle: rgba(66, 99, 70, 0.09);
+  /* Deep Black / Onyx Structural Elements */
+  --moss: #111215;
+  --moss-light: #202228;
+  --moss-dark: #07080a;
+  --moss-glow: rgba(12, 13, 16, 0.25);
+  --moss-subtle: rgba(200, 78, 22, 0.08);
 
-  --gold: #c98522;
-  --gold-glow: rgba(201, 133, 34, 0.25);
-  --gold-subtle: rgba(201, 133, 34, 0.1);
+  /* Warm Luminous Amber Gold */
+  --gold: #d46b18;
+  --gold-glow: rgba(212, 107, 24, 0.28);
+  --gold-subtle: rgba(212, 107, 24, 0.10);
 
-  --line: rgba(17, 27, 19, 0.11);
-  --line-soft: rgba(17, 27, 19, 0.06);
-  --line-strong: rgba(17, 27, 19, 0.22);
+  /* Neutral Black-Tinted Structural Lines */
+  --line: rgba(12, 13, 16, 0.11);
+  --line-soft: rgba(12, 13, 16, 0.06);
+  --line-strong: rgba(12, 13, 16, 0.22);
 
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
@@ -45,9 +51,9 @@
   --radius-xl: 32px;
   --radius-full: 9999px;
 
-  --shadow-sm: 0 4px 14px rgba(17, 27, 19, 0.04);
-  --shadow-md: 0 14px 34px -4px rgba(17, 27, 19, 0.08);
-  --shadow-lg: 0 26px 58px -8px rgba(17, 27, 19, 0.13);
+  --shadow-sm: 0 4px 14px rgba(12, 13, 16, 0.04);
+  --shadow-md: 0 14px 34px -4px rgba(12, 13, 16, 0.08);
+  --shadow-lg: 0 26px 58px -8px rgba(12, 13, 16, 0.13);
   --shadow-clay: 0 10px 28px -4px var(--clay-glow);
 
   --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
@@ -59,39 +65,39 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ink: #f3efe7;
-    --ink-soft: #c8cec7;
-    --ink-faint: #8d9a8c;
-    --paper: #0b110b;
-    --paper-soft: #131b12;
-    --paper-card: #111810;
-    --paper-surface: #172116;
-    --line: rgba(243, 239, 231, 0.12);
-    --line-soft: rgba(243, 239, 231, 0.06);
-    --line-strong: rgba(243, 239, 231, 0.22);
-    --clay: #e07d4f;
-    --clay-hover: #ea9066;
-    --clay-dark: #b85d34;
-    --clay-glow: rgba(224, 125, 79, 0.35);
-    --moss: #7fa084;
-    --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 14px 34px -4px rgba(0, 0, 0, 0.5);
-    --shadow-lg: 0 26px 58px -8px rgba(0, 0, 0, 0.7);
+    --ink: #f8f4ec;
+    --ink-soft: #d5cfc4;
+    --ink-faint: #989184;
+    --paper: #0b0c0e;
+    --paper-soft: #141518;
+    --paper-card: #111215;
+    --paper-surface: #18191e;
+    --line: rgba(248, 244, 236, 0.12);
+    --line-soft: rgba(248, 244, 236, 0.06);
+    --line-strong: rgba(248, 244, 236, 0.22);
+    --clay: #e06022;
+    --clay-hover: #ee7439;
+    --clay-dark: #b84a14;
+    --clay-glow: rgba(224, 96, 34, 0.38);
+    --moss: #1f2127;
+    --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 14px 34px -4px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 26px 58px -8px rgba(0, 0, 0, 0.8);
   }
 }
 
 :root[data-theme="dark"] {
-  --ink: #f3efe7;
-  --ink-soft: #c8cec7;
-  --ink-faint: #8d9a8c;
-  --paper: #0b110b;
-  --paper-soft: #131b12;
-  --paper-card: #111810;
-  --paper-surface: #172116;
-  --line: rgba(243, 239, 231, 0.12);
-  --line-soft: rgba(243, 239, 231, 0.06);
-  --clay: #e07d4f;
-  --moss: #7fa084;
+  --ink: #f8f4ec;
+  --ink-soft: #d5cfc4;
+  --ink-faint: #989184;
+  --paper: #0b0c0e;
+  --paper-soft: #141518;
+  --paper-card: #111215;
+  --paper-surface: #18191e;
+  --line: rgba(248, 244, 236, 0.12);
+  --line-soft: rgba(248, 244, 236, 0.06);
+  --clay: #e06022;
+  --moss: #1f2127;
 }
 
 /* Reset & Global Overflow Protection */
@@ -1007,9 +1013,9 @@ section.tight {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--moss-dark);
-  background: var(--moss-subtle);
-  border: 1px solid color-mix(in srgb, var(--moss) 28%, transparent);
+  color: var(--clay);
+  background: var(--clay-subtle);
+  border: 1px solid color-mix(in srgb, var(--clay) 28%, transparent);
   padding: 5px 12px;
   border-radius: var(--radius-full);
   margin-bottom: 18px;
@@ -1026,7 +1032,7 @@ section.tight {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: #557595;
+  background-color: #0c0d10;
   padding: 0;
 }
 
@@ -1037,18 +1043,20 @@ section.tight {
   }
 }
 
-/* 1. Sky Canvas Layer */
+/* 1. Sky Canvas Layer: Dramatic Charcoal Black through Deep Dusk Orange to Warm Cream Horizon */
 .hero-sky-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(180deg,
-      #537392 0%,
-      #6c8ba8 25%,
-      #8ea6bd 55%,
-      #bfa8aa 82%,
-      #d9957d 100%);
+      #0b0c10 0%,
+      #16171d 18%,
+      #2e1914 38%,
+      #5c2714 60%,
+      #a84315 78%,
+      #cd591e 90%,
+      #ecd5bb 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -2572,17 +2580,17 @@ section.calc-custom-section {
 }
 
 .suburb-pill:hover {
-  color: var(--ink);
-  border-color: var(--moss);
-  background: var(--moss-subtle);
+  color: var(--clay);
+  border-color: var(--clay);
+  background: var(--clay-subtle);
   transform: translateY(-2px);
 }
 
 .suburb-pill.active {
-  background: var(--moss, #426346);
+  background: var(--clay);
   color: #ffffff;
-  border-color: var(--moss);
-  box-shadow: 0 4px 12px rgba(66, 99, 70, 0.3);
+  border-color: var(--clay);
+  box-shadow: 0 4px 14px var(--clay-glow);
 }
 
 .suburb-pill-separator {
@@ -2672,9 +2680,9 @@ section.calc-custom-section {
 }
 
 .suburb-score-pill {
-  background: var(--moss-subtle, rgba(66, 99, 70, 0.09));
-  border: 1.5px solid var(--moss, #426346);
-  color: var(--moss-dark, #2a432e);
+  background: var(--clay-subtle, rgba(200, 78, 22, 0.08));
+  border: 1.5px solid var(--clay, #c84e16);
+  color: var(--clay-dark, #7b2905);
   padding: 5px 10px;
   border-radius: 10px;
   font-size: 0.86rem;
@@ -4039,9 +4047,9 @@ footer.site {
   padding: 72px 0 calc(36px + env(safe-area-inset-bottom, 0px));
   background:
     linear-gradient(180deg,
-      rgba(10, 19, 14, 0.78) 0%,
-      rgba(6, 12, 9, 0.88) 50%,
-      rgba(4, 8, 6, 0.96) 100%),
+      rgba(14, 15, 18, 0.86) 0%,
+      rgba(10, 11, 14, 0.94) 50%,
+      rgba(6, 7, 9, 0.98) 100%),
     url('footer-luxury-estate-bg.jpg') center bottom / cover no-repeat;
   color: #ffffff;
   position: relative;
