@@ -4048,7 +4048,7 @@ footer.site .brand svg circle {
       rgba(7, 18, 14, 0.22) 70%, 
       rgba(7, 18, 14, 0.04) 100%
     ),
-    url('quiz-family-bg.jpg');
+    url('quiz-family-bg.jpg?v=4.3');
   background-position: right center;
   background-repeat: no-repeat;
   background-size: cover;
