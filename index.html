@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=5.5">
+<link rel="stylesheet" href="assets/style.css?v=5.6">
 <!-- Three.js 3D WebGL Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
@@ -1234,325 +1234,337 @@
   </div>
 </section>
 
-<!-- Qualification / Fit Section -->
-<section class="tight">
-  <div class="wrap">
-    <span class="tag">Who We Work With</span>
-    <h2>We'd rather tell you it's not a fit than waste your time.</h2>
-    <p class="lede" style="margin-bottom:0">A straight, honest answer &mdash; even when it isn't the one you expected &mdash; is the foundation of genuine advisory.</p>
-    
-    <div class="fit-wrap" style="margin-top:34px">
-      <div class="fit-col yes">
-        <h3>This works well if you:</h3>
-        <ul>
-          <li>Have finance approved, or are genuinely close to obtaining it</li>
-          <li>Want a straight answer, even if it's "do not buy this one"</li>
-          <li>Are open to high-growth markets you haven't yet fixed on</li>
-          <li>Are ready to take action in the next 1-3 months</li>
-        </ul>
-      </div>
-      <div class="fit-col no">
-        <h3>This isn't a fit if you:</h3>
-        <ul>
-          <li>Just want someone to rubber-stamp a suburb you've already chosen</li>
-          <li>Are chasing unrealistic 30% below-market bargains</li>
-          <li>Aren't ready or willing to arrange finance pre-approval</li>
-          <li>Want a speculative hot tip rather than a researched strategy</li>
-        </ul>
-      </div>
-    </div>
+<!-- 3D Parallax Advisory & Institutional Compliance Wrapper -->
+<div class="compliance-parallax-container" id="complianceParallaxWrap">
+  <div class="compliance-parallax-bg" id="complianceParallaxBg" aria-hidden="true"></div>
+  <div class="compliance-parallax-overlay" aria-hidden="true"></div>
+  <div class="compliance-parallax-content">
 
-    <!-- Fee Transparency Flowchart -->
-    <div class="fee-model-box reveal" style="margin-top:40px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-        <div>
-          <span class="tag" style="margin-bottom:6px;">Transparent Economics</span>
-          <h3 style="margin:0; font-size:1.35rem;">How We Get Paid: $0 Upfront, $0 Advisory Cost to You</h3>
-        </div>
-        <div style="font-size:0.92rem; color:var(--moss); font-weight:700;">Zero Hidden Retainers &bull; Transparent Settlement Model</div>
-      </div>
-      <div class="fee-model-steps">
-        <div class="fee-step-card">
-          <div class="fee-step-num">01</div>
-          <h4 style="font-size:1.05rem; margin-bottom:6px;">15-Min Strategy Call</h4>
-          <div class="fee-step-img-wrap">
-            <img src="assets/fee-step1-strategy.jpg" alt="15-Min Strategy Call" class="fee-step-img" />
+    <!-- Qualification / Fit Section -->
+    <section class="tight fit-compliance-section">
+      <div class="wrap">
+        <span class="tag">Who We Work With</span>
+        <h2>We'd rather tell you it's not a fit than waste your time.</h2>
+        <p class="lede" style="margin-bottom:0">A straight, honest answer &mdash; even when it isn't the one you expected &mdash; is the foundation of genuine advisory.</p>
+        
+        <div class="fit-wrap" style="margin-top:34px">
+          <div class="fit-col yes">
+            <h3>This works well if you:</h3>
+            <ul>
+              <li>Have finance approved, or are genuinely close to obtaining it</li>
+              <li>Want a straight answer, even if it's "do not buy this one"</li>
+              <li>Are open to high-growth markets you haven't yet fixed on</li>
+              <li>Are ready to take action in the next 1-3 months</li>
+            </ul>
           </div>
-          <p style="font-size:0.88rem; color:var(--ink-soft); margin:0;">We clarify your borrowing capacity and define your parameters.</p>
-          <div class="fee-step-price">$0 Cost to You</div>
-        </div>
-        <div class="fee-step-arrow">&rarr;</div>
-        <div class="fee-step-card">
-          <div class="fee-step-num">02</div>
-          <h4 style="font-size:1.05rem; margin-bottom:6px;">Research &amp; Street Inspection</h4>
-          <div class="fee-step-img-wrap">
-            <img src="assets/fee-step2-research.jpg" alt="Research &amp; Street Inspection Analysis" class="fee-step-img" />
+          <div class="fit-col no">
+            <h3>This isn't a fit if you:</h3>
+            <ul>
+              <li>Just want someone to rubber-stamp a suburb you've already chosen</li>
+              <li>Are chasing unrealistic 30% below-market bargains</li>
+              <li>Aren't ready or willing to arrange finance pre-approval</li>
+              <li>Want a speculative hot tip rather than a researched strategy</li>
+            </ul>
           </div>
-          <p style="font-size:0.88rem; color:var(--ink-soft); margin:0;">We filter macro data and physically inspect micro-pockets.</p>
-          <div class="fee-step-price">$0 Cost to You</div>
         </div>
-        <div class="fee-step-arrow">&rarr;</div>
-        <div class="fee-step-card">
-          <div class="fee-step-num">03</div>
-          <h4 style="font-size:1.05rem; margin-bottom:6px;">Settlement &amp; Key Handover</h4>
-          <div class="fee-step-img-wrap">
-            <img src="assets/fee-step3-handover.jpg" alt="Settlement &amp; Key Handover" class="fee-step-img" />
+
+        <!-- Fee Transparency Flowchart -->
+        <div class="fee-model-box reveal" style="margin-top:40px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+            <div>
+              <span class="tag" style="margin-bottom:6px;">Transparent Economics</span>
+              <h3 style="margin:0; font-size:1.35rem;">How We Get Paid: $0 Upfront, $0 Advisory Cost to You</h3>
+            </div>
+            <div style="font-size:0.92rem; color:var(--moss); font-weight:700;">Zero Hidden Retainers &bull; Transparent Settlement Model</div>
           </div>
-          <p style="font-size:0.86rem; color:var(--ink-soft); margin:0;">Advocacy commission paid directly by developer/vendor upon settlement.</p>
-          <div class="fee-step-price" style="background:var(--clay-subtle); color:var(--clay);">$0 Cost to Buyer</div>
-        </div>
-      </div>
-
-      <!-- Traditional ($15k-$25k) vs $0 Upfront Fee Comparison Matrix -->
-      <div class="fee-comparison-matrix-box" style="margin-top:42px;">
-        <div class="matrix-header text-center">
-          <span class="tag" style="background:var(--moss-subtle); color:var(--moss); font-weight:700;">Direct Value Comparison</span>
-          <h3 style="font-size:1.45rem; margin:6px 0 8px 0;">Traditional Buyer's Agency ($15k&ndash;$25k) vs. Our $0 Upfront Model</h3>
-          <p style="font-size:0.92rem; color:var(--ink-soft); max-width:640px; margin:0 auto 24px;">Traditional buyer's agents charge heavy non-refundable upfront retainers regardless of outcome. Our aligned model eliminates your financial risk entirely.</p>
-        </div>
-
-        <div class="fee-table-responsive">
-          <table class="fee-matrix-table">
-            <thead>
-              <tr>
-                <th style="width:36%;">Advisory &amp; Acquisition Feature</th>
-                <th class="col-traditional" style="width:32%;">
-                  <div class="matrix-col-badge bad">Traditional Buyer's Agents</div>
-                  <div class="matrix-col-price clay">$15,000 &ndash; $25,000+</div>
-                  <div class="matrix-col-sub">Out-of-pocket buyer cost</div>
-                </th>
-                <th class="col-getahead" style="width:32%;">
-                  <div class="matrix-col-badge good">Get Ahead Realty Model</div>
-                  <div class="matrix-col-price moss">$0.00 Upfront</div>
-                  <div class="matrix-col-sub">Zero out-of-pocket advisory fee</div>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <strong>Upfront Engagement Retainer</strong>
-                  <span>Cash required before research starts</span>
-                </td>
-                <td class="col-traditional"><span class="fee-status bad">✕ $3,000 &ndash; $6,000</span> <span class="fee-note">(Non-refundable if you don't buy)</span></td>
-                <td class="col-getahead"><span class="fee-status good">✓ $0.00 Retainer</span> <span class="fee-note">(Zero upfront commitment)</span></td>
-              </tr>
-
-              <tr>
-                <td>
-                  <strong>Success &amp; Settlement Commission</strong>
-                  <span>Fee charged when property contracts settle</span>
-                </td>
-                <td class="col-traditional"><span class="fee-status bad">✕ $12,000 &ndash; $20,000+</span> <span class="fee-note">(Billed directly to your bank account)</span></td>
-                <td class="col-getahead"><span class="fee-status good">✓ $0 to Buyer</span> <span class="fee-note">(Paid directly by vendor/developer)</span></td>
-              </tr>
-
-              <tr>
-                <td>
-                  <strong>Total Buyer Out-of-Pocket Expense</strong>
-                  <span>Actual advisory cash cost from your pocket</span>
-                </td>
-                <td class="col-traditional"><strong class="clay" style="font-size:1.15rem;">$15,000 &ndash; $25,000+</strong></td>
-                <td class="col-getahead"><strong class="moss" style="font-size:1.25rem;">$0.00 Guaranteed</strong></td>
-              </tr>
-
-              <tr>
-                <td>
-                  <strong>Financial Risk to Buyer</strong>
-                  <span>If bank finance changes or personal plans shift</span>
-                </td>
-                <td class="col-traditional"><span class="fee-status bad">✕ High (Retainer Lost)</span></td>
-                <td class="col-getahead"><span class="fee-status good">✓ Zero Financial Risk</span></td>
-              </tr>
-
-              <tr>
-                <td>
-                  <strong>Strategy &amp; Borrowing Capacity Review</strong>
-                  <span>1-on-1 financial alignment &amp; goal roadmap</span>
-                </td>
-                <td class="col-traditional"><span>Often billed separately ($1k&ndash;$2k)</span></td>
-                <td class="col-getahead"><span class="fee-status good">✓ 100% Free 15-Min Discovery</span></td>
-              </tr>
-
-              <tr>
-                <td>
-                  <strong>Micro-Pocket &amp; Street Due Diligence</strong>
-                  <span>Physical footpath, flood &amp; zoning checks</span>
-                </td>
-                <td class="col-traditional"><span>Desktop algorithmic data only</span></td>
-                <td class="col-getahead"><span class="fee-status good">✓ Physical On-Site Verification</span></td>
-              </tr>
-
-              <tr>
-                <td>
-                  <strong>Off-Market Pre-Release Access</strong>
-                  <span>Access to properties before public market listing</span>
-                </td>
-                <td class="col-traditional"><span>Limited to standard MLS/Realestate</span></td>
-                <td class="col-getahead"><span class="fee-status good">✓ Direct Relationship Allocation</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Savings Highlight Callout Banner -->
-        <div class="matrix-savings-banner">
-          <div class="matrix-savings-icon">💡</div>
-          <div class="matrix-savings-text">
-            <strong>Keep Your $15k&ndash;$25k in Your Investment Deposit Buffer:</strong>
-            <span>By avoiding expensive upfront retainers, your hard-earned capital stays where it belongs &mdash; compounding equity in high-growth Australian real estate.</span>
+          <div class="fee-model-steps">
+            <div class="fee-step-card">
+              <div class="fee-step-num">01</div>
+              <h4 style="font-size:1.05rem; margin-bottom:6px;">15-Min Strategy Call</h4>
+              <div class="fee-step-img-wrap">
+                <img src="assets/fee-step1-strategy.jpg" alt="15-Min Strategy Call" class="fee-step-img" />
+              </div>
+              <p style="font-size:0.88rem; color:var(--ink-soft); margin:0;">We clarify your borrowing capacity and define your parameters.</p>
+              <div class="fee-step-price">$0 Cost to You</div>
+            </div>
+            <div class="fee-step-arrow">&rarr;</div>
+            <div class="fee-step-card">
+              <div class="fee-step-num">02</div>
+              <h4 style="font-size:1.05rem; margin-bottom:6px;">Research &amp; Street Inspection</h4>
+              <div class="fee-step-img-wrap">
+                <img src="assets/fee-step2-research.jpg" alt="Research &amp; Street Inspection Analysis" class="fee-step-img" />
+              </div>
+              <p style="font-size:0.88rem; color:var(--ink-soft); margin:0;">We filter macro data and physically inspect micro-pockets.</p>
+              <div class="fee-step-price">$0 Cost to You</div>
+            </div>
+            <div class="fee-step-arrow">&rarr;</div>
+            <div class="fee-step-card">
+              <div class="fee-step-num">03</div>
+              <h4 style="font-size:1.05rem; margin-bottom:6px;">Settlement &amp; Key Handover</h4>
+              <div class="fee-step-img-wrap">
+                <img src="assets/fee-step3-handover.jpg" alt="Settlement &amp; Key Handover" class="fee-step-img" />
+              </div>
+              <p style="font-size:0.86rem; color:var(--ink-soft); margin:0;">Advocacy commission paid directly by developer/vendor upon settlement.</p>
+              <div class="fee-step-price" style="background:var(--clay-subtle); color:var(--clay);">$0 Cost to Buyer</div>
+            </div>
           </div>
-          <a href="contact.html" class="btn btn-primary btn-small">Schedule Free Discovery &rarr;</a>
+
+          <!-- Traditional ($15k-$25k) vs $0 Upfront Fee Comparison Matrix -->
+          <div class="fee-comparison-matrix-box" style="margin-top:42px;">
+            <div class="matrix-header text-center">
+              <span class="tag" style="background:var(--moss-subtle); color:var(--moss); font-weight:700;">Direct Value Comparison</span>
+              <h3 style="font-size:1.45rem; margin:6px 0 8px 0;">Traditional Buyer's Agency ($15k&ndash;$25k) vs. Our $0 Upfront Model</h3>
+              <p style="font-size:0.92rem; color:var(--ink-soft); max-width:640px; margin:0 auto 24px;">Traditional buyer's agents charge heavy non-refundable upfront retainers regardless of outcome. Our aligned model eliminates your financial risk entirely.</p>
+            </div>
+
+            <div class="fee-table-responsive">
+              <table class="fee-matrix-table">
+                <thead>
+                  <tr>
+                    <th style="width:36%;">Advisory &amp; Acquisition Feature</th>
+                    <th class="col-traditional" style="width:32%;">
+                      <div class="matrix-col-badge bad">Traditional Buyer's Agents</div>
+                      <div class="matrix-col-price clay">$15,000 &ndash; $25,000+</div>
+                      <div class="matrix-col-sub">Out-of-pocket buyer cost</div>
+                    </th>
+                    <th class="col-getahead" style="width:32%;">
+                      <div class="matrix-col-badge good">Get Ahead Realty Model</div>
+                      <div class="matrix-col-price moss">$0.00 Upfront</div>
+                      <div class="matrix-col-sub">Zero out-of-pocket advisory fee</div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <strong>Upfront Engagement Retainer</strong>
+                      <span>Cash required before research starts</span>
+                    </td>
+                    <td class="col-traditional"><span class="fee-status bad">✕ $3,000 &ndash; $6,000</span> <span class="fee-note">(Non-refundable if you don't buy)</span></td>
+                    <td class="col-getahead"><span class="fee-status good">✓ $0.00 Retainer</span> <span class="fee-note">(Zero upfront commitment)</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <strong>Success &amp; Settlement Commission</strong>
+                      <span>Fee charged when property contracts settle</span>
+                    </td>
+                    <td class="col-traditional"><span class="fee-status bad">✕ $12,000 &ndash; $20,000+</span> <span class="fee-note">(Billed directly to your bank account)</span></td>
+                    <td class="col-getahead"><span class="fee-status good">✓ $0 to Buyer</span> <span class="fee-note">(Paid directly by vendor/developer)</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <strong>Total Buyer Out-of-Pocket Expense</strong>
+                      <span>Actual advisory cash cost from your pocket</span>
+                    </td>
+                    <td class="col-traditional"><strong class="clay" style="font-size:1.15rem;">$15,000 &ndash; $25,000+</strong></td>
+                    <td class="col-getahead"><strong class="moss" style="font-size:1.25rem;">$0.00 Guaranteed</strong></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <strong>Financial Risk to Buyer</strong>
+                      <span>If bank finance changes or personal plans shift</span>
+                    </td>
+                    <td class="col-traditional"><span class="fee-status bad">✕ High (Retainer Lost)</span></td>
+                    <td class="col-getahead"><span class="fee-status good">✓ Zero Financial Risk</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <strong>Strategy &amp; Borrowing Capacity Review</strong>
+                      <span>1-on-1 financial alignment &amp; goal roadmap</span>
+                    </td>
+                    <td class="col-traditional"><span>Often billed separately ($1k&ndash;$2k)</span></td>
+                    <td class="col-getahead"><span class="fee-status good">✓ 100% Free 15-Min Discovery</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <strong>Micro-Pocket &amp; Street Due Diligence</strong>
+                      <span>Physical footpath, flood &amp; zoning checks</span>
+                    </td>
+                    <td class="col-traditional"><span>Desktop algorithmic data only</span></td>
+                    <td class="col-getahead"><span class="fee-status good">✓ Physical On-Site Verification</span></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <strong>Off-Market Pre-Release Access</strong>
+                      <span>Access to properties before public market listing</span>
+                    </td>
+                    <td class="col-traditional"><span>Limited to standard MLS/Realestate</span></td>
+                    <td class="col-getahead"><span class="fee-status good">✓ Direct Relationship Allocation</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Savings Highlight Callout Banner -->
+            <div class="matrix-savings-banner">
+              <div class="matrix-savings-icon">💡</div>
+              <div class="matrix-savings-text">
+                <strong>Keep Your $15k&ndash;$25k in Your Investment Deposit Buffer:</strong>
+                <span>By avoiding expensive upfront retainers, your hard-earned capital stays where it belongs &mdash; compounding equity in high-growth Australian real estate.</span>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-small">Schedule Free Discovery &rarr;</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-<!-- Trust Badges & Institutional Compliance Section -->
-<section id="trust-compliance" class="trust-compliance-section reveal">
-  <div class="wrap">
-    
-    <!-- Trust Scoreboard Header -->
-    <div class="trust-scoreboard-banner">
-      <div class="trust-score-col">
-        <div class="trust-score-stars">★★★★★</div>
-        <div class="trust-score-main">4.9 / 5.0 Rating</div>
-        <div class="trust-score-sub">Based on 180+ Verified Client Strategies &amp; Settlements</div>
-      </div>
-      <div class="trust-score-divider"></div>
-      <div class="trust-score-col">
-        <div class="trust-score-icon">🏛️</div>
-        <div class="trust-score-main">ASIC Registered</div>
-        <div class="trust-score-sub">Australian Corporate Entity Compliance</div>
-      </div>
-      <div class="trust-score-divider"></div>
-      <div class="trust-score-col">
-        <div class="trust-score-icon">🛡️</div>
-        <div class="trust-score-main">$20,000,000 PI Cover</div>
-        <div class="trust-score-sub">Lloyd's &amp; Tier-1 Underwriter Protected</div>
-      </div>
-      <div class="trust-score-divider"></div>
-      <div class="trust-score-col">
-        <div class="trust-score-icon">🤝</div>
-        <div class="trust-score-main">$0 Upfront Retainers</div>
-        <div class="trust-score-sub">Aligned Incentive &bull; Zero Buyer Loss Risk</div>
-      </div>
-    </div>
+    </section>
 
-    <!-- Section Titles -->
-    <div class="trust-header text-center" style="margin-top:40px;">
-      <span class="tag">Regulatory Standards &amp; Client Security</span>
-      <h2>Institutional-Grade Compliance &amp; 100% Client Safeguards</h2>
-      <p class="lede">In an industry where rogue operators charge opaque retainers, Get Ahead Realty operates with total statutory compliance, strict ethical codes, and zero hidden fees.</p>
-    </div>
-
-    <!-- 6 Trust & Compliance Cards Grid -->
-    <div class="trust-pillars-grid">
-      
-      <!-- Card 1: PIPA & Ethical Advocacy -->
-      <div class="trust-pillar-card">
-        <div class="pillar-top">
-          <div class="pillar-badge moss">Ethics &bull; PIPA Principles</div>
-          <div class="pillar-seal">🛡️</div>
+    <!-- Trust Badges & Institutional Compliance Section -->
+    <section id="trust-compliance" class="trust-compliance-section reveal">
+      <div class="wrap">
+        
+        <!-- Trust Scoreboard Header -->
+        <div class="trust-scoreboard-banner">
+          <div class="trust-score-col">
+            <div class="trust-score-stars">★★★★★</div>
+            <div class="trust-score-main">4.9 / 5.0 Rating</div>
+            <div class="trust-score-sub">Based on 180+ Verified Client Strategies &amp; Settlements</div>
+          </div>
+          <div class="trust-score-divider"></div>
+          <div class="trust-score-col">
+            <div class="trust-score-icon">🏛️</div>
+            <div class="trust-score-main">ASIC Registered</div>
+            <div class="trust-score-sub">Australian Corporate Entity Compliance</div>
+          </div>
+          <div class="trust-score-divider"></div>
+          <div class="trust-score-col">
+            <div class="trust-score-icon">🛡️</div>
+            <div class="trust-score-main">$20,000,000 PI Cover</div>
+            <div class="trust-score-sub">Lloyd's &amp; Tier-1 Underwriter Protected</div>
+          </div>
+          <div class="trust-score-divider"></div>
+          <div class="trust-score-col">
+            <div class="trust-score-icon">🤝</div>
+            <div class="trust-score-main">$0 Upfront Retainers</div>
+            <div class="trust-score-sub">Aligned Incentive &bull; Zero Buyer Loss Risk</div>
+          </div>
         </div>
-        <h3>PIPA &amp; REBAA Code of Conduct</h3>
-        <p>We uphold the strict professional code of conduct set out by the Property Investment Professionals of Australia (PIPA) and the Real Estate Buyer's Agent Association (REBAA).</p>
-        <ul class="pillar-checks">
-          <li>✓ No speculative "hot tips" or unvetted pressure tactics</li>
-          <li>✓ Evidence-backed research and macro-economic data</li>
-          <li>✓ Written advisory clarity before any property inspection</li>
-        </ul>
-      </div>
 
-      <!-- Card 2: Professional Indemnity Insurance -->
-      <div class="trust-pillar-card highlight">
-        <div class="pillar-top">
-          <div class="pillar-badge gold">Financial Security Guarantee</div>
-          <div class="pillar-seal">🔒</div>
+        <!-- Section Titles -->
+        <div class="trust-header text-center" style="margin-top:40px;">
+          <span class="tag">Regulatory Standards &amp; Client Security</span>
+          <h2>Institutional-Grade Compliance &amp; 100% Client Safeguards</h2>
+          <p class="lede">In an industry where rogue operators charge opaque retainers, Get Ahead Realty operates with total statutory compliance, strict ethical codes, and zero hidden fees.</p>
         </div>
-        <h3>$20,000,000 Professional Indemnity</h3>
-        <p>Every transaction, micro-market report, and contract advisory process is backed by extensive $20M Professional Indemnity &amp; Cyber Risk Insurance.</p>
-        <ul class="pillar-checks">
-          <li>✓ Complete client indemnity protection on all advisory files</li>
-          <li>✓ Underwritten by A-rated statutory insurance providers</li>
-          <li>✓ Rigorous encrypted digital document workflows</li>
-        </ul>
-      </div>
 
-      <!-- Card 3: ASIC & Australian Corporate Entity -->
-      <div class="trust-pillar-card">
-        <div class="pillar-top">
-          <div class="pillar-badge clay">Corporate Licensing</div>
-          <div class="pillar-seal">🏛️</div>
+        <!-- 6 Trust & Compliance Cards Grid -->
+        <div class="trust-pillars-grid">
+          
+          <!-- Card 1: PIPA & Ethical Advocacy -->
+          <div class="trust-pillar-card">
+            <div class="pillar-top">
+              <div class="pillar-badge moss">Ethics &bull; PIPA Principles</div>
+              <div class="pillar-seal">🛡️</div>
+            </div>
+            <h3>PIPA &amp; REBAA Code of Conduct</h3>
+            <p>We uphold the strict professional code of conduct set out by the Property Investment Professionals of Australia (PIPA) and the Real Estate Buyer's Agent Association (REBAA).</p>
+            <ul class="pillar-checks">
+              <li>✓ No speculative "hot tips" or unvetted pressure tactics</li>
+              <li>✓ Evidence-backed research and macro-economic data</li>
+              <li>✓ Written advisory clarity before any property inspection</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Professional Indemnity Insurance -->
+          <div class="trust-pillar-card highlight">
+            <div class="pillar-top">
+              <div class="pillar-badge gold">Financial Security Guarantee</div>
+              <div class="pillar-seal">🔒</div>
+            </div>
+            <h3>$20,000,000 Professional Indemnity</h3>
+            <p>Every transaction, micro-market report, and contract advisory process is backed by extensive $20M Professional Indemnity &amp; Cyber Risk Insurance.</p>
+            <ul class="pillar-checks">
+              <li>✓ Complete client indemnity protection on all advisory files</li>
+              <li>✓ Underwritten by A-rated statutory insurance providers</li>
+              <li>✓ Rigorous encrypted digital document workflows</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: ASIC & Australian Corporate Entity -->
+          <div class="trust-pillar-card">
+            <div class="pillar-top">
+              <div class="pillar-badge clay">Corporate Licensing</div>
+              <div class="pillar-seal">🏛️</div>
+            </div>
+            <h3>ASIC &amp; Fair Trading Registered</h3>
+            <p>Get Ahead Realty operates as a fully licensed Australian corporate real estate advisory entity under ASIC and state Fair Trading statutory guidelines.</p>
+            <ul class="pillar-checks">
+              <li>✓ Fully verifiable ABN &amp; corporate registration credentials</li>
+              <li>✓ Full adherence to Australian Consumer Law (ACL)</li>
+              <li>✓ Statutory cooling-off and trust accounting transparency</li>
+            </ul>
+          </div>
+
+          <!-- Card 4: 100% Conflict Transparency -->
+          <div class="trust-pillar-card">
+            <div class="pillar-top">
+              <div class="pillar-badge moss">Fee Transparency</div>
+              <div class="pillar-seal">📜</div>
+            </div>
+            <h3>Zero Hidden Retainers or Clawbacks</h3>
+            <p>Unlike traditional buyer's agencies that lock you into non-refundable $15k–$25k fees, our $0 upfront model means you never pay if you don't buy.</p>
+            <ul class="pillar-checks">
+              <li>✓ Zero non-refundable engagement retainers</li>
+              <li>✓ 100% transparent developer/vendor settlement fee disclosure</li>
+              <li>✓ You retain full control to pause or decline any option</li>
+            </ul>
+          </div>
+
+          <!-- Card 5: Bank & SMSF Compliance -->
+          <div class="trust-pillar-card">
+            <div class="pillar-top">
+              <div class="pillar-badge blue">Lending Verification</div>
+              <div class="pillar-seal">🏦</div>
+            </div>
+            <h3>Major Bank &amp; SMSF Lending Compliant</h3>
+            <p>Our micro-market reports and rental yield models are structured to meet strict bank valuation and SMSF LRBA (Limited Recourse Borrowing) standards.</p>
+            <ul class="pillar-checks">
+              <li>✓ High bank valuation acceptance rate on settled properties</li>
+              <li>✓ Independent rental appraisals from local property managers</li>
+              <li>✓ Seamless coordination with your mortgage broker &amp; accountant</li>
+            </ul>
+          </div>
+
+          <!-- Card 6: 100% Physical Footpath Gate -->
+          <div class="trust-pillar-card">
+            <div class="pillar-top">
+              <div class="pillar-badge moss">Quality Standard</div>
+              <div class="pillar-seal">👟</div>
+            </div>
+            <h3>Strict "Footpath-First" Quality Gate</h3>
+            <p>We reject approximately 7 out of 8 potential properties upon physical inspection. We never recommend a home sight-unseen or solely from desktop data.</p>
+            <ul class="pillar-checks">
+              <li>✓ On-the-ground acoustic noise, slope, and flood testing</li>
+              <li>✓ Micro-pocket school catchment and street elevation checks</li>
+              <li>✓ Direct local agent and tenant market demand validation</li>
+            </ul>
+          </div>
+
         </div>
-        <h3>ASIC &amp; Fair Trading Registered</h3>
-        <p>Get Ahead Realty operates as a fully licensed Australian corporate real estate advisory entity under ASIC and state Fair Trading statutory guidelines.</p>
-        <ul class="pillar-checks">
-          <li>✓ Fully verifiable ABN &amp; corporate registration credentials</li>
-          <li>✓ Full adherence to Australian Consumer Law (ACL)</li>
-          <li>✓ Statutory cooling-off and trust accounting transparency</li>
-        </ul>
-      </div>
 
-      <!-- Card 4: 100% Conflict Transparency -->
-      <div class="trust-pillar-card">
-        <div class="pillar-top">
-          <div class="pillar-badge moss">Fee Transparency</div>
-          <div class="pillar-seal">📜</div>
+        <!-- Interactive Trust Callout Box -->
+        <div class="trust-action-banner">
+          <div class="trust-action-content">
+            <div class="trust-action-badge">🛡️ Your Protection Guaranteed</div>
+            <h3>Experience safe, data-driven property investing with complete peace of mind.</h3>
+            <p>Schedule a 15-minute, zero-pressure strategy call. We will review your goals and explain exactly how our compliance standards safeguard your investment.</p>
+          </div>
+          <div class="trust-action-btn-wrap">
+            <a href="contact.html" class="btn btn-primary">Book Compliant Strategy Call &rarr;</a>
+          </div>
         </div>
-        <h3>Zero Hidden Retainers or Clawbacks</h3>
-        <p>Unlike traditional buyer's agencies that lock you into non-refundable $15k–$25k fees, our $0 upfront model means you never pay if you don't buy.</p>
-        <ul class="pillar-checks">
-          <li>✓ Zero non-refundable engagement retainers</li>
-          <li>✓ 100% transparent developer/vendor settlement fee disclosure</li>
-          <li>✓ You retain full control to pause or decline any option</li>
-        </ul>
-      </div>
 
-      <!-- Card 5: Bank & SMSF Compliance -->
-      <div class="trust-pillar-card">
-        <div class="pillar-top">
-          <div class="pillar-badge blue">Lending Verification</div>
-          <div class="pillar-seal">🏦</div>
-        </div>
-        <h3>Major Bank &amp; SMSF Lending Compliant</h3>
-        <p>Our micro-market reports and rental yield models are structured to meet strict bank valuation and SMSF LRBA (Limited Recourse Borrowing) standards.</p>
-        <ul class="pillar-checks">
-          <li>✓ High bank valuation acceptance rate on settled properties</li>
-          <li>✓ Independent rental appraisals from local property managers</li>
-          <li>✓ Seamless coordination with your mortgage broker &amp; accountant</li>
-        </ul>
       </div>
-
-      <!-- Card 6: 100% Physical Footpath Gate -->
-      <div class="trust-pillar-card">
-        <div class="pillar-top">
-          <div class="pillar-badge moss">Quality Standard</div>
-          <div class="pillar-seal">👟</div>
-        </div>
-        <h3>Strict "Footpath-First" Quality Gate</h3>
-        <p>We reject approximately 7 out of 8 potential properties upon physical inspection. We never recommend a home sight-unseen or solely from desktop data.</p>
-        <ul class="pillar-checks">
-          <li>✓ On-the-ground acoustic noise, slope, and flood testing</li>
-          <li>✓ Micro-pocket school catchment and street elevation checks</li>
-          <li>✓ Direct local agent and tenant market demand validation</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <!-- Interactive Trust Callout Box -->
-    <div class="trust-action-banner">
-      <div class="trust-action-content">
-        <div class="trust-action-badge">🛡️ Your Protection Guaranteed</div>
-        <h3>Experience safe, data-driven property investing with complete peace of mind.</h3>
-        <p>Schedule a 15-minute, zero-pressure strategy call. We will review your goals and explain exactly how our compliance standards safeguard your investment.</p>
-      </div>
-      <div class="trust-action-btn-wrap">
-        <a href="contact.html" class="btn btn-primary">Book Compliant Strategy Call &rarr;</a>
-      </div>
-    </div>
+    </section>
 
   </div>
-</section>
+</div>
 
 <!-- 5-Step Process Summary -->
 <section class="alt">
@@ -1731,6 +1743,6 @@
   </div>
 </div>
 
-<script src="assets/script.js?v=4.6"></script>
+<script src="assets/script.js?v=4.7"></script>
 </body>
 </html>

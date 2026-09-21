@@ -93,6 +93,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // 0.8 Initialize Ambient Background Video Auto-play Resilience
   initHeroBackgroundVideo();
 
+  // 0.9 Initialize 3D Compliance & Fit Parallax Depth Zoom
+  initComplianceParallaxZoom();
+
   // 1. Top Reading Scroll Progress Indicator
   var progressBar = document.getElementById('scrollProgress');
   window.addEventListener('scroll', function () {
@@ -1406,4 +1409,42 @@ function initHeroBackgroundVideo() {
       window.addEventListener('click', startOnGesture, { passive: true });
     });
   }
+}
+
+/* ==========================================================================
+   ⭐ 3D COMPLIANCE PARALLAX & DEPTH ZOOM CONTROLLER
+   ========================================================================== */
+function initComplianceParallaxZoom() {
+  var wrap = document.getElementById('complianceParallaxWrap');
+  var bg = document.getElementById('complianceParallaxBg');
+  if (!wrap || !bg) return;
+
+  var ticking = false;
+
+  function updateParallax() {
+    var rect = wrap.getBoundingClientRect();
+    var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    if (rect.top < windowHeight && rect.bottom > 0) {
+      var totalDistance = rect.height + windowHeight;
+      var currentOffset = windowHeight - rect.top;
+      var progress = Math.max(0, Math.min(1, currentOffset / totalDistance));
+
+      // 3D Depth Zoom: scale smoothly from 1.00 to 1.15 with subtle counter-scroll parallax
+      var scale = 1.0 + progress * 0.15;
+      var translateY = (progress - 0.5) * 45;
+
+      bg.style.transform = 'translate3d(0, ' + translateY.toFixed(2) + 'px, 0) scale(' + scale.toFixed(4) + ')';
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateParallax();
 }
