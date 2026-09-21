@@ -1035,13 +1035,8 @@ section.tight {
   pointer-events: none;
 }
 
-/* 1.5. Dual-Layer Composite "REALTY" Typography:
-   - Behind Villa (.hero-realty-solid-bg): Solid Opaque White on top of Sky Background
-   - In Front of Villa (.hero-realty-stroked-fg): Thick Stroked Outline over Villa Architecture
-   - Positioned directly behind "GET AHEAD" to create a majestic typographic background
-*/
-.hero-realty-solid-bg,
-.hero-realty-stroked-fg {
+/* 1.5. Monumental Stroked "REALTY" Typography Directly Behind "GET AHEAD" */
+.hero-realty-solid-bg {
   position: absolute;
   bottom: calc(64% - 24px);
   left: 0;
@@ -1051,26 +1046,19 @@ section.tight {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
+  /* Sits directly behind Get Ahead (z-index: 3) and behind foreground villa (z-index: 4) */
   pointer-events: none;
   user-select: none;
   text-align: center;
   overflow: hidden;
 }
 
-.hero-realty-solid-bg {
-  z-index: 2;
-  /* Sits behind Get Ahead (z-index: 3) and behind foreground villa (z-index: 4) */
-}
-
 .hero-realty-stroked-fg {
-  z-index: 5;
-  /* Sits in front of villa (z-index: 4) and behind clouds (z-index: 6) */
-  /* Clipped so the stroke only renders where the villa is, never across Get Ahead */
-  clip-path: inset(calc(100% - 64%) 0 0 0);
+  display: none;
 }
 
-.realty-solid-text,
-.realty-stroked-text {
+.realty-solid-text {
   font-family: 'Inter Tight', 'Montserrat', 'Syne', -apple-system, sans-serif;
   font-size: clamp(7.2rem, 19.5vw, 23rem);
   font-weight: 900;
@@ -1080,42 +1068,23 @@ section.tight {
   white-space: nowrap;
   display: inline-block;
   pointer-events: none;
-}
-
-/* Layer 1 (Behind Villa & Get Ahead): Pure Solid White & Opaque against the Sky */
-.realty-solid-text {
-  color: #FFFFFF;
-  -webkit-text-fill-color: #FFFFFF;
-  -webkit-text-stroke: 4.5px #FFFFFF;
-  opacity: 0.92;
-  filter: drop-shadow(0 6px 28px rgba(10, 24, 42, 0.35));
-}
-
-/* Layer 2 (Over Villa): Thick White Stroke with Transparent Interior revealing the Villa */
-.realty-stroked-text {
+  /* Pure Crisp White Strokes with Transparent Interior */
   color: transparent;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 4.5px #FFFFFF;
-  opacity: 1;
+  -webkit-text-stroke: 4px #FFFFFF;
+  opacity: 0.94;
   filter: drop-shadow(0 4px 18px rgba(10, 24, 42, 0.40));
 }
 
 @media (max-width: 768px) {
-
-  .hero-realty-solid-bg,
-  .hero-realty-stroked-fg {
+  .hero-realty-solid-bg {
     bottom: calc(66% - 16px);
     top: auto;
   }
 
-  .hero-realty-stroked-fg {
-    clip-path: inset(calc(100% - 66%) 0 0 0);
-  }
-
-  .realty-solid-text,
-  .realty-stroked-text {
+  .realty-solid-text {
     font-size: clamp(3.8rem, 18vw, 7.8rem);
-    -webkit-text-stroke: 2.8px #FFFFFF;
+    -webkit-text-stroke: 2.5px #FFFFFF;
   }
 }
 
