@@ -5,8 +5,7 @@
   "description": "Australian Buyers Agency & SMSF Property Advisory website ready for Vercel deployment",
   "scripts": {
     "dev": "npx -y serve .",
-    "start": "npx -y serve .",
-    "build": "echo \"Static build verified successfully.\""
+    "start": "npx -y serve ."
   },
   "keywords": [
     "real-estate",
