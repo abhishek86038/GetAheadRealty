@@ -492,51 +492,63 @@ header.site.on-hero nav.primary a[aria-current="page"]::after {
   box-shadow: 0 1px 6px rgba(10, 24, 42, 0.50);
 }
 
-/* Header CTA: Phone & Book Call as Pure Clean Text on Hero */
+/* Header CTA: Phone & Book Call as Elegant Frosted / Terracotta Pills */
 header.site.on-hero .header-cta {
-  gap: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 header.site.on-hero .phone-link {
   display: inline-flex;
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 0.95rem;
+  align-items: center;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-  text-shadow: 0 2px 10px rgba(10, 24, 42, 0.50);
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  padding: 6px 0;
-  transition: color 0.2s ease, transform 0.2s ease;
+  padding: 8px 18px;
+  border-radius: var(--radius-full, 9999px);
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(14px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  box-shadow: 0 4px 16px rgba(10, 24, 42, 0.20) !important;
+  text-shadow: 0 1px 4px rgba(10, 24, 42, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 header.site.on-hero .phone-link:hover {
   color: #ffffff;
-  transform: translateY(-1.5px);
+  background: rgba(255, 255, 255, 0.22) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(10, 24, 42, 0.30) !important;
 }
 
 header.site.on-hero .header-cta .btn-primary {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+  display: inline-flex;
+  align-items: center;
+  background: #D9531E !important;
+  border: 1px solid rgba(255, 255, 255, 0.20) !important;
   color: #ffffff !important;
-  font-size: 0.95rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: -0.01em;
-  text-shadow: 0 2px 10px rgba(10, 24, 42, 0.50);
-  padding: 6px 0;
-  min-height: auto;
-  transition: color 0.2s ease, transform 0.2s ease;
+  padding: 8px 20px;
+  min-height: 38px;
+  border-radius: var(--radius-full, 9999px);
+  box-shadow: 0 4px 18px rgba(217, 83, 30, 0.40) !important;
+  text-shadow: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 header.site.on-hero .header-cta .btn-primary:hover {
-  color: #ffffff;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-  transform: translateY(-1.5px);
+  background: #bf4414 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(217, 83, 30, 0.55) !important;
+  text-decoration: none;
 }
 
 header.site.on-hero .menu-toggle {
@@ -650,20 +662,24 @@ header.site.scrolled nav.primary a[aria-current="page"]::after {
 }
 
 header.site.scrolled .phone-link {
-  background: transparent;
-  box-shadow: none;
-  border-color: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  display: inline-flex;
+  align-items: center;
+  background: rgba(10, 24, 42, 0.04);
+  border: 1px solid rgba(10, 24, 42, 0.08);
+  border-radius: var(--radius-full, 9999px);
   color: var(--ink);
   text-shadow: none;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 600;
-  padding: 7px 14px;
+  padding: 7px 16px;
+  transition: all 0.2s ease;
 }
 
 header.site.scrolled .phone-link:hover {
   color: var(--clay);
+  background: rgba(217, 83, 30, 0.08);
+  border-color: rgba(217, 83, 30, 0.20);
+  transform: translateY(-1px);
 }
 
 header.site.scrolled .header-cta .btn-primary {
@@ -1119,9 +1135,9 @@ section.tight {
 div.hero-3d-title {
   margin: 0 !important;
   font-family: 'Inter Tight', 'Plus Jakarta Sans', -apple-system, sans-serif !important;
-  font-size: clamp(4.8rem, 10.5vw, 12.8rem) !important;
+  font-size: clamp(4.4rem, 9.6vw, 11.8rem) !important;
   font-weight: 900 !important;
-  letter-spacing: -0.025em !important;
+  letter-spacing: 0.045em !important;
   line-height: 0.96 !important;
   text-transform: uppercase !important;
   white-space: nowrap !important;
@@ -1148,8 +1164,8 @@ div.hero-3d-title {
   .hero-3d-title,
   .hero .hero-3d-title,
   div.hero-3d-title {
-    font-size: clamp(2.2rem, 8.8vw, 3.8rem) !important;
-    letter-spacing: -0.015em !important;
+    font-size: clamp(2.1rem, 8.4vw, 3.6rem) !important;
+    letter-spacing: 0.03em !important;
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
     text-shadow:
