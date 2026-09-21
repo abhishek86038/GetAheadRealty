@@ -1802,46 +1802,53 @@ section.tight { padding: 56px 0; }
    ⭐ 60-SEC INVESTOR READINESS DIAGNOSTIC QUIZ
    ========================================================================== */
 .quiz-section {
-  padding: 85px 0;
+  padding: 70px 16px;
   position: relative;
-  background: linear-gradient(180deg, rgba(14, 28, 22, 0.40) 0%, rgba(14, 28, 22, 0.28) 50%, rgba(14, 28, 22, 0.48) 100%), 
-              url('quiz-family-bg.jpg') center top / cover no-repeat;
+  background: linear-gradient(180deg, rgba(14, 28, 22, 0.32) 0%, rgba(14, 28, 22, 0.15) 50%, rgba(14, 28, 22, 0.38) 100%), 
+              url('quiz-family-bg.jpg') center center / cover no-repeat;
   background-attachment: scroll;
 }
 
+.quiz-section .wrap {
+  max-width: 1220px;
+  width: 100%;
+}
+
 .quiz-header {
-  max-width: 680px;
-  margin: 0 auto 36px;
+  max-width: 780px;
+  margin: 0 auto 30px;
   position: relative;
   z-index: 2;
 }
 
 .quiz-header .tag {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.22);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .quiz-header h2 {
   color: #ffffff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 .quiz-header .lede {
-  color: #e2ede8;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  color: #f0f7f4;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
 }
 
 .quiz-container-box {
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
   border-radius: var(--radius-xl);
-  padding: 42px;
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
-  max-width: 840px;
+  padding: 42px 48px;
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.32);
+  max-width: 1160px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -1864,10 +1871,10 @@ section.tight { padding: 56px 0; }
 
 .quiz-progress-track {
   height: 8px;
-  background: var(--paper-warm);
+  background: rgba(27, 77, 62, 0.1);
   border-radius: var(--radius-full);
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(27, 77, 62, 0.15);
 }
 
 .quiz-progress-fill {
@@ -1879,14 +1886,14 @@ section.tight { padding: 56px 0; }
 
 /* Question Titles */
 .quiz-question-title {
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   color: var(--ink);
   margin-bottom: 6px;
   line-height: 1.25;
 }
 
 .quiz-question-sub {
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   color: var(--ink-soft);
   margin-bottom: 24px;
 }
@@ -1895,19 +1902,22 @@ section.tight { padding: 56px 0; }
 .quiz-options-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 16px;
 }
 
 .quiz-opt-card {
   display: block;
   cursor: pointer;
-  border: 1.5px solid var(--line);
+  border: 1.5px solid rgba(27, 77, 62, 0.16);
   border-radius: var(--radius-md);
-  padding: 18px 20px;
-  background: var(--paper-card);
+  padding: 20px 22px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   user-select: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .quiz-opt-card input {
@@ -1917,13 +1927,14 @@ section.tight { padding: 56px 0; }
 .quiz-opt-card:hover {
   border-color: var(--moss);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 20px rgba(27, 77, 62, 0.12);
 }
 
 .quiz-opt-card.selected {
   border-color: var(--moss);
-  background: var(--moss-subtle);
-  box-shadow: 0 0 0 1px var(--moss);
+  background: rgba(27, 77, 62, 0.12);
+  box-shadow: 0 0 0 1.5px var(--moss);
 }
 
 .quiz-opt-content {
@@ -2051,10 +2062,13 @@ section.tight { padding: 56px 0; }
 }
 
 .quiz-res-card {
-  background: var(--paper-warm);
-  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(27, 77, 62, 0.16);
   border-radius: var(--radius-md);
-  padding: 16px 18px;
+  padding: 18px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .quiz-res-kicker {
@@ -2067,23 +2081,25 @@ section.tight { padding: 56px 0; }
 }
 
 .quiz-res-val {
-  font-size: 1.18rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--ink);
   margin-bottom: 4px;
 }
 
 .quiz-res-sub {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--ink-soft);
 }
 
 /* Lead Capture Box */
 .quiz-lead-box {
-  background: linear-gradient(135deg, var(--moss-subtle) 0%, rgba(163, 72, 40, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(27, 77, 62, 0.14) 0%, rgba(163, 72, 40, 0.10) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1.5px solid var(--moss);
   border-radius: var(--radius-lg);
-  padding: 26px;
+  padding: 28px;
   text-align: center;
 }
 
