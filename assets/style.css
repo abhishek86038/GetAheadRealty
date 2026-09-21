@@ -773,64 +773,75 @@ section.tight {
   pointer-events: none;
 }
 
-/* 2. Pure CSS Monumental 3D Typography in One Line - Just Above Hero Image */
+/* 2. Pure CSS Monumental 3D Typography in One Line - Just Above Hero Image (Interactive & Modern) */
 .hero-monumental-text {
   position: absolute;
-  bottom: calc(65% + 12px);
+  bottom: calc(65% + 6px);
   left: 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 4;
-  pointer-events: none;
+  pointer-events: auto;
   user-select: none;
   text-align: center;
-  padding: 0 24px;
+  padding: 0 16px;
+  perspective: 1100px;
 }
 
 @media (max-width: 768px) {
   .hero-monumental-text {
-    bottom: calc(70% + 8px);
-    padding: 0 12px;
+    bottom: calc(70% + 4px);
+    padding: 0 8px;
   }
 }
 
 .hero-3d-title {
   margin: 0;
-  font-family: 'Syne', 'Space Grotesk', -apple-system, sans-serif;
-  font-size: clamp(2.2rem, 5.8vw, 6.2rem);
+  font-family: 'Outfit', 'Syne', 'Plus Jakarta Sans', -apple-system, sans-serif;
+  font-size: clamp(2.8rem, 8.2vw, 8.6rem);
   font-weight: 900;
-  letter-spacing: 0.04em;
-  line-height: 1;
+  letter-spacing: -0.015em;
+  line-height: 0.95;
   text-transform: uppercase;
   white-space: nowrap;
   display: inline-block;
   color: #FFFFFF;
+  cursor: pointer;
+  will-change: transform, text-shadow;
+  transform-style: preserve-3d;
+  /* Pure White Luminous 3D Extrusion Depth */
   text-shadow:
-    0 1px 0 #E2EDF8,
-    0 2px 0 #CBDFF2,
-    0 3px 0 #B5D2EC,
-    0 4px 0 #9FC4E6,
-    0 5px 0 #8AB7E0,
-    0 6px 1px rgba(16, 37, 60, 0.25),
-    0 0 14px rgba(255, 255, 255, 0.45),
-    0 10px 24px rgba(11, 24, 40, 0.40),
-    0 22px 44px rgba(5, 15, 26, 0.50);
-  transform: perspective(700px) translateZ(0);
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.22));
+    0 1px 0 #F4F7FB,
+    0 2px 0 #E5EDF5,
+    0 3px 0 #D3E1EE,
+    0 4px 0 #BDD3E6,
+    0 5px 0 #A5C3DD,
+    0 6px 1px rgba(16, 37, 60, 0.22),
+    0 0 24px rgba(255, 255, 255, 0.70),
+    0 12px 26px rgba(11, 24, 40, 0.42),
+    0 24px 48px rgba(5, 15, 26, 0.55);
+  transform: perspective(1100px) translateZ(16px);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.20));
+  transition: filter 0.3s ease;
+}
+
+.hero-3d-title:hover {
+  filter: drop-shadow(0 8px 24px rgba(255, 255, 255, 0.45)) drop-shadow(0 6px 16px rgba(0, 0, 0, 0.30));
 }
 
 @media (max-width: 768px) {
   .hero-3d-title {
-    font-size: clamp(1.4rem, 6.2vw, 2.25rem);
-    letter-spacing: 0.02em;
+    font-size: clamp(1.65rem, 6.8vw, 2.75rem);
+    letter-spacing: 0.01em;
     text-shadow:
-      0 1px 0 #CBDFF2,
-      0 2px 0 #9FC4E6,
-      0 3px 0 #8AB7E0,
+      0 1px 0 #E5EDF5,
+      0 2px 0 #BDD3E6,
+      0 3px 0 #A5C3DD,
       0 4px 1px rgba(16, 37, 60, 0.28),
-      0 8px 18px rgba(5, 15, 26, 0.50);
+      0 0 16px rgba(255, 255, 255, 0.60),
+      0 8px 20px rgba(5, 15, 26, 0.50);
   }
 }
 
