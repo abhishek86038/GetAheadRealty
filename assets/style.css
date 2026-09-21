@@ -1157,11 +1157,21 @@ section.tight { padding: 56px 0; }
 
 /* ---------- Interactive Calculator Widget ---------- */
 .calculator-section {
-  background: var(--paper-card);
+  background-color: #f8f4eb;
+  background-image: 
+    linear-gradient(135deg, 
+      rgba(248, 244, 235, 0.93) 0%, 
+      rgba(248, 244, 235, 0.84) 50%, 
+      rgba(248, 244, 235, 0.94) 100%
+    ),
+    url('calc-ambient-bg.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
-  padding: 40px;
-  box-shadow: var(--shadow-md);
+  padding: 42px;
+  box-shadow: var(--shadow-md, 0 16px 36px rgba(17, 27, 19, 0.08));
   margin-top: 40px;
 }
 
@@ -1631,10 +1641,21 @@ section.tight { padding: 56px 0; }
    ⭐ INTERACTIVE SUBURB EXPLORER & LIVE MARKET HEATMAP
    ========================================================================== */
 .suburb-explorer-section {
-  padding: 76px 0;
-  background: var(--paper-warm);
+  padding: 84px 0;
+  background-color: var(--paper-warm, #f8f4eb);
+  background-image: 
+    linear-gradient(180deg, 
+      rgba(248, 244, 235, 0.94) 0%, 
+      rgba(248, 244, 235, 0.88) 45%, 
+      rgba(248, 244, 235, 0.96) 100%
+    ),
+    url('suburb-aerial-bg.jpg');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  position: relative;
 }
 
 .suburb-header-flex {
@@ -2744,14 +2765,26 @@ section.tight { padding: 56px 0; }
 
 /* ---------- CTA Band ---------- */
 .cta-band {
-  background: var(--ink);
-  color: var(--paper);
-  border-radius: var(--radius-xl);
-  padding: 56px 48px;
+  background-color: #08140c;
+  background-image: 
+    linear-gradient(90deg, 
+      rgba(7, 18, 12, 0.94) 0%, 
+      rgba(7, 18, 12, 0.82) 48%, 
+      rgba(7, 18, 12, 0.38) 78%, 
+      rgba(7, 18, 12, 0.12) 100%
+    ),
+    url('cta-estate-dusk.jpg');
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  border-radius: var(--radius-xl, 28px);
+  padding: 68px 54px;
   text-align: left;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .cta-band::after {
