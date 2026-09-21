@@ -78,8 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // 0.3 Initialize Suburb Heatmap & Filter Explorer
   initSuburbExplorer();
 
-  // 0.4 Initialize 3D Interactive Hero Monumental Text Physics
-  initHero3DInteractive();
+  // 0.4 Hero title is fixed and static per user request
 
   // 0.5 Initialize Kinetic Number Counter Scroll Animations
   initKineticCounters();
@@ -1150,97 +1149,10 @@ function initLiveActivityTicker() {
 }
 
 /* ==========================================================================
-   ⭐ 3D INTERACTIVE HERO MONUMENTAL TEXT PHYSICS CONTROLLER
+   ⭐ HERO MONUMENTAL TEXT (FIXED STATIC NON-INTERACTIVE)
    ========================================================================== */
 function initHero3DInteractive() {
-  var hero = document.querySelector('.hero');
-  var title = document.querySelector('.hero-3d-title');
-  if (!hero || !title) return;
-
-  var targetX = 0;
-  var targetY = 0;
-  var currentX = 0;
-  var currentY = 0;
-  var isHovered = false;
-
-  function onPointerMove(clientX, clientY) {
-    var rect = hero.getBoundingClientRect();
-    if (clientX < rect.left || clientX > rect.right || clientY < rect.top || clientY > rect.bottom) {
-      return;
-    }
-    // Normalize to range -1 to +1
-    targetX = ((clientX - rect.left) / rect.width - 0.5) * 2;
-    targetY = ((clientY - rect.top) / rect.height - 0.5) * 2;
-  }
-
-  hero.addEventListener('mousemove', function (e) {
-    onPointerMove(e.clientX, e.clientY);
-  });
-
-  title.addEventListener('mouseenter', function () {
-    isHovered = true;
-  });
-
-  title.addEventListener('mouseleave', function () {
-    isHovered = false;
-  });
-
-  hero.addEventListener('mouseleave', function () {
-    targetX = 0;
-    targetY = 0;
-    isHovered = false;
-  });
-
-  // Touch support for mobile interaction
-  hero.addEventListener('touchmove', function (e) {
-    if (e.touches && e.touches[0]) {
-      onPointerMove(e.touches[0].clientX, e.touches[0].clientY);
-    }
-  }, { passive: true });
-
-  hero.addEventListener('touchend', function () {
-    targetX = 0;
-    targetY = 0;
-  });
-
-  title.style.color = '#FFFFFF';
-  title.style.setProperty('-webkit-text-fill-color', '#FFFFFF');
-
-  function renderLoop() {
-    // Smooth lerp damping (0.08)
-    currentX += (targetX - currentX) * 0.08;
-    currentY += (targetY - currentY) * 0.08;
-
-    var rotX = -currentY * 18; // Pitch
-    var rotY = currentX * 24;  // Yaw
-    var transZ = isHovered ? 40 : 16;
-    var scale = isHovered ? 1.03 : 1;
-
-    // Shift 3D shadows based on dynamic light source opposite to cursor
-    var sx = -currentX * 14;
-    var sy = -currentY * 10 + 6;
-
-    title.style.color = '#FFFFFF';
-    title.style.transform = 'perspective(1100px) rotateX(' + rotX.toFixed(2) + 'deg) rotateY(' + rotY.toFixed(2) + 'deg) translateZ(' + transZ + 'px) scale(' + scale + ')';
-
-    // Pure White luminous 3D extrusion shadows
-    title.style.textShadow = [
-      (sx * 0.1).toFixed(1) + 'px ' + (sy * 0.1 + 1).toFixed(1) + 'px 0 #FFFFFF',
-      (sx * 0.2).toFixed(1) + 'px ' + (sy * 0.2 + 2).toFixed(1) + 'px 0 #EDF3F9',
-      (sx * 0.3).toFixed(1) + 'px ' + (sy * 0.3 + 3).toFixed(1) + 'px 0 #DEEAF4',
-      (sx * 0.4).toFixed(1) + 'px ' + (sy * 0.4 + 4).toFixed(1) + 'px 0 #CCE0EF',
-      (sx * 0.5).toFixed(1) + 'px ' + (sy * 0.5 + 5).toFixed(1) + 'px 0 #BAD5EA',
-      (sx * 0.6).toFixed(1) + 'px ' + (sy * 0.6 + 6).toFixed(1) + 'px 1px rgba(16, 37, 60, 0.20)',
-      '0 0 30px rgba(255, 255, 255, 0.90)',
-      '0 0 55px rgba(255, 255, 255, 0.45)',
-      (sx * 1.1).toFixed(1) + 'px ' + (sy * 1.1 + 12).toFixed(1) + 'px 28px rgba(11, 24, 40, 0.40)',
-      (sx * 1.6).toFixed(1) + 'px ' + (sy * 1.6 + 24).toFixed(1) + 'px 50px rgba(5, 15, 26, 0.55)'
-    ].join(', ');
-
-    requestAnimationFrame(renderLoop);
-  }
-
-  requestAnimationFrame(renderLoop);
+  // Title is fixed, non-interactive per user request
 }
 
 /* ==========================================================================
