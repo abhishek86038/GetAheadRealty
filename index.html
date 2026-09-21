@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=7.0">
+<link rel="stylesheet" href="assets/style.css?v=7.1">
 <!-- Three.js 3D WebGL Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
@@ -48,10 +48,9 @@
   <!-- Sky Canvas Layer -->
   <div class="hero-sky-canvas" aria-hidden="true"></div>
 
-  <!-- Pure CSS High-Contrast Monumental Typography -->
-  <div class="hero-monumental-text" aria-label="GET AHEAD REALTY">
-    <div class="hero-css-line-1">GET AHEAD</div>
-    <div class="hero-css-line-2">REALTY</div>
+  <!-- Pure CSS 3D Monumental Typography in One Line (Just Above Hero Image) -->
+  <div class="hero-monumental-text" aria-label="Get Ahead Realty">
+    <h1 class="hero-3d-title">Get Ahead Realty</h1>
   </div>
 
   <!-- Foreground Transparent Architectural Luxury Villa with Rooftop Gardens -->
@@ -61,6 +60,26 @@
       alt="Get Ahead Realty Modern Architectural Villa" 
       class="hero-villa-foreground-img"
     >
+  </div>
+
+  <!-- Atmospheric Clouds Layer at End of Hero Image -->
+  <div class="hero-clouds-container" aria-hidden="true">
+    <div class="hero-cloud-layer hero-cloud-back">
+      <svg class="hero-cloud-svg" viewBox="0 0 2880 160" preserveAspectRatio="none">
+        <path d="M0,160 L0,110 C50,85 100,90 150,105 C200,70 270,65 330,90 C390,45 470,40 540,70 C610,25 690,20 770,50 C840,35 900,45 960,65 C1020,30 1100,25 1180,55 C1250,15 1340,20 1410,60 C1430,70 1440,75 1440,80 C1490,85 1540,90 1590,105 C1640,70 1710,65 1770,90 C1830,45 1910,40 1980,70 C2050,25 2130,20 2210,50 C2280,35 2340,45 2400,65 C2460,30 2540,25 2620,55 C2690,15 2780,20 2850,60 C2870,70 2880,75 2880,80 L2880,160 Z" fill="rgba(255, 255, 255, 0.55)" />
+      </svg>
+    </div>
+    <div class="hero-cloud-layer hero-cloud-mid">
+      <svg class="hero-cloud-svg" viewBox="0 0 2880 140" preserveAspectRatio="none">
+        <path d="M0,140 L0,90 C60,65 130,70 190,85 C260,45 340,40 420,68 C490,20 570,15 650,45 C730,10 820,18 890,50 C960,25 1040,30 1110,60 C1190,15 1270,22 1350,55 C1410,40 1435,50 1440,55 C1500,65 1570,70 1630,85 C1700,45 1780,40 1860,68 C1930,20 2010,15 2090,45 C2170,10 2260,18 2330,50 C2400,25 2480,30 2550,60 C2630,15 2710,22 2790,55 C2850,40 2875,50 2880,55 L2880,140 Z" fill="rgba(255, 255, 255, 0.78)" />
+      </svg>
+    </div>
+    <div class="hero-cloud-layer hero-cloud-front">
+      <svg class="hero-cloud-svg" viewBox="0 0 2880 110" preserveAspectRatio="none">
+        <path d="M0,110 L0,65 C70,35 150,40 220,60 C300,20 390,25 470,52 C550,10 640,15 720,40 C800,5 890,12 970,38 C1050,12 1130,22 1210,48 C1290,10 1370,18 1435,45 C1438,47 1440,48 1440,50 C1510,35 1590,40 1660,60 C1740,20 1830,25 1910,52 C1990,10 2080,15 2160,40 C2240,5 2330,12 2410,38 C2490,12 2570,22 2650,48 C2730,10 2810,18 2875,45 C2878,47 2880,48 2880,50 L2880,110 Z" fill="rgba(255, 255, 255, 0.95)" />
+      </svg>
+    </div>
+    <div class="hero-cloud-fog-bed"></div>
   </div>
 
 </div>
