@@ -14,7 +14,7 @@ window.DEVELOPER_CONFIG = {
       handle: "@abhishek8638",
       url: "https://github.com/abhishek8638",
       icon: "github",
-      accent: "#24292e"
+      accent: "#105fadff"
     },
     {
       name: "LinkedIn",
@@ -46,8 +46,8 @@ window.DEVELOPER_CONFIG = {
     },
     {
       name: "Direct Email",
-      handle: "abhishek8638@users.noreply.github.com",
-      url: "mailto:abhishek8638@users.noreply.github.com", // 👈 Edit your Email
+      handle: "abhishekkumar086038@gmail.com",
+      url: "mailto:abhishekkumar086038@gmail.com", // 👈 Edit your Email
       icon: "mail",
       accent: "#c25e3d"
     }
@@ -65,10 +65,10 @@ window.DEVELOPER_CONFIG = {
 
 // Get Ahead Realty — Next-Level Interactive Logic
 document.addEventListener('DOMContentLoaded', function () {
-  
+
   // 0. Initialize Floating Developer Contact Widget on Left Corner
   initDeveloperContactWidget();
-  
+
   // 1. Top Reading Scroll Progress Indicator
   var progressBar = document.getElementById('scrollProgress');
   window.addEventListener('scroll', function () {
@@ -611,6 +611,12 @@ function initDeveloperContactWidget() {
     });
   }
 
+  var mailLink = 'mailto:abhishekkumar086038@gmail.com';
+  if (config.links && config.links.length) {
+    var foundMail = config.links.find(function(l){ return l.icon === 'mail'; });
+    if (foundMail && foundMail.url) mailLink = foundMail.url;
+  }
+
   // Create Widget Elements
   var widgetContainer = document.createElement('div');
   widgetContainer.className = 'dev-float-widget';
@@ -642,7 +648,7 @@ function initDeveloperContactWidget() {
 
       <div class="dev-card-footer">
         <span>Need a website or custom app?</span>
-        <a href="mailto:abhishekkumar086038@gmail.com" class="dev-footer-cta">Get in Touch &rarr;</a>
+        <a href="${mailLink}" class="dev-footer-cta">Get in Touch &rarr;</a>
       </div>
     </div>
 
