@@ -639,9 +639,103 @@ section.tight { padding: 56px 0; }
 /* ---------- Hero & Spline 3D Scene ---------- */
 .hero {
   position: relative;
-  padding: 68px 0 80px;
+  padding: 72px 0 88px;
+  min-height: 820px;
+  display: flex;
+  align-items: center;
   overflow: hidden;
-  background-color: var(--paper);
+  background-color: #a6bbd3;
+}
+
+.hero-villa-sky-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-villa-backdrop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  filter: contrast(1.03) brightness(0.98);
+  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero:hover .hero-villa-backdrop-img {
+  transform: scale(1.02);
+}
+
+/* Atmospheric Layered Cloud Drift Animation */
+.hero-cloud-drift-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 38%;
+  background-image: url('hero-cloud-strip.png');
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: bottom left;
+  opacity: 0.65;
+  pointer-events: none;
+  animation: cloudDriftSlow 38s linear infinite;
+  z-index: 1;
+}
+
+.hero-cloud-drift-layer.cloud-layer-2 {
+  bottom: -20px;
+  height: 48%;
+  opacity: 0.45;
+  animation: cloudDriftReverse 52s linear infinite;
+  filter: blur(4px);
+  z-index: 1;
+}
+
+@keyframes cloudDriftSlow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes cloudDriftReverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.hero-atmosphere-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(248, 244, 235, 0.88) 0%,
+    rgba(248, 244, 235, 0.55) 45%,
+    rgba(248, 244, 235, 0.15) 75%,
+    rgba(248, 244, 235, 0.0) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* High-End Frosted Content Plate */
+.hero-content-plate {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 38px 40px;
+  border-radius: var(--radius-lg, 24px);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 24px 50px rgba(17, 27, 19, 0.10);
+  max-width: 620px;
+}
+
+@media (max-width: 768px) {
+  .hero-content-plate {
+    padding: 26px 22px;
+  }
 }
 
 .hero-bg-video-wrap {
