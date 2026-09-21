@@ -69,6 +69,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // 0. Initialize Floating Developer Contact Widget on Left Corner
   initDeveloperContactWidget();
 
+  // 0.1 Initialize 60-Sec Investor Readiness Quiz
+  initInvestorReadinessQuiz();
+
   // 1. Top Reading Scroll Progress Indicator
   var progressBar = document.getElementById('scrollProgress');
   window.addEventListener('scroll', function () {
@@ -702,4 +705,217 @@ function initDeveloperContactWidget() {
       closeWidget();
     }
   });
+}
+
+/* ==========================================================================
+   ⭐ 60-SEC INVESTOR READINESS DIAGNOSTIC QUIZ CONTROLLER
+   ========================================================================== */
+function initInvestorReadinessQuiz() {
+  var quizForm = document.getElementById('investorQuizForm');
+  if (!quizForm) return;
+
+  var currentStep = 1;
+  var totalSteps = 4;
+
+  var stepPanes = quizForm.querySelectorAll('.quiz-step-pane[data-step]');
+  var loadingPane = document.getElementById('quizLoadingPane');
+  var resultPane = document.getElementById('quizResultPane');
+  var navFooter = document.getElementById('quizNavFooter');
+
+  var btnNext = document.getElementById('btnQuizNext');
+  var btnPrev = document.getElementById('btnQuizPrev');
+  var btnRetake = document.getElementById('btnRetakeQuiz');
+  var btnClaim = document.getElementById('btnClaimStrategy');
+
+  var stepText = document.getElementById('quizStepText');
+  var percentText = document.getElementById('quizPercentText');
+  var progressFill = document.getElementById('quizProgressFill');
+
+  // Option Card Selection Logic
+  var allOptCards = quizForm.querySelectorAll('.quiz-opt-card');
+  allOptCards.forEach(function (card) {
+    card.addEventListener('click', function () {
+      var grid = card.closest('.quiz-options-grid');
+      if (grid) {
+        grid.querySelectorAll('.quiz-opt-card').forEach(function (c) {
+          c.classList.remove('selected');
+        });
+      }
+      card.classList.add('selected');
+      var radio = card.querySelector('input[type="radio"]');
+      if (radio) {
+        radio.checked = true;
+      }
+    });
+  });
+
+  // Update Step Display
+  function renderStep(step) {
+    currentStep = step;
+
+    stepPanes.forEach(function (pane) {
+      if (parseInt(pane.getAttribute('data-step'), 10) === step) {
+        pane.style.display = 'block';
+        pane.classList.add('active');
+      } else {
+        pane.style.display = 'none';
+        pane.classList.remove('active');
+      }
+    });
+
+    if (loadingPane) loadingPane.style.display = 'none';
+    if (resultPane) resultPane.style.display = 'none';
+    if (navFooter) navFooter.style.display = 'flex';
+
+    var pct = Math.round((step / totalSteps) * 100);
+    if (progressFill) progressFill.style.width = pct + '%';
+    if (stepText) stepText.textContent = 'Question ' + step + ' of ' + totalSteps;
+    if (percentText) percentText.textContent = pct + '% Completed';
+
+    if (btnPrev) {
+      btnPrev.style.display = step > 1 ? 'inline-flex' : 'none';
+    }
+
+    if (btnNext) {
+      btnNext.textContent = step === totalSteps ? 'Calculate Strategy Score →' : 'Next Question →';
+    }
+  }
+
+  // Calculate & Display Result
+  function finishQuiz() {
+    // Hide question panes and nav
+    stepPanes.forEach(function (p) { p.style.display = 'none'; });
+    if (navFooter) navFooter.style.display = 'none';
+
+    // Show loading spinner
+    if (loadingPane) {
+      loadingPane.style.display = 'block';
+      if (progressFill) progressFill.style.width = '100%';
+      if (stepText) stepText.textContent = 'Analysis In Progress';
+      if (percentText) percentText.textContent = '100% Calculated';
+    }
+
+    // Read selected answers
+    var goal = (quizForm.querySelector('input[name="goal"]:checked') || {}).value || 'first_prop';
+    var budget = (quizForm.querySelector('input[name="budget"]:checked') || {}).value || 'growth';
+    var priority = (quizForm.querySelector('input[name="priority"]:checked') || {}).value || 'growth';
+    var timeline = (quizForm.querySelector('input[name="timeline"]:checked') || {}).value || 'now';
+
+    setTimeout(function () {
+      if (loadingPane) loadingPane.style.display = 'none';
+      if (resultPane) resultPane.style.display = 'block';
+
+      // Dynamic Results Calculation
+      var resScore = document.getElementById('resScore');
+      var resHeadline = document.getElementById('resHeadline');
+      var resSummary = document.getElementById('resSummary');
+      var resCorridor = document.getElementById('resCorridor');
+      var resEquity = document.getElementById('resEquity');
+      var resCashflow = document.getElementById('resCashflow');
+
+      var score = 95;
+      var corridor = 'Moreton Bay / SE QLD Metro';
+      var equity = '+$380,000 – $510,000';
+      var cashflow = '+$15 – $35 / week';
+
+      if (goal === 'smsf') {
+        score = 96;
+        corridor = 'SMSF High-Yield Corridor (Brisbane North / Adelaide Fringe)';
+        cashflow = '+$45 – $75 / week (Positive SMSF Yield)';
+        if (resHeadline) resHeadline.textContent = 'High-Yield SMSF Growth Profile';
+        if (resSummary) resSummary.textContent = 'Your super balance is primed for standalone high-yielding residential or commercial assets with self-funding cashflow.';
+      } else if (goal === 'portfolio') {
+        score = 98;
+        corridor = 'Dual-Market Growth Hubs (SE QLD Metro + Perth Outer Metro)';
+        equity = '+$550,000 – $780,000';
+        if (resHeadline) resHeadline.textContent = 'Multi-Property Portfolio Scaler';
+        if (resSummary) resSummary.textContent = 'Your equity position allows cross-border diversification into tight vacancy markets with compounding capital growth.';
+      } else if (goal === 'second_opinion') {
+        score = 94;
+        corridor = 'Micro-Pocket Risk Verification';
+        if (resHeadline) resHeadline.textContent = 'Pre-Purchase Due Diligence Priority';
+        if (resSummary) resSummary.textContent = 'Independent street-by-street acoustic, flood, zoning, and school boundary validation prior to settlement.';
+      }
+
+      if (budget === 'entry') {
+        equity = '+$240,000 – $340,000';
+        cashflow = '+$20 – $40 / week';
+        corridor = 'Emerging Regional Hubs & Satellite Growth Corridors';
+      } else if (budget === 'premium') {
+        score = 99;
+        equity = '+$620,000 – $920,000';
+        cashflow = '+$60 – $110 / week';
+      }
+
+      if (priority === 'yield') {
+        cashflow = '+$50 – $90 / week (Positive Cashflow)';
+      } else if (priority === 'tax') {
+        cashflow = 'Tax Depreciation Optimised (High Deductions)';
+      }
+
+      if (resScore) resScore.textContent = score + '%';
+      if (resCorridor) resCorridor.textContent = corridor;
+      if (resEquity) resEquity.textContent = equity;
+      if (resCashflow) resCashflow.textContent = cashflow;
+
+      // Scroll smoothly to results
+      var quizSection = document.getElementById('readiness-quiz');
+      if (quizSection) {
+        quizSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 1200);
+  }
+
+  // Next Button Click
+  if (btnNext) {
+    btnNext.addEventListener('click', function () {
+      if (currentStep < totalSteps) {
+        renderStep(currentStep + 1);
+      } else {
+        finishQuiz();
+      }
+    });
+  }
+
+  // Prev Button Click
+  if (btnPrev) {
+    btnPrev.addEventListener('click', function () {
+      if (currentStep > 1) {
+        renderStep(currentStep - 1);
+      }
+    });
+  }
+
+  // Retake Quiz Button
+  if (btnRetake) {
+    btnRetake.addEventListener('click', function () {
+      renderStep(1);
+    });
+  }
+
+  // Lead Claim Form Button
+  if (btnClaim) {
+    btnClaim.addEventListener('click', function () {
+      var name = (document.getElementById('quizLeadName') || {}).value;
+      var email = (document.getElementById('quizLeadEmail') || {}).value;
+      var phone = (document.getElementById('quizLeadPhone') || {}).value;
+      var successMsg = document.getElementById('quizSuccessMsg');
+
+      if (!name || !email || !phone) {
+        alert('Please fill in your Name, Email, and Phone number to receive your strategy report.');
+        return;
+      }
+
+      btnClaim.disabled = true;
+      btnClaim.textContent = 'Generating Plan...';
+
+      setTimeout(function () {
+        btnClaim.style.display = 'none';
+        if (successMsg) successMsg.style.display = 'block';
+      }, 700);
+    });
+  }
+
+  // Initial Step Render
+  renderStep(1);
 }
