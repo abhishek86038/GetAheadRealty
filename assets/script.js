@@ -1384,6 +1384,12 @@ function initHeroBackgroundVideo() {
 
   video.muted = true;
   video.defaultMuted = true;
+  video.loop = false; // Strictly do not repeat/loop
+
+  // When video completes its animation, hold on final frame (the house)
+  video.addEventListener('ended', function () {
+    video.pause();
+  });
 
   var playPromise = video.play();
   if (playPromise !== undefined) {
