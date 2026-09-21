@@ -90,6 +90,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // 0.7 Initialize Card Dynamic Radial Glow Physics
   initCursorGlowPhysics();
 
+  // 0.8 Initialize Ambient Background Video Auto-play Resilience
+  initHeroBackgroundVideo();
+
   // 1. Top Reading Scroll Progress Indicator
   var progressBar = document.getElementById('scrollProgress');
   window.addEventListener('scroll', function () {
@@ -1370,4 +1373,31 @@ function initCursorGlowPhysics() {
       card.style.setProperty('--mouse-y', y + 'px');
     });
   });
+}
+
+/* ==========================================================================
+   ⭐ AMBIENT BACKGROUND VIDEO RESILIENCE & LOW-POWER FALLBACK
+   ========================================================================== */
+function initHeroBackgroundVideo() {
+  var video = document.querySelector('.hero-bg-video');
+  if (!video) return;
+
+  video.muted = true;
+  video.defaultMuted = true;
+
+  var playPromise = video.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(function () {
+      // If browser blocked autoplay due to low power or user gesture rules, play on first touch/scroll
+      function startOnGesture() {
+        video.play();
+        window.removeEventListener('touchstart', startOnGesture);
+        window.removeEventListener('scroll', startOnGesture);
+        window.removeEventListener('click', startOnGesture);
+      }
+      window.addEventListener('touchstart', startOnGesture, { passive: true });
+      window.addEventListener('scroll', startOnGesture, { passive: true });
+      window.addEventListener('click', startOnGesture, { passive: true });
+    });
+  }
 }

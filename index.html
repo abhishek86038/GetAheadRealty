@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=4.3">
+<link rel="stylesheet" href="assets/style.css?v=4.4">
 <!-- Three.js 3D WebGL Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
@@ -45,6 +45,14 @@
 
 <!-- Hero Section -->
 <div class="hero">
+  <!-- Dynamic Animated Video Background -->
+  <div class="hero-bg-video-wrap" aria-hidden="true">
+    <video class="hero-bg-video" autoplay loop muted playsinline poster="assets/settlement-handover.jpg">
+      <source src="assets/hero-bg-video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+  </div>
+
   <svg class="hero-contours" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
     <g fill="none" stroke="var(--moss)" stroke-width="1">
       <path d="M-50 420 C 200 380, 300 460, 550 400 S 900 320, 1250 380" opacity="0.35"/>
@@ -1660,6 +1668,6 @@
   </div>
 </div>
 
-<script src="assets/script.js?v=4.2"></script>
+<script src="assets/script.js?v=4.4"></script>
 </body>
 </html>
