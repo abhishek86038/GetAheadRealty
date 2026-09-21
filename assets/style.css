@@ -571,9 +571,11 @@ header.site.scrolled {
     opacity: 0;
     transform: translateY(-24px) scale(0.96);
   }
+
   65% {
     transform: translateY(2px) scale(1.008);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -1000,7 +1002,7 @@ section.tight {
   position: relative;
   width: 100%;
   height: 98vh;
-  min-height: 880px;
+  min-height: 800px;
   max-height: 1150px;
   display: flex;
   align-items: center;
@@ -1036,14 +1038,16 @@ section.tight {
 /* 1.5. Dual-Layer Composite "REALTY" Typography:
    - Behind Villa (.hero-realty-solid-bg): Solid Opaque White on top of Sky Background
    - In Front of Villa (.hero-realty-stroked-fg): Thick Stroked Outline over Villa Architecture
+   - Positioned directly behind "GET AHEAD" to create a majestic typographic background
 */
 .hero-realty-solid-bg,
 .hero-realty-stroked-fg {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: calc(64% - 24px);
+  left: 0;
   width: 100%;
+  top: auto;
+  transform: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1054,32 +1058,36 @@ section.tight {
 }
 
 .hero-realty-solid-bg {
-  z-index: 2; /* Sits behind foreground villa (z-index: 3) and above sky canvas (z-index: 1) */
+  z-index: 2;
+  /* Sits behind Get Ahead (z-index: 3) and behind foreground villa (z-index: 4) */
 }
 
 .hero-realty-stroked-fg {
-  z-index: 4; /* Sits in front of villa (z-index: 3) and behind clouds (z-index: 5) */
+  z-index: 5;
+  /* Sits in front of villa (z-index: 4) and behind clouds (z-index: 6) */
+  /* Clipped so the stroke only renders where the villa is, never across Get Ahead */
+  clip-path: inset(calc(100% - 64%) 0 0 0);
 }
 
 .realty-solid-text,
 .realty-stroked-text {
   font-family: 'Inter Tight', 'Montserrat', 'Syne', -apple-system, sans-serif;
-  font-size: clamp(8.5rem, 25vw, 29rem);
+  font-size: clamp(7.2rem, 19.5vw, 23rem);
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: -0.03em;
-  line-height: 0.80;
+  letter-spacing: -0.025em;
+  line-height: 0.82;
   white-space: nowrap;
   display: inline-block;
   pointer-events: none;
 }
 
-/* Layer 1 (Behind Villa): Pure Solid White & Opaque against the Sky */
+/* Layer 1 (Behind Villa & Get Ahead): Pure Solid White & Opaque against the Sky */
 .realty-solid-text {
   color: #FFFFFF;
   -webkit-text-fill-color: #FFFFFF;
   -webkit-text-stroke: 4.5px #FFFFFF;
-  opacity: 0.96;
+  opacity: 0.92;
   filter: drop-shadow(0 6px 28px rgba(10, 24, 42, 0.35));
 }
 
@@ -1093,28 +1101,35 @@ section.tight {
 }
 
 @media (max-width: 768px) {
+
   .hero-realty-solid-bg,
   .hero-realty-stroked-fg {
-    top: 48%;
+    bottom: calc(66% - 16px);
+    top: auto;
+  }
+
+  .hero-realty-stroked-fg {
+    clip-path: inset(calc(100% - 66%) 0 0 0);
   }
 
   .realty-solid-text,
   .realty-stroked-text {
-    font-size: clamp(4.6rem, 23vw, 9.5rem);
+    font-size: clamp(3.8rem, 18vw, 7.8rem);
     -webkit-text-stroke: 2.8px #FFFFFF;
   }
 }
 
-/* 2. Pure CSS Monumental 3D Typography: "GET AHEAD" - Behind Villa Roofline (Fixed, Crisp, Non-Glow) */
+/* 2. Pure CSS Monumental 3D Typography: "GET AHEAD" - Behind Villa Roofline, In Front of REALTY */
 .hero-monumental-text {
   position: absolute;
-  bottom: calc(74% - 15px);
+  bottom: calc(64% - 16px);
   left: 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2; /* Sits slightly behind foreground villa (z-index: 3) and in front of stroked REALTY */
+  z-index: 3;
+  /* Sits in front of REALTY background (z-index: 2) and slightly behind foreground villa (z-index: 4) */
   pointer-events: none;
   user-select: none;
   text-align: center;
@@ -1123,7 +1138,7 @@ section.tight {
 
 @media (max-width: 768px) {
   .hero-monumental-text {
-    bottom: calc(76% - 10px);
+    bottom: calc(66% - 10px);
     padding: 0 8px;
   }
 }
@@ -1154,7 +1169,7 @@ div.hero-3d-title {
     0 5px 0 #8DAFD2,
     0 6px 1px rgba(10, 24, 42, 0.22),
     0 12px 24px rgba(8, 18, 32, 0.35);
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 6px 16px rgba(8, 18, 32, 0.42));
 }
 
 @media (max-width: 768px) {
@@ -1175,14 +1190,14 @@ div.hero-3d-title {
   }
 }
 
-/* 3. Foreground Architectural Luxury Villa (Bigger Scale & Grounded) */
+/* 3. Foreground Architectural Luxury Villa (Scaled Down & Harmonious) */
 .hero-villa-foreground-wrap {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 74%;
-  z-index: 3;
+  height: 64%;
+  z-index: 4;
   pointer-events: none;
   overflow: hidden;
   display: flex;
@@ -1192,13 +1207,13 @@ div.hero-3d-title {
 
 @media (max-width: 768px) {
   .hero-villa-foreground-wrap {
-    height: 76%;
+    height: 66%;
   }
 }
 
 .hero-villa-foreground-img {
   width: 100%;
-  max-width: 1760px;
+  max-width: 1500px;
   height: 100%;
   object-fit: contain;
   object-position: center bottom;
@@ -1217,7 +1232,7 @@ div.hero-3d-title {
   left: 0;
   width: 100%;
   height: 90px;
-  z-index: 5;
+  z-index: 6;
   pointer-events: none;
   overflow: hidden;
 }
@@ -1265,14 +1280,12 @@ div.hero-3d-title {
   left: 0;
   width: 100%;
   height: 30px;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.40) 25%,
-    rgba(248, 244, 235, 0.85) 75%,
-    rgba(248, 244, 235, 1) 100%
-  );
-  z-index: 6;
+  background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.40) 25%,
+      rgba(248, 244, 235, 0.85) 75%,
+      rgba(248, 244, 235, 1) 100%);
+  z-index: 7;
 }
 
 @keyframes cloudDriftSlow {
