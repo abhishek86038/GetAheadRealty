@@ -411,7 +411,7 @@ header.site.on-hero .header-row {
   padding: 0 4px;
 }
 
-/* Brand: Just Clean Text & Crisp Avatar on Hero */
+/* Brand: Just Clean Text & Crisp Logo on Hero */
 header.site.on-hero .brand {
   background: transparent !important;
   border: none !important;
@@ -424,18 +424,19 @@ header.site.on-hero .brand {
 
 header.site.on-hero .brand-word {
   color: #ffffff;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: -0.015em;
+  font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.32rem;
+  letter-spacing: -0.02em;
   text-shadow: 0 2px 10px rgba(10, 24, 42, 0.50);
 }
 
+header.site.on-hero .brand-logo,
 header.site.on-hero .brand-avatar {
   width: 36px;
   height: 36px;
-  border: 2px solid rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.30);
+  border-radius: 11px;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.35));
 }
 
 /* Nav Links: Just Pure Text Links on Hero */
@@ -594,16 +595,19 @@ header.site.scrolled .brand {
 
 header.site.scrolled .brand-word {
   color: var(--ink);
+  font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.18rem;
+  letter-spacing: -0.02em;
   text-shadow: none;
-  font-size: 1.15rem;
-  font-weight: 700;
 }
 
+header.site.scrolled .brand-logo,
 header.site.scrolled .brand-avatar {
   width: 32px;
   height: 32px;
-  border: 1.5px solid var(--clay);
-  box-shadow: 0 2px 8px var(--clay-glow);
+  border-radius: 9px;
+  filter: drop-shadow(0 2px 6px rgba(10, 24, 42, 0.12));
 }
 
 header.site.scrolled nav.primary {
@@ -706,19 +710,19 @@ header.site.scrolled .menu-toggle span::after {
   transform: translateY(-1px);
 }
 
+.brand-logo,
 .brand-avatar {
   width: 34px;
   height: 34px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1.5px solid var(--clay);
-  box-shadow: 0 2px 8px var(--clay-glow);
+  border-radius: 10px;
+  object-fit: contain;
   flex: none;
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+.brand:hover .brand-logo,
 .brand:hover .brand-avatar {
-  transform: scale(1.10) rotate(6deg);
+  transform: scale(1.08) rotate(3deg);
 }
 
 .brand svg {
@@ -733,10 +737,10 @@ header.site.scrolled .menu-toggle span::after {
 }
 
 .brand-word {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.20rem;
-  letter-spacing: -0.015em;
+  font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
   color: var(--ink);
   white-space: nowrap;
 }
@@ -1029,16 +1033,60 @@ section.tight {
   pointer-events: none;
 }
 
-/* 2. Pure CSS Monumental 3D Typography in One Line - Behind Hero Image (Fixed, Crisp, Non-Glow) */
+/* 1.5. Colossal Stroked "REALTY" Typography Behind the Whole Hero Image */
+.hero-realty-stroked-bg {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2; /* Sits behind foreground villa (z-index: 3) and above sky canvas (z-index: 1) */
+  pointer-events: none;
+  user-select: none;
+  text-align: center;
+  overflow: hidden;
+}
+
+.realty-stroked-text {
+  font-family: 'Inter Tight', 'Montserrat', 'Syne', -apple-system, sans-serif;
+  font-size: clamp(8.5rem, 25vw, 29rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.80;
+  white-space: nowrap;
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 2.5px rgba(255, 255, 255, 0.28);
+  filter: drop-shadow(0 4px 22px rgba(10, 24, 42, 0.25));
+  opacity: 0.90;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .hero-realty-stroked-bg {
+    top: 46%;
+  }
+
+  .realty-stroked-text {
+    font-size: clamp(4.6rem, 23vw, 9.5rem);
+    -webkit-text-stroke: 1.8px rgba(255, 255, 255, 0.26);
+  }
+}
+
+/* 2. Pure CSS Monumental 3D Typography: "GET AHEAD" - Behind Villa Roofline (Fixed, Crisp, Non-Glow) */
 .hero-monumental-text {
   position: absolute;
-  bottom: calc(74% - 20px);
+  bottom: calc(74% - 15px);
   left: 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2; /* Sits slightly behind foreground villa (z-index: 3) and above sky canvas (z-index: 1) */
+  z-index: 2; /* Sits slightly behind foreground villa (z-index: 3) and in front of stroked REALTY */
   pointer-events: none;
   user-select: none;
   text-align: center;
@@ -1047,7 +1095,7 @@ section.tight {
 
 @media (max-width: 768px) {
   .hero-monumental-text {
-    bottom: calc(76% - 12px);
+    bottom: calc(76% - 10px);
     padding: 0 8px;
   }
 }
@@ -1057,7 +1105,7 @@ section.tight {
 div.hero-3d-title {
   margin: 0 !important;
   font-family: 'Inter Tight', 'Plus Jakarta Sans', -apple-system, sans-serif !important;
-  font-size: clamp(4.2rem, 8.4vw, 10.5rem) !important;
+  font-size: clamp(4.8rem, 10.5vw, 12.8rem) !important;
   font-weight: 900 !important;
   letter-spacing: -0.025em !important;
   line-height: 0.96 !important;
@@ -1086,7 +1134,7 @@ div.hero-3d-title {
   .hero-3d-title,
   .hero .hero-3d-title,
   div.hero-3d-title {
-    font-size: clamp(1.55rem, 6.4vw, 2.6rem) !important;
+    font-size: clamp(2.2rem, 8.8vw, 3.8rem) !important;
     letter-spacing: -0.015em !important;
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;

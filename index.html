@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600&family=Inter+Tight:wght@700;800;900&family=Montserrat:wght@700;800;900&family=Outfit:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&family=Syncopate:wght@700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=8.3">
+<link rel="stylesheet" href="assets/style.css?v=8.4">
 <!-- Three.js 3D WebGL Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
@@ -19,9 +19,9 @@
 
 <header class="site on-hero">
   <div class="header-row">
-    <a class="brand" href="index.html">
-      <img src="assets/settlement-handover.jpg" alt="Get Ahead Realty" class="brand-avatar" />
-      <span class="brand-word">Get Ahead Realty</span>
+    <a class="brand" href="index.html" aria-label="Get Ahead Home">
+      <img src="assets/logo.svg" alt="Get Ahead Logo" class="brand-logo" width="36" height="36" />
+      <span class="brand-word">Get Ahead</span>
     </a>
     <nav class="primary" id="primaryNav" aria-label="Primary">
       <a href="index.html" aria-current="page">Home</a>
@@ -43,21 +43,26 @@
 
 <main id="main">
 
-<!-- Hero Section with Monumental Pure CSS 'GET AHEAD REALTY' Typography & Architecture -->
+<!-- Hero Section with Monumental Pure CSS 'GET AHEAD' Typography & Colossal Stroked 'REALTY' -->
 <div class="hero hero-architectural-frame">
   <!-- Sky Canvas Layer -->
   <div class="hero-sky-canvas" aria-hidden="true"></div>
 
-  <!-- Pure CSS 3D Monumental Typography in One Line (Just Above Hero Image) -->
-  <div class="hero-monumental-text" role="heading" aria-level="1" aria-label="Get Ahead Realty">
-    <div class="hero-3d-title">Get Ahead Realty</div>
+  <!-- Colossal Stroked "REALTY" Typography Behind the Whole Hero Image -->
+  <div class="hero-realty-stroked-bg" aria-hidden="true">
+    <span class="realty-stroked-text">REALTY</span>
+  </div>
+
+  <!-- Pure CSS 3D Monumental Typography: "GET AHEAD" (Just Above/Behind Hero Image) -->
+  <div class="hero-monumental-text" role="heading" aria-level="1" aria-label="Get Ahead">
+    <div class="hero-3d-title">Get Ahead</div>
   </div>
 
   <!-- Foreground Transparent Architectural Luxury Villa with Rooftop Gardens -->
   <div class="hero-villa-foreground-wrap" aria-hidden="true">
     <img 
       src="assets/hero.png?v=2" 
-      alt="Get Ahead Realty Modern Architectural Villa" 
+      alt="Get Ahead Modern Architectural Villa" 
       class="hero-villa-foreground-img"
     >
   </div>
@@ -1663,12 +1668,9 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a class="brand" href="index.html" style="margin-bottom:14px">
-          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="28" height="28">
-            <circle cx="20" cy="20" r="18" stroke="var(--ink)" stroke-width="1.4"/>
-            <path d="M20 11 L25 20 L20 29 L15 20 Z" fill="var(--clay)"/>
-          </svg>
-          <span class="brand-word">Get Ahead Realty</span>
+        <a class="brand" href="index.html" style="margin-bottom:14px" aria-label="Get Ahead Home">
+          <img src="assets/logo.svg" alt="Get Ahead Logo" class="brand-logo" width="30" height="30" />
+          <span class="brand-word">Get Ahead</span>
         </a>
         <p style="max-width:34ch">Strategy before property. Smarter property decisions for a better financial future.</p>
       </div>
@@ -1727,6 +1729,6 @@
   </div>
 </div>
 
-<script src="assets/script.js?v=8.3"></script>
+<script src="assets/script.js?v=8.4"></script>
 </body>
 </html>
