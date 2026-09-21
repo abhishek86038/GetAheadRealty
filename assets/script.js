@@ -746,7 +746,7 @@ function initInvestorReadinessQuiz() {
   var btnNext = document.getElementById('btnQuizNext');
   var btnPrev = document.getElementById('btnQuizPrev');
   var btnRetake = document.getElementById('btnRetakeQuiz');
-  var btnClaim = document.getElementById('btnClaimStrategy');
+  var btnClaim = document.getElementById('btnClaimStrategyReport') || document.getElementById('btnClaimStrategy');
 
   var stepText = document.getElementById('quizStepText');
   var percentText = document.getElementById('quizPercentText');
@@ -818,9 +818,9 @@ function initInvestorReadinessQuiz() {
 
     // Read selected answers
     var goal = (quizForm.querySelector('input[name="goal"]:checked') || {}).value || 'first_prop';
-    var budget = (quizForm.querySelector('input[name="budget"]:checked') || {}).value || 'growth';
-    var priority = (quizForm.querySelector('input[name="priority"]:checked') || {}).value || 'growth';
-    var timeline = (quizForm.querySelector('input[name="timeline"]:checked') || {}).value || 'now';
+    var budget = (quizForm.querySelector('input[name="budget"]:checked') || {}).value || '100k_200k';
+    var strategy = (quizForm.querySelector('input[name="strategy"]:checked') || {}).value || 'balanced';
+    var timeframe = (quizForm.querySelector('input[name="timeframe"]:checked') || {}).value || 'immediate';
 
     setTimeout(function () {
       if (loadingPane) loadingPane.style.display = 'none';
@@ -828,8 +828,6 @@ function initInvestorReadinessQuiz() {
 
       // Dynamic Results Calculation
       var resScore = document.getElementById('resScore');
-      var resHeadline = document.getElementById('resHeadline');
-      var resSummary = document.getElementById('resSummary');
       var resCorridor = document.getElementById('resCorridor');
       var resEquity = document.getElementById('resEquity');
       var resCashflow = document.getElementById('resCashflow');
@@ -843,34 +841,32 @@ function initInvestorReadinessQuiz() {
         score = 96;
         corridor = 'SMSF High-Yield Corridor (Brisbane North / Adelaide Fringe)';
         cashflow = '+$45 – $75 / week (Positive SMSF Yield)';
-        if (resHeadline) resHeadline.textContent = 'High-Yield SMSF Growth Profile';
-        if (resSummary) resSummary.textContent = 'Your super balance is primed for standalone high-yielding residential or commercial assets with self-funding cashflow.';
+        equity = '+$390,000 – $540,000';
       } else if (goal === 'portfolio') {
         score = 98;
         corridor = 'Dual-Market Growth Hubs (SE QLD Metro + Perth Outer Metro)';
         equity = '+$550,000 – $780,000';
-        if (resHeadline) resHeadline.textContent = 'Multi-Property Portfolio Scaler';
-        if (resSummary) resSummary.textContent = 'Your equity position allows cross-border diversification into tight vacancy markets with compounding capital growth.';
+        cashflow = '+$30 – $60 / week';
       } else if (goal === 'second_opinion') {
         score = 94;
-        corridor = 'Micro-Pocket Risk Verification';
-        if (resHeadline) resHeadline.textContent = 'Pre-Purchase Due Diligence Priority';
-        if (resSummary) resSummary.textContent = 'Independent street-by-street acoustic, flood, zoning, and school boundary validation prior to settlement.';
+        corridor = 'Micro-Pocket Risk Verification Hubs';
+        equity = '+$320,000 – $460,000';
+        cashflow = '+$20 – $40 / week';
       }
 
-      if (budget === 'entry') {
-        equity = '+$240,000 – $340,000';
+      if (budget === 'under_100k') {
+        equity = '+$260,000 – $360,000';
         cashflow = '+$20 – $40 / week';
-        corridor = 'Emerging Regional Hubs & Satellite Growth Corridors';
-      } else if (budget === 'premium') {
+        corridor = 'Armadale WA & Regional High-Yield Precincts';
+      } else if (budget === '200k_350k' || budget === '350k_plus') {
         score = 99;
         equity = '+$620,000 – $920,000';
-        cashflow = '+$60 – $110 / week';
+        cashflow = '+$55 – $95 / week';
       }
 
-      if (priority === 'yield') {
+      if (strategy === 'high_yield') {
         cashflow = '+$50 – $90 / week (Positive Cashflow)';
-      } else if (priority === 'tax') {
+      } else if (strategy === 'tax_smsf') {
         cashflow = 'Tax Depreciation Optimised (High Deductions)';
       }
 
