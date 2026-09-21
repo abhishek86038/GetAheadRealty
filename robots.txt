@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://getaheadrealty.com.au/sitemap.xml

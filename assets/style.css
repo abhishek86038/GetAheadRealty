@@ -960,6 +960,142 @@ section.tight {
   background: var(--paper-soft);
 }
 
+/* ==========================================================================
+   ⭐ ALTERNATING SECTIONS SYSTEM
+   - Cream Background with Continuous Animated Architectural Grid
+   - Luxury Background Image with Contrast Overlay
+   ========================================================================== */
+
+/* 1. Cream Background with Smooth Animated Architectural Grid */
+.section-cream-grid {
+  position: relative;
+  background-color: #fbf8f2 !important;
+  background-image:
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(200, 78, 22, 0.05) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 50% at 50% 115%, rgba(12, 13, 16, 0.035) 0%, transparent 65%),
+    linear-gradient(to right, rgba(12, 13, 16, 0.062) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(12, 13, 16, 0.062) 1px, transparent 1px) !important;
+  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px !important;
+  animation: creamGridDrift 30s linear infinite !important;
+  border-top: 1px solid rgba(12, 13, 16, 0.09) !important;
+  border-bottom: 1px solid rgba(12, 13, 16, 0.09) !important;
+  overflow: hidden;
+}
+
+@keyframes creamGridDrift {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, 0 0, 48px 48px, 48px 48px;
+  }
+}
+
+/* Subtle ambient beam slowly sweeping across the cream grid */
+.section-cream-grid::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle 420px at 50% 50%, rgba(255, 255, 255, 0.70), transparent 75%);
+  animation: creamAmbientDrift 14s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes creamAmbientDrift {
+  0% {
+    transform: translate(-15%, -10%) scale(0.9);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate(10%, 15%) scale(1.15);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate(-5%, 8%) scale(1.0);
+    opacity: 0.45;
+  }
+}
+
+.section-cream-grid > * {
+  position: relative;
+  z-index: 2;
+}
+
+.section-cream-grid h2,
+.section-cream-grid h3,
+.section-cream-grid h4 {
+  color: var(--ink, #0c0d10);
+}
+
+.section-cream-grid .lede {
+  color: var(--ink-soft, #2c2f37);
+}
+
+.section-cream-grid.testimonials-section {
+  padding: 88px 0;
+}
+
+/* Enhanced Cards on Cream Grid */
+.section-cream-grid .testi-card {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(12, 13, 16, 0.08) !important;
+  box-shadow: 0 14px 34px -4px rgba(12, 13, 16, 0.08) !important;
+}
+
+.section-cream-grid .suburb-card {
+  background: #ffffff !important;
+  box-shadow: 0 14px 34px -4px rgba(12, 13, 16, 0.08) !important;
+}
+
+.section-cream-grid .case-card {
+  box-shadow: 0 18px 42px -6px rgba(12, 13, 16, 0.10) !important;
+}
+
+/* 2. Luxury Background Image Sections */
+.section-bg-image {
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+/* CTA Section Background Image */
+.cta-section-wrap.section-bg-image {
+  padding: 96px 0;
+  background-color: #06110a;
+  background-image:
+    linear-gradient(180deg,
+      rgba(6, 17, 10, 0.90) 0%,
+      rgba(6, 17, 10, 0.75) 50%,
+      rgba(6, 17, 10, 0.94) 100%),
+    url('cta-estate-dusk.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.cta-section-wrap .cta-band {
+  background: rgba(11, 26, 17, 0.86);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-cream-grid {
+    animation: none !important;
+  }
+  .section-cream-grid::before {
+    animation: none !important;
+    display: none !important;
+  }
+}
+
 .grid-2 {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -1338,7 +1474,96 @@ div.hero-3d-title {
   }
 }
 
-/* Hero atmosphere clean (no white overlay) */
+/* ---------- Hero CTA Action Buttons (White Buttons) ---------- */
+.hero-cta-actions {
+  position: absolute;
+  bottom: 105px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 25;
+  pointer-events: auto;
+  width: auto;
+  max-width: 90%;
+}
+
+.hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 30px;
+  border-radius: 999px;
+  font-family: var(--font-heading, 'Inter Tight', 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.02rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+.hero-btn-white {
+  background: #ffffff !important;
+  color: #0f2c20 !important;
+  border: 1.5px solid #ffffff !important;
+  box-shadow: 0 12px 32px rgba(8, 20, 32, 0.26), 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.hero-btn-white:hover {
+  background: #f5fbf7 !important;
+  color: #081a13 !important;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 18px 42px rgba(8, 20, 32, 0.36), 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.hero-btn-white-secondary {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #0f2c20 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 12px 32px rgba(8, 20, 32, 0.22), 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.hero-btn-white-secondary:hover {
+  background: #ffffff !important;
+  color: #081a13 !important;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 18px 42px rgba(8, 20, 32, 0.36), 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.hero-cta-arrow {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.hero-cta-btn:hover .hero-cta-arrow {
+  transform: translate(3px, -3px);
+}
+
+@media (max-width: 680px) {
+  .hero-cta-actions {
+    bottom: 22px;
+    flex-direction: column;
+    width: calc(100% - 32px);
+    gap: 10px;
+  }
+
+  .hero-cta-btn {
+    width: 100%;
+    padding: 13px 22px;
+    font-size: 0.95rem;
+    justify-content: center;
+  }
+}
+
 
 /* High-End Frosted Content Plate */
 .hero-content-plate {
@@ -5542,20 +5767,20 @@ footer.site .brand svg circle {
 }
 
 /* ==========================================================================
-   ⭐ 60-SEC INVESTOR READINESS QUIZ (LEFT QUIZ, RIGHT FAMILY BACKGROUND)
+   ⭐ 60-SEC INVESTOR READINESS DIAGNOSTIC (ORANGE / CLAY THEME)
    ========================================================================== */
 .quiz-section {
   position: relative;
-  padding: 84px 0 92px 0;
-  background-color: #0c1813;
+  padding: 88px 0 96px 0;
+  background-color: #0e0a07;
   background-image:
     linear-gradient(90deg,
-      rgba(7, 18, 14, 0.97) 0%,
-      rgba(7, 18, 14, 0.92) 36%,
-      rgba(7, 18, 14, 0.72) 52%,
-      rgba(7, 18, 14, 0.22) 70%,
-      rgba(7, 18, 14, 0.04) 100%),
-    url('quiz-family-bg.jpg?v=4.3');
+      rgba(14, 10, 8, 0.98) 0%,
+      rgba(18, 12, 9, 0.94) 38%,
+      rgba(22, 14, 10, 0.84) 56%,
+      rgba(28, 17, 12, 0.52) 80%,
+      rgba(32, 20, 14, 0.22) 100%),
+    url('investor-readiness-diagnostic.jpg');
   background-position: right center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -5565,7 +5790,7 @@ footer.site .brand svg circle {
 }
 
 .quiz-left-wrapper {
-  max-width: 620px;
+  max-width: 640px;
   width: 100%;
   margin-left: 0;
   margin-right: auto;
@@ -5578,9 +5803,9 @@ footer.site .brand svg circle {
 }
 
 .quiz-header .tag {
-  background: rgba(85, 214, 151, 0.18);
-  color: #55d697;
-  border: 1px solid rgba(85, 214, 151, 0.4);
+  background: rgba(200, 78, 22, 0.18);
+  color: #ff7d42;
+  border: 1px solid rgba(200, 78, 22, 0.45);
   font-weight: 700;
   letter-spacing: 0.04em;
   padding: 5px 14px;
@@ -5602,7 +5827,7 @@ footer.site .brand svg circle {
 }
 
 .quiz-header .lede {
-  color: #c4ded5;
+  color: #ded3c7;
   font-size: 1.02rem;
   line-height: 1.55;
   margin-bottom: 0;
@@ -5610,13 +5835,13 @@ footer.site .brand svg circle {
 }
 
 .quiz-container-box {
-  background: rgba(10, 24, 18, 0.78);
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  background: rgba(20, 15, 12, 0.86);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
   border-radius: 20px;
   padding: 30px 28px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(85, 214, 151, 0.15);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(200, 78, 22, 0.22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 /* Progress bar */
@@ -5630,28 +5855,33 @@ footer.site .brand svg circle {
   align-items: center;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #a8d5c5;
+  color: #d6c8bc;
   margin-bottom: 8px;
 }
 
 .quiz-step-indicator {
-  color: #55d697;
+  color: #ff7d42;
+  font-weight: 800;
+}
+
+.quiz-step-percent {
+  color: #cbbbae;
 }
 
 .quiz-progress-track {
   width: 100%;
-  height: 7px;
-  background: rgba(255, 255, 255, 0.15);
+  height: 8px;
+  background: rgba(255, 255, 255, 0.14);
   border-radius: 999px;
   overflow: hidden;
 }
 
 .quiz-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #1b7a54 0%, #55d697 100%);
+  background: linear-gradient(90deg, #c84e16 0%, #ff7d42 100%);
   border-radius: 999px;
   transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 0 10px rgba(85, 214, 151, 0.5);
+  box-shadow: 0 0 14px rgba(255, 125, 66, 0.6);
 }
 
 /* Question Typography */
@@ -5665,7 +5895,7 @@ footer.site .brand svg circle {
 
 .quiz-question-sub {
   font-size: 0.88rem;
-  color: #b0d0c4;
+  color: #cbbbae;
   margin: 0 0 18px 0;
   line-height: 1.45;
 }
@@ -5681,15 +5911,13 @@ footer.site .brand svg circle {
 .quiz-opt-card {
   position: relative;
   display: block;
-  background: rgba(14, 32, 24, 0.72);
-  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  background: rgba(28, 21, 17, 0.74);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
   border-radius: 14px;
   padding: 14px 14px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.22s ease;
   user-select: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
 }
 
 .quiz-opt-card input[type="radio"] {
@@ -5727,7 +5955,7 @@ footer.site .brand svg circle {
 .quiz-opt-text span {
   display: block;
   font-size: 0.78rem;
-  color: #a4c9bc;
+  color: #cbbbae;
   line-height: 1.35;
 }
 
@@ -5743,21 +5971,22 @@ footer.site .brand svg circle {
 }
 
 .quiz-opt-card:hover {
-  background: rgba(22, 48, 36, 0.85);
-  border-color: rgba(85, 214, 151, 0.6);
+  background: rgba(38, 28, 22, 0.90);
+  border-color: rgba(255, 125, 66, 0.65);
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .quiz-opt-card.selected {
-  background: rgba(20, 52, 38, 0.92);
-  border-color: #55d697;
-  box-shadow: 0 0 18px rgba(85, 214, 151, 0.28), inset 0 0 12px rgba(85, 214, 151, 0.12);
+  background: rgba(45, 25, 16, 0.95);
+  border-color: #ff7d42;
+  box-shadow: 0 0 20px rgba(200, 78, 22, 0.35), inset 0 0 12px rgba(255, 125, 66, 0.14);
 }
 
 .quiz-opt-card.selected .quiz-opt-radio {
-  border-color: #55d697;
-  background: #55d697;
-  box-shadow: inset 0 0 0 3px #0c1e16;
+  border-color: #ff7d42;
+  background: #ff7d42;
+  box-shadow: inset 0 0 0 3px #18110d;
 }
 
 /* Nav Footer */
@@ -5773,8 +6002,8 @@ footer.site .brand svg circle {
 .quiz-spinner {
   width: 44px;
   height: 44px;
-  border: 4px solid rgba(85, 214, 151, 0.2);
-  border-top-color: #55d697;
+  border: 4px solid rgba(255, 125, 66, 0.2);
+  border-top-color: #ff7d42;
   border-radius: 50%;
   margin: 0 auto;
   animation: quizSpin 0.9s linear infinite;
@@ -5796,7 +6025,7 @@ footer.site .brand svg circle {
 
 .quiz-loading-checks li {
   font-size: 0.88rem;
-  color: #b4d8cb;
+  color: #dfd4c8;
   padding: 6px 0 6px 24px;
   position: relative;
 }
@@ -5805,7 +6034,7 @@ footer.site .brand svg circle {
   content: "✓";
   position: absolute;
   left: 0;
-  color: #55d697;
+  color: #ff7d42;
   font-weight: 800;
 }
 
@@ -5820,12 +6049,12 @@ footer.site .brand svg circle {
 }
 
 .quiz-score-badge {
-  background: linear-gradient(135deg, #1b7a54 0%, #0e422c 100%);
-  border: 2px solid #55d697;
+  background: linear-gradient(135deg, #c84e16 0%, #7d2906 100%);
+  border: 2px solid #ff7d42;
   border-radius: 16px;
   padding: 12px 18px;
   text-align: center;
-  box-shadow: 0 8px 24px rgba(85, 214, 151, 0.3);
+  box-shadow: 0 8px 24px rgba(200, 78, 22, 0.4);
   flex-shrink: 0;
 }
 
@@ -5841,7 +6070,7 @@ footer.site .brand svg circle {
   display: block;
   font-size: 0.72rem;
   font-weight: 700;
-  color: #8ce6be;
+  color: #ffcaa8;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-top: 4px;
@@ -5855,7 +6084,7 @@ footer.site .brand svg circle {
 }
 
 .quiz-res-card {
-  background: rgba(14, 32, 24, 0.85);
+  background: rgba(28, 21, 16, 0.88);
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 12px;
   padding: 14px;
@@ -5865,7 +6094,7 @@ footer.site .brand svg circle {
   font-size: 0.74rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #92b8aa;
+  color: #ff9d6e;
   font-weight: 700;
   margin-bottom: 4px;
 }
@@ -5878,20 +6107,21 @@ footer.site .brand svg circle {
   margin-bottom: 4px;
 }
 
-.quiz-res-val.moss {
-  color: #55d697;
+.quiz-res-val.moss,
+.quiz-res-val.orange {
+  color: #ff7d42 !important;
 }
 
 .quiz-res-sub {
   font-size: 0.76rem;
-  color: #b0d0c4;
+  color: #cbbbae;
   line-height: 1.35;
 }
 
 /* Lead Box */
 .quiz-lead-box {
-  background: rgba(18, 42, 32, 0.8);
-  border: 1.5px solid rgba(85, 214, 151, 0.35);
+  background: rgba(28, 21, 16, 0.85);
+  border: 1.5px solid rgba(200, 78, 22, 0.42);
   border-radius: 14px;
   padding: 20px;
   margin-top: 8px;
@@ -5906,7 +6136,7 @@ footer.site .brand svg circle {
 .quiz-input {
   width: 100%;
   padding: 12px 16px;
-  background: rgba(8, 20, 14, 0.8);
+  background: rgba(16, 12, 10, 0.85);
   border: 1.5px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   color: #ffffff;
@@ -5917,13 +6147,13 @@ footer.site .brand svg circle {
 }
 
 .quiz-input:focus {
-  border-color: #55d697;
-  background: rgba(12, 28, 20, 0.95);
-  box-shadow: 0 0 0 3px rgba(85, 214, 151, 0.2);
+  border-color: #ff7d42;
+  background: rgba(25, 18, 14, 0.95);
+  box-shadow: 0 0 0 3px rgba(200, 78, 22, 0.25);
 }
 
 .quiz-input::placeholder {
-  color: #7d9e92;
+  color: #9c8a7c;
 }
 
 /* Mobile Responsiveness for Quiz */
@@ -5938,15 +6168,11 @@ footer.site .brand svg circle {
     padding: 60px 0 70px 0;
     background-image:
       linear-gradient(180deg,
-        rgba(7, 18, 14, 0.96) 0%,
-        rgba(7, 18, 14, 0.92) 65%,
-        rgba(7, 18, 14, 0.80) 100%),
-      url('quiz-family-bg.jpg');
+        rgba(14, 10, 8, 0.98) 0%,
+        rgba(18, 12, 9, 0.94) 60%,
+        rgba(22, 14, 10, 0.88) 100%),
+      url('investor-readiness-diagnostic.jpg');
     background-position: center top;
-  }
-
-  .quiz-left-wrapper {
-    max-width: 100%;
   }
 
   .quiz-container-box {

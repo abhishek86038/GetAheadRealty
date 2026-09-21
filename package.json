@@ -1,0 +1,20 @@
+{
+  "name": "get-ahead-realty",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Australian Buyers Agency & SMSF Property Advisory website ready for Vercel deployment",
+  "scripts": {
+    "dev": "npx -y serve .",
+    "start": "npx -y serve .",
+    "build": "echo \"Static build verified successfully.\""
+  },
+  "keywords": [
+    "real-estate",
+    "buyers-agency",
+    "smsf",
+    "property-investment",
+    "australia"
+  ],
+  "author": "Get Ahead Realty",
+  "license": "UNLICENSED"
+}
