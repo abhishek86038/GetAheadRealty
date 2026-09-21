@@ -642,7 +642,7 @@ function initDeveloperContactWidget() {
 
       <div class="dev-card-footer">
         <span>Need a website or custom app?</span>
-        <a href="mailto:abhishek8638@users.noreply.github.com" class="dev-footer-cta">Get in Touch &rarr;</a>
+        <a href="mailto:abhishekkumar086038@gmail.com" class="dev-footer-cta">Get in Touch &rarr;</a>
       </div>
     </div>
 

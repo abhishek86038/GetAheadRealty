@@ -1687,41 +1687,9 @@ details.faq p {
 
 /* ---------- Footer ---------- */
 footer.site {
-  border-top: 1.5px solid rgba(85, 214, 151, 0.35);
-  padding: 64px 0 calc(36px + env(safe-area-inset-bottom, 0px));
-  background: linear-gradient(180deg, rgba(10, 16, 13, 0.86) 0%, rgba(6, 10, 8, 0.94) 100%), url('dev-bg.png') center / cover no-repeat;
-  color: #ffffff;
-  position: relative;
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.4);
-}
-
-footer.site .brand {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  transition: all 0.25s ease;
-}
-
-footer.site .brand:hover {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: #55d697;
-  transform: translateY(-2px);
-}
-
-footer.site .brand .brand-word {
-  color: #ffffff;
-  font-weight: 700;
-}
-
-footer.site .brand svg circle {
-  stroke: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid var(--line);
+  padding: 60px 0 calc(32px + env(safe-area-inset-bottom, 0px));
+  background: color-mix(in srgb, var(--paper-soft) 60%, var(--paper));
 }
 
 .footer-grid {
@@ -1730,58 +1698,38 @@ footer.site .brand svg circle {
   gap: 34px;
 }
 
-.footer-grid p {
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.65;
-  font-size: 0.94rem;
-}
-
 .footer-grid h4 {
-  font-size: 0.86rem;
-  color: #55d697;
+  font-size: 0.88rem;
+  color: var(--ink-faint);
   font-weight: 700;
   margin-bottom: 16px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  text-shadow: 0 0 10px rgba(85, 214, 151, 0.3);
+  letter-spacing: 0.06em;
 }
 
-.footer-grid ul { list-style: none; padding: 0; margin: 0; }
-.footer-grid li { margin-bottom: 11px; }
-.footer-grid a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 0.94rem;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  display: inline-block;
-}
-
-.footer-grid a:hover {
-  color: #55d697;
-  padding-left: 4px;
-  text-shadow: 0 0 8px rgba(85, 214, 151, 0.4);
-}
-
-.disclaimer {
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.6);
-  max-width: 95ch;
-  margin-top: 36px;
-  line-height: 1.68;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding-top: 24px;
-}
+.footer-grid ul { list-style: none; }
+.footer-grid li { margin-bottom: 10px; }
+.footer-grid a { text-decoration: none; color: var(--ink-soft); font-size: 0.94rem; transition: var(--transition); }
+.footer-grid a:hover { color: var(--clay); padding-left: 3px; }
 
 .footer-bottom {
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 46px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
   font-size: 0.84rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--ink-faint);
+}
+
+.disclaimer {
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  max-width: 95ch;
+  margin-top: 24px;
+  line-height: 1.65;
 }
 
 /* ==========================================================================
