@@ -1804,8 +1804,8 @@ section.tight { padding: 56px 0; }
 .quiz-section {
   padding: 85px 0;
   position: relative;
-  background: linear-gradient(135deg, rgba(14, 28, 22, 0.88) 0%, rgba(27, 77, 62, 0.82) 50%, rgba(14, 28, 22, 0.90) 100%), 
-              url('quiz-family-bg.png') center center / cover no-repeat;
+  background: linear-gradient(180deg, rgba(14, 28, 22, 0.40) 0%, rgba(14, 28, 22, 0.28) 50%, rgba(14, 28, 22, 0.48) 100%), 
+              url('quiz-family-bg.jpg') center top / cover no-repeat;
   background-attachment: scroll;
 }
 
