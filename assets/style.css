@@ -776,7 +776,7 @@ section.tight {
 /* 2. Pure CSS Monumental 3D Typography in One Line - Just Above Hero Image (Interactive & Modern) */
 .hero-monumental-text {
   position: absolute;
-  bottom: calc(65% + 10px);
+  bottom: calc(65% + 14px);
   left: 0;
   width: 100%;
   display: flex;
@@ -792,7 +792,7 @@ section.tight {
 
 @media (max-width: 768px) {
   .hero-monumental-text {
-    bottom: calc(70% + 8px);
+    bottom: calc(70% + 10px);
     padding: 0 8px;
   }
 }
@@ -802,10 +802,10 @@ section.tight {
 div.hero-3d-title {
   margin: 0 !important;
   font-family: 'Syne', 'Unbounded', 'Outfit', sans-serif !important;
-  font-size: clamp(2.2rem, 6.2vw, 6.4rem) !important;
+  font-size: clamp(1.5rem, 3.8vw, 3.8rem) !important;
   font-weight: 900 !important;
-  letter-spacing: -0.015em !important;
-  line-height: 0.98 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1 !important;
   text-transform: uppercase !important;
   white-space: nowrap !important;
   display: inline-block !important;
@@ -822,25 +822,25 @@ div.hero-3d-title {
     0 4px 0 #CCE0EF,
     0 5px 0 #BAD5EA,
     0 6px 1px rgba(16, 37, 60, 0.20),
-    0 0 28px rgba(255, 255, 255, 0.85),
-    0 0 50px rgba(255, 255, 255, 0.45),
-    0 12px 28px rgba(11, 24, 40, 0.40),
-    0 24px 50px rgba(5, 15, 26, 0.55);
-  transform: perspective(1100px) translateZ(16px);
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.20));
+    0 0 24px rgba(255, 255, 255, 0.85),
+    0 0 45px rgba(255, 255, 255, 0.40),
+    0 10px 24px rgba(11, 24, 40, 0.38),
+    0 20px 42px rgba(5, 15, 26, 0.50);
+  transform: perspective(1100px) translateZ(14px);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.20));
   transition: filter 0.3s ease;
 }
 
 .hero-3d-title:hover {
-  filter: drop-shadow(0 8px 30px rgba(255, 255, 255, 0.65)) drop-shadow(0 6px 18px rgba(0, 0, 0, 0.30));
+  filter: drop-shadow(0 8px 26px rgba(255, 255, 255, 0.65)) drop-shadow(0 6px 16px rgba(0, 0, 0, 0.28));
 }
 
 @media (max-width: 768px) {
   .hero-3d-title,
   .hero .hero-3d-title,
   div.hero-3d-title {
-    font-size: clamp(1.35rem, 5.5vw, 2.2rem) !important;
-    letter-spacing: 0.01em !important;
+    font-size: clamp(1.05rem, 4.4vw, 1.65rem) !important;
+    letter-spacing: 0.05em !important;
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
     text-shadow:
@@ -848,8 +848,8 @@ div.hero-3d-title {
       0 2px 0 #DEEAF4,
       0 3px 0 #BAD5EA,
       0 4px 1px rgba(16, 37, 60, 0.25),
-      0 0 20px rgba(255, 255, 255, 0.80),
-      0 8px 22px rgba(5, 15, 26, 0.50);
+      0 0 16px rgba(255, 255, 255, 0.80),
+      0 6px 18px rgba(5, 15, 26, 0.45);
   }
 }
 
